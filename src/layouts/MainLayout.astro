@@ -23,113 +23,13 @@ const { title } = Astro.props;
 			<Header></Header>
 		</header>
 		
-		<main class="content"> 
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<h1 class="text-display-desktop ">DIN ØL<br>DIT ØJEBLIK</h1>
-			<div class="layout">
-			  <article class="top-box">Top Box Content</article>
-			  <div class="bottom-boxes">
-				<article class="left-box">Left Box Content</article>
-				<article class="right-box">Right Box Content</article>
-			  </div>
-			</div>
-			<slot />
+		<main>
+			<slot></slot>
 		</main>
 
 		<footer>
 			<Footer></Footer>
 		</footer>
-			
+
 	</body>
 </html>
-
-<style>
-
-.layout {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.top-box {
-  width: 100%;
-  height: 50%; /* Or any height you want */
-  background-color: #751111; /* Placeholder color */
-}
-
-.bottom-boxes {
-  display: flex;
-  width: 100%;
-  height: 50%;
-  flex-direction: row;
-}
-
-.left-box {
-  flex: 62%; /* 62% of the bottom section */
-  background-color: #974a4a; /* Placeholder color */
-}
-
-.right-box {
-  flex: 38%; /* 38% of the bottom section */
-  background-color: #202295; /* Placeholder color */
-}
-
-/* Responsive layout adjustments */
-@media (max-width: 768px) {
-  .bottom-boxes {
-    flex-direction: column;
-  }
-
-  .left-box,
-  .right-box {
-    flex: 100%;
-    height: 50%; /* Adjusts height for mobile view */
-  }
-}
-
-@media (max-width: 600px) {
-  .top-box {
-    height: 40%; /* Adjust for smaller screens */
-  }
-}
-</style>
-
-<script>
-	/* Import af Motion One biblioteket */
-	import { animate, stagger, inView, scroll, timeline } from "motion";
-
-	inView( ".content" , () =>{
-	animate( ".content", { opacity: [ 0, 1] }, { duration: 2 })
-	})
-
-
-	inView(".top-box", () => {
-  animate(".top-box", { y: ["100%", "0%"]}, { duration: 1.5 });
-});
-
-// Left box animation (slide in from the left) with responsiveness
-inView(".left-box", () => {
-  // Use dynamic `x` value based on screen size
-  const screenWidth = window.innerWidth;
-  let xValue = screenWidth < 600 ? "-50%" : "-100%"; // Adjust for smaller screens
-
-  animate(".left-box", { x: [xValue, "0%"] }, { duration: 1.5 });
-});
-
-// Right box animation (slide in from the right) with responsiveness
-inView(".right-box", () => {
-  // Use dynamic `x` value based on screen size
-  const screenWidth = window.innerWidth;
-  let xValue = screenWidth < 600 ? "50%" : "100%"; // Adjust for smaller screens
-
-  animate(".right-box", { x: [xValue, "0%"] }, { duration: 1.5 });
-});
-	
-</script>
