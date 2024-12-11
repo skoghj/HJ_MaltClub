@@ -4,29 +4,30 @@
 
 @layer base{
     h1 {
-    @apply text-h1-mobile
+    @apply text-h1-mobile font-bold font-title
       }
     h2 {
-       @apply text-h2-mobile
+       @apply text-h2-mobile font-bold
+      }
       }
 
     h3 {
-      @apply text-h3-mobile
+      @apply text-h3-mobile font-semibold
     }
+    
 
     h4 {
-      @apply text-h4-mobile
+      @apply text-h4-mobile font-semibold
     }
 
     h5 { 
-      @apply text-h5-mobile
+      @apply text-h5-mobile font-semibold
 
     }
     p {
-      @apply text-body-md
+      @apply text-body-md font-regular
       }
 
-}
 
 @screen md {
   h1 {
