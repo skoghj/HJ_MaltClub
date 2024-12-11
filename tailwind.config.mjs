@@ -62,17 +62,46 @@ export default {
       title: ["Urbanist", "sans-serif"],
       body: ["Lora", "serif"],
     },
-    fontSize: {
-      konsultativ: ["0.563rem", { lineHeight: "1.0rem" }],
-      xsmall: ["0.75rem", { lineHeight: "1.25rem" }],
-      base: ["1rem", { lineHeight: "1.5rem" }],
-      small: ["1.313rem", { lineHeight: "2.25rem" }],
-      medium: ["1.75rem", { lineHeight: "3rem" }],
-      large: ["2.375rem", { lineHeight: "3.75rem" }],
-      xlarge: ["3.188rem", { lineHeight: "4.5rem" }],
-      "2xlarge": ["4.188rem", { lineHeight: "5.5rem" }],
-      "3xlarge": ["5.625em", { lineHeight: "3.5rem" }],
-      "display": ["7.5rem", { lineHeight: "3.75rem" }],
+    fontSize: { 
+      /* Mobile, Minor Second */
+      "body-sm": ["0.875rem", { lineHeight: "1.25rem" }], // 14px, line-height: 20px
+      "body-md": ["1rem", { lineHeight: "1.5rem" }], // 16px, line-height: 24px
+      "body-lg": ["1.125rem", { lineHeight: "1.75rem" }], // 18px, line-height: 28px
+
+      "h5-mobile": ["1.125rem", { lineHeight: "1.75rem" }], // 18px, line-height: 28px
+      "h4-mobile": ["1.25rem", { lineHeight: "1.75rem" }], // 20px, line-height: 28px
+      "h3-mobile": ["1.438rem", { lineHeight: "2rem" }], // 23px, line-height: 32px
+      "h2-mobile": ["1.625rem", { lineHeight: "2.25rem" }], // 26px, line-height: 36px
+      "h1-mobile": ["1.813rem", { lineHeight: "2.5rem" }], // 29px, line-height: 40px
+
+      "display-mobile": ["2.25rem", { lineHeight: "3rem" }], // 36px, line-height: 48px
+
+        /* Tablet, Intermediate Scale (larger sizes for heading and display) */
+      "body-sm-tablet": ["1rem", { lineHeight: "1.5rem" }], // 16px
+      "body-md-tablet": ["1.25rem", { lineHeight: "1.75rem" }], // 20px
+      "body-lg-tablet": ["1.375rem", { lineHeight: "1.875rem" }], // 22px
+
+      "h5-tablet": ["1.5rem", { lineHeight: "2rem" }], // 24px
+      "h4-tablet": ["1.75rem", { lineHeight: "2.25rem" }], // 28px
+      "h3-tablet": ["2rem", { lineHeight: "2.5rem" }], // 32px
+      "h2-tablet": ["2.5rem", { lineHeight: "3rem" }], // 40px
+      "h1-tablet": ["3rem", { lineHeight: "3.25rem" }], // 48px
+
+      "display-tablet": ["3.25rem", { lineHeight: "3.5rem" }], // 52px
+
+      /* Desktop, Perfect Fourth */
+
+      "body-sm-desktop": ["1.125rem", { lineHeight: "1.75rem" }], // 18px, line-height: 28px
+      "body-md-desktop": ["1.313rem", { lineHeight: "2rem" }], // 21px, line-height: 32px
+      "body-lg-desktop": ["1.75rem", { lineHeight: "2.5rem" }], // 28px, line-height: 40px
+    
+      "h5-desktop": ["1.75rem", { lineHeight: "2.5rem" }], // 28px, line-height: 40px
+      "h4-desktop": ["2.375rem", { lineHeight: "3rem" }], // 38px, line-height: 48px
+      "h3-desktop": ["3.188rem", { lineHeight: "4rem" }], // 51px, line-height: 64px
+      "h2-desktop": ["4.188rem", { lineHeight: "5rem" }], // 67px, line-height: 80px
+      "h1-desktop": ["5.625rem", { lineHeight: "6rem" }], // 90px, line-height: 96px
+    
+      "display-desktop": ["7.5rem", { lineHeight: "8rem" }], // 120px, line-height: 128px
     },
     fontWeight: {
       light: "300",
@@ -110,4 +139,4 @@ export default {
       require('@tailwindcss/aspect-ratio'),
       require('@tailwindcss/container-queries')
     ],
-}
+  }
