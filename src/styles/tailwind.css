@@ -3,7 +3,24 @@
 @tailwind utilities;
 
 @layer base{
-    /* p{
-        @apply text-body;
-    } */
+    h1 {
+
+      }
+    h2 {
+       
+      }
+
+    h3 {
+
+    }
+
+    h4 {
+
+    }
+
+    p {
+      
+      }
+
 }
+
