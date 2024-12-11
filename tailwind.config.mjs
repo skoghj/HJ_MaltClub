@@ -31,7 +31,6 @@ export default {
         900: "#613C00",
         950: "#331F00"
       },
-      },
       neutral: {
         50: "#FCFAF8",
         100: "#F7F3EE",
@@ -104,12 +103,11 @@ export default {
       inner25: "0 4px 4px 0 rgb(0 0 0 / 0.25) inset",
       inner50: "0 4px 4px 0 rgb(0 0 0 / 0.50) inset",
     },
+  },
     plugins: [
       require('@tailwindcss/typography'),
       require('@tailwindcss/forms'),
       require('@tailwindcss/aspect-ratio'),
-      require('@tailwindcss/container-queries'),
-      require('flowbite/plugin'),
+      require('@tailwindcss/container-queries')
     ],
-  };
-  
+}
