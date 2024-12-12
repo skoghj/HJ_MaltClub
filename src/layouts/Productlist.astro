@@ -1,0 +1,93 @@
+---
+import Listproduct from "../components/Listproduct.astro"
+import Organicbutton from "../components/Organicbutton.astro"
+---
+
+    <!-- Top Box -->
+<article class="top-box px-md py-sm bg-neutral-500 grid grid-cols-1 items-center md:grid-cols-2 md:px-lg md:py-md lg:px-xl lg:py-lg">
+  <!-- Image Section -->
+  <div class="pr-sm flex justify-center md:pr-md lg:pr-lg">
+    <Listproduct beer_image="../img/maltClub.webp" />
+  </div>
+  <!-- Text and Button Section -->
+  <div class="flex flex-col items-start">
+    <div class="pb-md md:pb-lg lg:pb-xl ">
+      <div>
+      <h3 class="text-primary-500">MALTCLUB</h3>
+      <h5 class="text-primary-400">275 kr.</h5>
+     </div>
+     <h5 class="md:text-body-md-desktop lg:text-body-md-desktop font-regular">Ølkassen består af 9-11 kvalitetsøl</h5>
+    </div>
+    <Organicbutton text="SE ØLKASSERNE" size="medium" variant="primary" />
+  </div>
+</article>
+
+<!-- Bottom Boxes -->
+<div class="bottom-boxes flex flex-col md:flex-row">
+  <!-- Left Box -->
+  <article class="left-box px-md py-sm bg-neutral-400 flex flex-col md:flex-col flex-[100%] md:flex-[62%] md:px-lg md:py-md lg:px-xl lg:py-lg">
+    <div class="pb-md md:pb-lg lg:pb-xl">
+      <Listproduct
+        beer_image="../img/maltClub_XL.webp"
+        title="MaltClub XL"
+        description="Ølkassen består af 9-11 kvalitetsøl"
+        price="425 kr."/>
+    </div>
+    <!-- Prevent the button from stretching by applying inline-block, auto width, and flex-shrink-0 -->
+    <div class="flex-shrink-0">
+      <Organicbutton class="inline-block w-auto" text="SE ØLKASSERNE" size="small" variant="secondary" />
+    </div>
+  </article>
+
+  <!-- Right Box -->
+  <article class="right-box px-md py-sm bg-neutral-600 flex flex-col flex-[100%] md:flex-[38%] md:px-lg md:py-md lg:px-xl lg:py-lg">
+    <div class="pb-md md:pb-lg lg:pb-xl">
+      <Listproduct
+        beer_image="../img/maltClub_ipa.webp"
+        title="MaltClub U/IPA"
+        description="Ølkassen består af 9-11 kvalitetsøl"
+        price="275 KR." />
+    </div>
+    <!-- Prevent the button from stretching by applying inline-block, auto width, and flex-shrink-0 -->
+    <div class="flex-shrink-0">
+      <Organicbutton class="inline-block w-auto" text="SE ØLKASSERNE" size="small" variant="secondary" />
+    </div>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script> 
+/* Import af Motion One biblioteket */
+    import { animate, inView } from "motion";
+    
+    inView(".content", () => {
+      animate(".content", { opacity: [0, 1] }, { duration: 2 });
+    });
+    
+    inView(".top-box", () => {
+      animate(".top-box", { y: ["100%", "0%"] }, { duration: 1.5 });
+    });
+    
+    // Left box animation (slide in from the le ft) with responsiveness
+    inView(".left-box", () => {
+      // Use dynamic `x` value based on screen size
+      const screenWidth = window.innerWidth;
+      let xValue = screenWidth < 600 ? "-50%" : "-100%"; // Adjust for smaller screens
+    
+      animate(".left-box", { x: [xValue, "0%"] }, { duration: 1.5 });
+    });
+    
+    // Right box animation (slide in from the right) with responsiveness
+    inView(".right-box", () => {
+      // Use dynamic `x` value based on screen size
+      const screenWidth = window.innerWidth;
+      let xValue = screenWidth < 600 ? "50%" : "100%"; // Adjust for smaller screens
+    
+      animate(".right-box", { x: [xValue, "0%"] }, { duration: 1.5 });
+    });
+    </script>
