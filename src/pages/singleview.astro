@@ -1,0 +1,70 @@
+---
+const { url = "#", cardimage = "", cardimagealt = "", procuktnavn = "", kortbeskrivelse = "", pris = "" } = Astro.props;
+import MainLayout from "../layouts/MainLayout.astro";
+import Secondarybutton from "../components/Secondarybutton.astro";
+import SingleviewProduktcard from "../components/SingleviewProduktcard.astro";
+import SingleviewAnbefalecard from "../components/SingleviewAnbefalecard.astro";
+---
+
+<MainLayout title="singleview">
+  <section class="bg-primary-500">
+    <div class="max-w-7xl mx-auto flex"><SingleviewProduktcard /></div>
+  </section>
+
+  <section class="bg-primary-500">
+    <div class="pt-xl px-xs text-accent-500 flex flex-col max-w-7xl mx-auto">
+      <h3 class="text-h1-mobile lg:text-h3-desktop py-ml">Andre kunder købte også</h3>
+      <div id="controls-carousel" class="relative w-full md:hidden" data-carousel="static">
+        <!-- Carousel wrapper til mobil -->
+        <div class="relative aspect-[16/20] overflow-hidden rounded-xs md:h-auto">
+          <!-- Item 1 -->
+          <div class="duration-700 ease-in-out w-full" data-carousel-item>
+            <SingleviewAnbefalecard url="" cardimage="maltclub_xl.webp" cardimagealt="maltclub xl abonnement" procuktnavn="MALTCLUB XL" , kortbeskrivelse="Består af 9-11 kvalitetsøl" , pris="DKK 456" />
+          </div>
+          <!-- Item 2 -->
+          <div class="duration-700 ease-in-out w-full" data-carousel-item>
+            <SingleviewAnbefalecard url="" cardimage="maltclub.webp" cardimagealt="maltclub abonnement" procuktnavn="MALTCLUB" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+          </div>
+          <!-- Item 3 -->
+          <div class="duration-700 ease-in-out w-full" data-carousel-item>
+            <SingleviewAnbefalecard url="" cardimage="maltclub_u_ipa.webp" cardimagealt="maltclub uden ipa abonnement" procuktnavn="MALTCLUB U/IPA" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+          </div>
+          <!-- Item 4 -->
+          <div class="duration-700 ease-in-out w-full" data-carousel-item>
+            <SingleviewAnbefalecard url="" cardimage="maltclub_gave.webp" cardimagealt="maltclub gave abonnement" procuktnavn="MALTCLUB GAVE" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+          </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute -top-xl start-0 z-30 flex items-center justify-center h-full cursor-pointer group focus:outline-none md:hidden" data-carousel-prev>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 bg-neutral-100 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+            <svg class="w-4 h-4 text-gray-400 dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button type="button" class="absolute -top-xl right-[0px] z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none md:hidden" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 bg-neutral-100 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+            <svg class="w-4 h-4 text-gray-400 dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="hidden md:grid md:grid-cols-4 md:gap-xxxs pb-2xl">
+        <SingleviewAnbefalecard url="" cardimage="maltclub_xl.webp" cardimagealt="maltclub xl abonnement" procuktnavn="MALTCLUB XL" , kortbeskrivelse="Består af 9-11 kvalitetsøl" , pris="DKK 456" />
+
+        <SingleviewAnbefalecard url="" cardimage="maltclub.webp" cardimagealt="maltclub abonnement" procuktnavn="MALTCLUB" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+
+        <SingleviewAnbefalecard url="" cardimage="maltclub_u_ipa.webp" cardimagealt="maltclub uden ipa abonnement" procuktnavn="MALTCLUB U/IPA" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+
+        <SingleviewAnbefalecard url="" cardimage="maltclub_gave.webp" cardimagealt="maltclub gave abonnement" procuktnavn="MALTCLUB GAVE" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<!--Plug in til mobil slider -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
