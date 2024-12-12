@@ -1,0 +1,126 @@
+---
+const { url = "#", cardimage = "", cardimagealt = "", procuktnavn = "", kortbeskrivelse = "", detajerbeskrivelse = "" } = Astro.props;
+import Secondarybutton from "./Secondarybutton.astro";
+---
+
+<section class="flex flex-wrap px-sm bg-primary-500 text-accent-500">
+  <div>
+    <!--<img src={cardimage} alt={cardimagealt}  -->
+    <img src="/maltclub_xl.webp" alt="maltclub xl abonnement" />
+  </div>
+  <h1 class="">Maltclub XL</h1>
+  <div class="flex flex-wrap gap-xs py-xxs">
+    <div class="flex bg-accent-500 px-xs py-xxs rounded-full gap-xxs">
+      <img src="/quality_icon.svg" alt="quality ikon" class="w-md" />
+      <p class="text-primary-500">5-6 kvalitetsøl</p>
+    </div>
+    <div class="flex bg-accent-500 px-xs py-xxs rounded-full gap-xxs">
+      <img src="/lock_icon.svg" alt="ingen binding ikon" class="w-xs" />
+      <p class="text-primary-500">Ingen binding</p>
+    </div>
+  </div>
+  <div>
+    <p>Vi håndplukker et udvalg af gode specialøl til dig hver måned og leverer til nærmeste pakkeshop.</p>
+  </div>
+  <div class="w-full py-md">
+    <div class="flex w-full border-b-2 border-accent-500 py-xxs justify-start items-center gap-xxs">
+      <div>
+        <img src="/Ol_ks_levering.svg" alt="levering icon" class="w-ml" />
+      </div>
+      <div class="flex">
+        <p>DKK 465</p>
+        <p>/ md.inkl.moms</p>
+      </div>
+    </div>
+    <div class="flex justify-between items-center gap-xs py-xs">
+      <div class="flex py-xxs gap-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtn">
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
+        </svg>
+        <p id="cartCount">01</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtn">
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      <a href="/Tilmeldingprocess"> <Secondarybutton variant="secondary" size="small" width="large">Tilføj til kurv</Secondarybutton></a>
+    </div>
+  </div>
+  <!--Shopping cart i headeren (mulig at tilføje til kurvikon) 
+  <p id="totalItems">Total Items: 0</p>-->
+
+  <div class="w-full py-xxs justify-start items-center gap-xxs">
+    <div class="accordion-item item flex flex-col w-full justify-between items-center gap-xs">
+      <div class="accordion-header w-full flex justify-between border-b-2 border-accent-500 py-xxxs">
+        <p>Beskrivelser</p>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-sm accordion-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+        </svg>
+      </div>
+      <div class="accordion-content hidden">
+        <p>{detajerbeskrivelse}</p>
+        <div>
+          <p class="py-xs">MaltClub Øl Abonnement – Kvalitetsøl leveret til døren for kun DKK 275/md. inkl. fragt.</p>
+          <div>
+            <li>5-6 nøje udvalgte specialøl – Håndplukket fra både ind- og udland.</li>
+            <li>Unikke øloplevelser – Øl, du sjældent finder i supermarkedet.</li>
+            <li>Tilpasset sæson og højtider – Vi vælger øl, der passer perfekt til tiden på året.</li>
+            <li>Respekt for håndværk og historie – Kvalitet og tradition er i fokus.</li>
+          </div>
+          <p class="py-xs">Læn dig tilbage og glæd dig til nye, lækre øloplevelser hver måned!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  ///////////////////////////////////////////////////Items counter////////////////////
+  // Elementet, der viser antallet af varer i kurven
+  const cartCountElement = document.getElementById("cartCount");
+  const totalItemsElement = document.getElementById("totalItems");
+
+  // Start antal varer
+  let cartCount = 1;
+
+  // plus og minus knap
+  const increaseBtn = document.getElementById("increaseBtn");
+  const decreaseBtn = document.getElementById("decreaseBtn");
+
+  // når man klikker plus knappen
+  increaseBtn.addEventListener("click", () => {
+    cartCount++;
+    updateCart();
+  });
+
+  // når man klikker minus knappen
+  decreaseBtn.addEventListener("click", () => {
+    if (cartCount > 0) {
+      cartCount--;
+      updateCart();
+    }
+  });
+
+  // Funktion til at opdatere indholdet i kurven og det samlede antal varer
+  function updateCart() {
+    // Vise antallet af varer i kurven
+    cartCountElement.textContent = cartCount.toString().padStart(2, "0");
+
+    // Opdatere det samlede antal varer i kurven
+    totalItemsElement.textContent = `Total Items: ${cartCount}`;
+  }
+  ///////////////////////////////////////////////////Accordion produkt beskrivelser////////////////////
+
+  document.querySelectorAll(".accordion-header").forEach((header) => {
+    header.addEventListener("click", function () {
+      //Find den tilsvarende accordion-content og skift dens synlighed//
+      const content = this.nextElementSibling; //I dette tilfælde er accordion-content placeret lige efter det næste element.//
+      const icon = this.querySelector(".accordion-icon");
+
+      // content toggle
+      content.classList.toggle("hidden");
+
+      // icon rotate toggle (active)
+      icon.classList.toggle("rotate-180");
+    });
+  });
+</script>
