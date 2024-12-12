@@ -1,32 +1,32 @@
 ---
 import Secondarybutton from "./Secondarybutton.astro";
 
-const { url = "#", cardimage = "", cardimagealt = "", procuktnavn = "", kortbeskrivelse = "", detajerbeskrivelse = "" } = Astro.props;
+const { url = "#", cardimage = "", cardimagealt = "", procuktnavn = "", kortbeskrivelse = "", pris = "" } = Astro.props;
 ---
 
 <article class="card @container">
-  <a href={url} class="flex flex-col justify-between h-full">
-    <header class="daseholdheader relative aspect-[16/9]">
+  <a href={url} class="flex flex-col justify-between h-full px-xs">
+    <header class="daseholdheader relative w-full h-auto">
       <div class="relative">
         <div class="absolute inset-0 w-full z-10"></div>
-        <img src="/maltclub_xl.webp" alt="maltclub xl abonnement" class="w-full object-cover h-auto bg-neutral-400 z-10" />
+        <img src={cardimage} alt={cardimagealt} class="w-full object-cover h-auto bg-neutral-400 z-10" />
       </div>
     </header>
-    <section class="bg-primary-700 h-[180px]">
+    <section class="bg-primary-700 w-full grow flex flex-col">
       <div class="flex flex-col grow text-accent-500">
         <div class="flex justify-between items-baseline px-xs pt-xs">
-          <h1>MALTCLUB XL</h1>
+          <h3 class="text-h3-mobile">{procuktnavn}</h3>
           <img src="/shoppingcart.svg" alt="shoppingcart ikon" class="w-ml" />
         </div>
         <div class="flex px-xs pt-xxs">
           <div class="border-b-2 border-accent-500 flex w-full items-center gap-xxs">
             <img src="/beer-ikon.svg" alt="beer ikon" class="w-md py-xxs" />
-            <p>Består af 9-11 kvalitetsøl</p>
+            <p>{kortbeskrivelse}</p>
           </div>
         </div>
       </div>
-      <div class="grow flex px-xs pt-xxs items-baseline justify-between text-accent-500">
-        <h1>DKK 465</h1>
+      <div class="grow flex flex-wrap gap-xs px-xs py-md items-baseline justify-between text-accent-500">
+        <h3 class="text-h3-mobile">{pris}</h3>
         <Secondarybutton variant="primary" size="small" width="small">Se mere</Secondarybutton>
       </div>
     </section>
