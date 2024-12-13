@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       // Modal content
       div.innerHTML = `
-        <div class="bg-orange-200 p-8 max-w-sm w-full rounded-md shadow-md">
+        <div class="bg-neutral-200 p-8 max-w-sm w-full rounded-md shadow-md">
           <h1 class="text-center text-2xl font-bold mb-4">Login</h1>
           <p class="text-center text-sm mb-2">This is a school project</p>
           <p class="text-center text-sm mb-6">Enter password below <code class="bg-primary-500 p-1 rounded"> </code></p>
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
               type="password" 
               name="pass" 
               placeholder="Password"
-              class="w-full h-11 px-3 border rounded-md border-gray-300 focus:outline-none focus:ring focus:ring-blue-300"
+              class="w-full h-11 px-3 border rounded-md border-neutral-600 focus:outline-none focus:ring focus:ring-primary-200"
             >
             <input 
               type="submit" 
