@@ -1,0 +1,30 @@
+---
+const { img, name, description, beer} = Astro.props
+---
+<div class="px-2">
+  <div class="bg-accent-500 ">
+    <div class="flex flex-col items-center max-w-[284px] lg:max-w-[370px] mx-auto p-sm pb-xs h-[300px] relative">
+      <!-- IMG centered -->
+      <img src={img} alt="Ølentusiast" class="h-20 w-20 rounded-sm mx-auto">
+      
+      <!-- H3 centered -->
+      <h3-desktop class="text-left p-xs">{name}</h3-desktop>
+    
+      <!-- Content container that adjusts based on description size -->
+      <div class="flex flex-col justify-between items-start w-full">
+        <div class="flex-grow">
+          <p class="text-left">{description}</p>
+        </div>
+      </div>
+  
+      <!-- Beer icon aligned horizontally, fixed vertical position -->
+      <img src={beer} alt="beer-icon" class="h-18 absolute bottom-0 left-0 right-20 p-sm pb-xs">
+    </div>
+  </div>
+</div>
+  
+  
+  
+  
+
+  
