@@ -1,0 +1,40 @@
+---
+import Secondarybutton from "./Secondarybutton.astro";
+---
+
+<section class="max-w-7xl mx-auto flex flex-col flex-wrap py-xl bg-neutral-300 items-center md:grid md:grid-cols-2 md:gap-ml">
+  <div class="px-sm md:px-xl">
+    <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-400">Ordreoversigt</h1>
+    <div class="relative">
+      <img src="/maltclub.webp" alt="maltclub abonnement" class="relative" />
+      <div class="absolute -top-[0.5rem] right-s w-lg h-lg bg-primary-500 text-accent-500 flex items-center justify-center rounded-full text-h3-mobile font-bold">01</div>
+    </div>
+  </div>
+  <div class="flex flex-col w-full justify-center mx-auto px-sm md:px-xl gap-md pt-md md:pt-none">
+    <div class="grid grid-cols-3 justify-between items-center w-full">
+      <h5 class="font-semibold">MALTCLUB</h5>
+      <div class="flex justify-center items-center">
+        <img src="/material-symbols_delete-outline.svg" alt="delete ikon" class="w-ml opacity-60 cursor-pointer" />
+      </div>
+      <h5 class="font-semibold flex justify-center items-center">DKK 275</h5>
+    </div>
+
+    <div class="grid grid-cols-3 justify-between items-center">
+      <h5 class="font-regular">Antal</h5>
+      <h5 class="font-regular col-start-3 flex justify-center items-center">1 kasse</h5>
+    </div>
+
+    <div class="grid grid-cols-3 justify-between items-center">
+      <h5 class="font-regular">Levering</h5>
+      <h5 class="font-regular col-start-3 flex justify-center items-center">Inkl. fragt</h5>
+    </div>
+
+    <div class="grid grid-cols-3 justify-between items-center">
+      <h5 class="font-semibold">I alt</h5>
+      <h5 class="font-semibold col-start-3 flex justify-center items-center">DKK 275</h5>
+    </div>
+    <div class="col-start-2 pt-sm">
+      <Secondarybutton variant="primary" size="medium" width="large" className="sm:size-small md:size-medium lg:size-large">Bekræft og forsæt</Secondarybutton>
+    </div>
+  </div>
+</section>
