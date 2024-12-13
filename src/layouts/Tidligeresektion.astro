@@ -1,0 +1,118 @@
+---
+import TidligereCard from "../components/TidligereCard.astro";
+---
+
+<div class="bg-neutral-500 pt-ml py-lg px-ml lg:p-2xl border-solid">
+    <!-- <h2-desktop class="text-accent-500 font-bold font-title pb-s">
+        Nysgerrrig på tidligere MaltClub kasser? 
+    </h2-desktop> -->
+     <div>
+      <h3 class="text-accent-500 pb-xs lg:pb-2xl">
+        Nysgerrrig på tidligere MaltClub kasser? 
+      </h3>
+
+      <h2-desktop class="text-accent-500 font-bold font-title pb-s lg:pb-2xl ">
+        Nysgerrrig på tidligere MaltClub kasser? 
+      </h2-desktop>
+     </div>
+
+    <div x-data="{ currentIndex: 0, cardWidth: 305, totalCards: 8 }" class="relative overflow-hidden">
+      
+      <!-- Cards Container -->
+      <div class="flex transition-transform duration-500 border-solid"
+        :style="`transform: translateX(-${currentIndex * cardWidth}px);`">
+        
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/januar.webp" alt="billed af ølflasker"
+      month="Januar">
+</div>
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/februar.webp" alt="billed af ølflasker"
+      month="Februar">
+</div>
+
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/marts.webp" alt="billed af ølflasker"
+      month="Marts">
+</div>
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/april.webp" alt="billed af ølflasker"
+      month="April">
+</div>
+
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/maj.webp" alt="billed af ølflasker"
+      month="Maj">
+</div>
+
+
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/juni.webp" alt="billed af ølflasker"
+      month="Juni">
+</div>
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/juli.webp" alt="billed af ølflasker"
+      month="Juli">
+</div>
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/august.webp" alt="billed af ølflasker"
+      month="August">
+</div>
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/september.webp" alt="billed af ølflasker"
+      month="September">
+</div>
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/oktober.webp" alt="billed af ølflasker"
+      month="Oktober">
+</div>
+
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/november.webp" alt="billed af ølflasker"
+      month="November">
+</div>
+<div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 px-2" x-show="true">
+    <TidligereCard
+      img="img/img_hjul/december.webp" alt="billed af ølflasker"
+      month="December">
+</div>
+ </div>
+
+      <!-- Navigation Controls (Arrows) -->
+      <button 
+        @click="currentIndex = (currentIndex === 0) ? totalCards - 1 : currentIndex - 1"  
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 text-accent-800 p-3">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <button 
+        @click="currentIndex = (currentIndex + 1) % totalCards"
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 text-accent-800 p-3">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+</div>
+
+

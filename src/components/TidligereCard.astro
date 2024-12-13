@@ -1,0 +1,16 @@
+---
+const { img, month} = Astro.props
+---
+<div class="px-2">
+  <div class="bg-accent-500 ">
+    <div class="flex flex-col items-center max-w-[284px] lg:max-w-[370px] mx-auto p-sm pb-xs h-[300px] relative">
+      <!-- IMG centered -->
+      <img src={img} alt="Ølentusiast" class="h-80 w-80 mx-auto">
+      
+      <!-- H5 centered -->
+      <!-- <h5-desktop class="text-accent-500 p-xs">{month}</h5-desktop> -->
+      <h5 class="pt-4 text-accent-500">{month}</h5p>
+    </div>
+  </div>
+</div>
+
