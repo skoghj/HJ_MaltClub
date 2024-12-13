@@ -1,0 +1,27 @@
+---
+import Organicbutton from "../components/Organicbutton.astro"
+---
+
+<div class="flex flex-col lg:flex-row justify-between bg-primary-700 text-accent-500">
+    <!-- Left Content -->
+    <div class="pl-sm md:pl-md lg:pl-xl py-sm md:py-sm lg:py-lg">
+        <!-- Heading -->
+        <h1 class="text-display-mobile md:text-display-tablet lg:text-display-desktop">
+            DIN ØL<br>DIT ØJEBLIK
+        </h1>
+        <!-- Subheading -->
+        <h3 class="text-accent-700">
+            Øl på abonnement - smag på <br> nye favoritter hver måned
+        </h3>
+        <!-- Button -->
+       <Organicbutton
+       size="large"
+       variant="primary"
+       text="KOM I GANG">
+    </div>
+
+    <!-- Right Image -->
+    <div class="w-full lg:w-1/2">
+        <img src="../img/index_hero.png" alt="Beer being poured into glass" class="w-full max-w-md  lg:max-w-none">
+    </div>
+</div>
