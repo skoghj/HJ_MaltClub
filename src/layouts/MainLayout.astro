@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import AgeVerification from "../components/AgeVerification.astro";
 import '../styles/tailwind.css';
 import 'animate.css';
+import Cursor from "../components/Cursor.astro";
 const { title } = Astro.props;
 
 ---
@@ -21,6 +22,7 @@ const { title } = Astro.props;
 		<title>{Astro.props.title}</title>
 	</head>
 	<body>
+	
 		<AgeVerification />
 		<div class="relative w-full overflow-hidden bg-neutral-500">
 			<svg id="svg-mask" class="absolute top-0 left-0 w-full h-full">
@@ -37,7 +39,7 @@ const { title } = Astro.props;
 		</header>
 		
 		<main>
-		
+			<Cursor />	
 			
 			<slot></slot>
 		</main>
@@ -72,3 +74,4 @@ const { title } = Astro.props;
     );
 });
 </script>
+
