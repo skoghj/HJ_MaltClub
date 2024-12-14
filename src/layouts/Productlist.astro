@@ -2,7 +2,7 @@
 import Listproduct from "../components/Listproduct.astro"
 import Organicbutton from "../components/Organicbutton.astro"
 ---
-
+<div>
     <!-- Top Box -->
 <article class="top-box px-md py-sm bg-neutral-500 grid grid-cols-1 items-center md:grid-cols-2 md:px-lg md:py-md lg:px-xl lg:py-lg">
   <!-- Image Section -->
@@ -56,11 +56,6 @@ import Organicbutton from "../components/Organicbutton.astro"
 </div>
 
 
-
-
-
-
-
 <script> 
 /* Import af Motion One biblioteket */
     import { animate, inView } from "motion";
@@ -70,7 +65,7 @@ import Organicbutton from "../components/Organicbutton.astro"
     });
     
     inView(".top-box", () => {
-      animate(".top-box", { y: ["100%", "0%"] }, { duration: 1.5 });
+      animate(".top-box", { x: ["-100%", "0%"] }, { duration: 1.5 });
     });
     
     // Left box animation (slide in from the le ft) with responsiveness

@@ -1,0 +1,23 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Productlist from "../layouts/Productlist.astro";
+
+---
+<MainLayout>
+  
+
+    <!-- Page content -->
+        <div class="flex text-accent-500 px-sm md:px-md lg:px-lg py-lg">
+               <div class="w-1/2">
+                <h1>VÆLG DIT ØL ABONNEMENT</h1>
+                <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop">Hver måned sammensætter vi en ny spændende kasse med kvalitetsøl. Vælg en kasse, der passer til dit behov</p>
+            </div>
+            <div>
+                <img src="../img/ølkasse_blob.png" alt="Ølkasse">
+            </div>
+        </div>
+        <Productlist />
+
+</MainLayout>
+
+
