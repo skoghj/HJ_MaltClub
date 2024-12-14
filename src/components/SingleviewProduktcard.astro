@@ -34,6 +34,7 @@ import Secondarybutton from "./Secondarybutton.astro";
             <p>DKK 275</p>
             <p>/ md. inkl. moms</p>
           </div>
+          <!--desktop version shopping cart count nummer -->
           <div class="hidden md:flex py-xxs gap-sm ml-auto">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtn">
               <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
@@ -44,13 +45,14 @@ import Secondarybutton from "./Secondarybutton.astro";
             </svg>
           </div>
         </div>
+        <!--mobile version shopping cart count nummer -->
         <div class="flex justify-between items-center gap-xs py-xs">
           <div class="flex py-xxs gap-sm md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtnMobil">
               <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
             </svg>
-            <p id="cartCount">01</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtn">
+            <p id="cartCountMobil">01</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtnMobil">
               <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
             </svg>
           </div>
@@ -91,39 +93,49 @@ import Secondarybutton from "./Secondarybutton.astro";
 <script>
   ///////////////////////////////////////////////////Items counter////////////////////
   // Elementet, der viser antallet af varer i kurven
-  const cartCountElement = document.getElementById("cartCount");
+  const cartCountElements = document.querySelectorAll("#cartCount, #cartCountMobil");
   const totalItemsElement = document.getElementById("totalItems");
 
   // Start antal varer
   let cartCount = 1;
 
   // plus og minus knap
-  const increaseBtn = document.getElementById("increaseBtn");
-  const decreaseBtn = document.getElementById("decreaseBtn");
+  const increaseBtns = document.querySelectorAll("#increaseBtn, #increaseBtnMobil");
+  const decreaseBtns = document.querySelectorAll("#decreaseBtn, #decreaseBtnMobil");
 
-  // når man klikker plus knappen
-  increaseBtn.addEventListener("click", () => {
-    cartCount++;
-    updateCart();
-  });
-
-  // når man klikker minus knappen
-  decreaseBtn.addEventListener("click", () => {
-    if (cartCount > 0) {
-      cartCount--;
-      updateCart();
-    }
-  });
-
-  // Funktion til at opdatere indholdet i kurven og det samlede antal varer
+  // Opdater antallet i visningen
   function updateCart() {
-    // Vise antallet af varer i kurven
-    cartCountElement.textContent = cartCount.toString().padStart(2, "0");
+    // Opdater begge cart counters
+    cartCountElements.forEach((el) => (el.textContent = cartCount.toString().padStart(2, "0")));
 
-    // Opdatere det samlede antal varer i kurven
-    totalItemsElement.textContent = `Total Items: ${cartCount}`;
+    // Opdater det samlede antal varer
+    if (totalItemsElement) {
+      totalItemsElement.textContent = `Total Items: ${cartCount}`;
+    }
   }
-  ///////////////////////////////////////////////////Accordion produkt beskrivelser////////////////////
+
+  // Event handlers for plus-knapper
+  increaseBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      cartCount++;
+      updateCart();
+    })
+  );
+
+  // Event handlers for minus-knapper
+  decreaseBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      if (cartCount > 0) {
+        cartCount--;
+        updateCart();
+      }
+    })
+  );
+
+  // Initial visning
+  updateCart();
+
+  ///////////////////////////////Accordion produkt beskrivelser////////////////////
 
   document.querySelectorAll(".accordion-header").forEach((header) => {
     header.addEventListener("click", function () {
