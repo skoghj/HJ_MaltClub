@@ -1,4 +1,4 @@
-<div x-data="{ open: false }" class="relative bg-primary-500">
+<div x-data="{ open: false }" class="relative bg-gradient-to-r from-primary-500 to-primary-700">
  <!-- Mobile Navigation -->
 <div class="flex md:hidden items-center justify-between px-sm py-sm">
     <!-- Burger Menu Icon -->
@@ -43,8 +43,8 @@
             <!-- ØLPAKKER Accordion Item -->
             <li x-data="{ openDropdown: false }">
                 <!-- Dropdown Toggle Button -->
-                <button @click="openDropdown = !openDropdown" class="flex justify-between items-center w-full">
-                    ØLPAKKER
+                <button @click="openDropdown = !openDropdown" class="flex justify-between items-center w-full"><>
+                    ØLPAKKER</>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 ml-2 transform transition-transform" :class="{ 'rotate-180': openDropdown }">
                         <path d="M7 10l5 5 5-5H7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -95,7 +95,7 @@
         <ul class="flex space-x-xl font-title text-accent-500 font-semibold">
             <!-- ØLPAKKER with Hover Dropdown -->
             <li class="relative group">
-                <a href="#ølpakker" class="flex items-center hover:text-primary-300 text-body-md-desktop"> ØLPAKKER
+                <a href="ølkasser.astro" class="flex items-center hover:text-primary-300 text-body-md-desktop"> ØLPAKKER
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[24px] w-[24px] ml-xs transition-transform transform group-hover:rotate-180 group-hover:text-primary-300">
                         <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
                     </svg>

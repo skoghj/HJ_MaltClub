@@ -1,0 +1,65 @@
+<div 
+    x-data="ageVerification" 
+    x-init="checkVerification" 
+    x-show="!ageVerified" 
+   class="fixed inset-0 z-50 bg-gradient-to-b from-primary-500 to-primary-700 flex items-center justify-center"
+    x-cloak>
+    <!-- Container -->
+    <div class="text-center max-w-xl w-full p-8 relative">
+        <!-- Logo øverst -->
+        <div class="absolute -top-28 left-1/2 transform -translate-x-1/2">
+            <img src="../svg/logo.svg" alt="Logo" class="h-48 w-48 object-contain">
+        </div>
+        
+        <!-- Spørgsmål og knapper -->
+        <h2 class="font-bold mb-md mt-lg text-accent-500">
+            Er du over 18 år?
+        </h2>
+   
+        <div class="flex justify-center gap-4">
+            <!-- Ja-knap -->
+            <button 
+                @click="verifyAge" 
+                class="bg-neutral-500 text-primary-500 px-6 py-3 w-full max-w-xs rounded-lg hover:bg-primary-400 hover:text-accent-500 transition">
+                Ja, jeg er
+            </button>
+            <!-- Nej-knap -->
+            <button 
+                @click="denyAge" 
+                class="border-2 border-neutral-500 text-neutral-500 px-6 py-3 w-full max-w-xs rounded-lg hover:bg-transparent hover:text-primary-300 hover:border-primary-300 transition">
+                Nej, jeg er ikke
+            </button>
+        </div>
+        
+        <!-- Fejlbesked -->
+        <p x-show="showError" class="text-red-600 mt-xs text-body-lg">
+            Du skal være over 18 år for at bruge denne side.
+        </p>
+    </div>
+</div>
+<script>
+    document.addEventListener('alpine:init', () => {
+        // Registering the ageVerification Alpine.js component
+        Alpine.data('ageVerification', () => ({
+            ageVerified: false,
+            showError: false,
+
+            // Check if the user is already verified
+            checkVerification() {
+                this.ageVerified = localStorage.getItem('ageVerified') === 'true';
+            },
+
+            // Handle "Yes, I am over 18"
+            verifyAge() {
+                localStorage.setItem('ageVerified', 'true');
+                this.ageVerified = true; // Hide the modal
+            },
+
+            // Handle "No, I am under 18"
+            denyAge() {
+                localStorage.removeItem('ageVerified');
+                this.showError = true; // Show the error message
+            }
+        }));
+    });
+</script>

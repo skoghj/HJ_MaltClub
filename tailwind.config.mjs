@@ -88,7 +88,8 @@ export default {
       "h2-tablet": ["2.5rem", { lineHeight: "3rem" }], // 40px
       "h1-tablet": ["3rem", { lineHeight: "3.25rem" }], // 48px
 
-      "display-tablet": ["3.25rem", { lineHeight: "3rem" }], // 52px
+      "display-tablet": ["5rem", { lineHeight: "5.25rem" }], // 52px
+      "display-tablet2": ["3rem", { lineHeight: "3.25rem" }], // 52px
 
       /* Desktop, Perfect Fourth */
 
@@ -102,7 +103,7 @@ export default {
       "h2-desktop": ["4.188rem", { lineHeight: "5rem" }], // 67px, line-height: 80px
       "h1-desktop": ["5.625rem", { lineHeight: "6rem" }], // 90px, line-height: 96px
     
-      "display-desktop": ["7.5rem", { lineHeight: "7rem" }], // 120px, line-height: 128px
+      "display-desktop": ["6.5rem", { lineHeight: "6.25rem" }], // 120px, line-height: 128px
     },
     fontWeight: {
       light: "300",
