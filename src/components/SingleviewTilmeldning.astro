@@ -3,174 +3,240 @@ import Secondarybutton from "./Secondarybutton.astro";
 ---
 
 <!-------------------------- Odreoversigt ------------------------------------>
-<section class="max-w-7xl mx-auto flex flex-col flex-wrap py-xl mb-md bg-neutral-300 items-center md:grid md:grid-cols-2 md:gap-ml">
-  <div class="px-sm md:px-xl">
-    <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-400">Ordreoversigt</h1>
-    <div class="relative">
-      <img src="/maltclub.webp" alt="maltclub abonnement" class="relative" />
-      <div class="absolute -top-[0.5rem] right-s w-lg h-lg bg-primary-500 text-accent-500 flex items-center justify-center rounded-full text-h3-mobile font-bold">01</div>
-    </div>
-  </div>
-  <div class="flex flex-col w-full justify-center mx-auto px-sm md:px-xl gap-md pt-md md:pt-none">
-    <div class="grid grid-cols-3 justify-between items-center w-full">
-      <h5 class="font-semibold">MALTCLUB</h5>
-      <div class="flex justify-center items-center">
-        <img src="/material-symbols_delete-outline.svg" alt="delete ikon" class="w-ml opacity-60 cursor-pointer" />
+<section class="bg-accent-500 py-xl">
+  <section class="max-w-7xl mx-auto flex flex-col flex-wrap py-xl mb-md bg-neutral-300 items-center md:grid md:grid-cols-2 md:gap-ml">
+    <div class="px-sm md:px-xl">
+      <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-400">Ordreoversigt</h1>
+      <div class="relative">
+        <img src="/maltclub.webp" alt="maltclub abonnement" class="relative" />
+        <div class="absolute -top-[0.5rem] right-s w-lg h-lg bg-primary-500 text-accent-500 flex items-center justify-center rounded-full text-h3-mobile font-bold">01</div>
       </div>
-      <h5 class="font-semibold flex justify-center items-center">DKK 275</h5>
     </div>
-
-    <div class="grid grid-cols-3 justify-between items-center">
-      <h5 class="font-regular">Antal</h5>
-      <h5 class="font-regular col-start-3 flex justify-center items-center">1 kasse</h5>
-    </div>
-
-    <div class="grid grid-cols-3 justify-between items-center">
-      <h5 class="font-regular">Levering</h5>
-      <h5 class="font-regular col-start-3 flex justify-center items-center">Inkl. fragt</h5>
-    </div>
-
-    <div class="grid grid-cols-3 justify-between items-center">
-      <h5 class="font-semibold">I alt</h5>
-      <h5 class="font-semibold col-start-3 flex justify-center items-center">DKK 275</h5>
-    </div>
-    <div class="col-start-2 pt-sm">
-      <Secondarybutton variant="primary" size="medium" width="large" className="sm:size-small md:size-medium lg:size-large">Bekræft og forsæt</Secondarybutton>
-    </div>
-  </div>
-</section>
-
-<!-------------------------- Betalingkort valgmuligheder ------------------------------------>
-<section class="max-w-7xl mx-auto flex flex-col flex-wrap py-xl mb-md bg-neutral-300 items-center">
-  <div class="mx-auto flex flex-col justify-center items-center">
-    <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-400">Hurtig betaling</h1>
-    <div class="flex flex-wrap justify-center items-center gap-md w-full">
-      <img src="/mastercard_ikon.svg" alt="master card ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
-      <img src="/visa_ikon.svg" alt="visa card ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
-      <img src="/unionpay_ikon.svg" alt="unionpay card ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
-    </div>
-    <div class="flex items-baseline gap-md">
-      <span class="w-20 md:w-40 lg:w-80 h-px bg-primary-400"></span>
-      <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-500 pt-ml">Eller</h1>
-      <span class="w-20 md:w-40 lg:w-8 h-px bg-primary-400"></span>
-    </div>
-    <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-400">Betal med kort</h1>
-    <div class="flex flex-wrap justify-center items-center gap-md w-full">
-      <img src="/applepay_ikon.svg" alt="applepay  ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
-      <img src="/googlepay_ikon.svg" alt="googlepay  ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
-      <img src="/mobilepay_ikon.svg" alt="mobilepay  ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
-    </div>
-  </div>
-</section>
-<!-------------------------- Formular første step---------------------------------->
-
-<section class="w-full pt-ml flex flex-col lg:col-start-2 lg:col-end-3 lg:pt-5xl bg-accent-500 mx-auto mr-xl">
-  <form class="flex flex-col max-w-7xl px-s lg:py-md lg:mr-md lg:ml-md">
-    <article class="førsteprogress">
-      <h1 class="text-h1-mobile pb-sm lg:text-h4-desktop text-primary-400">Kontaktoplysninger</h1>
-
-      <div class="flex flex-col lg:pt-sm">
-        <label for="maltclub" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">E-mail <span class="text-accent-800">*</span></h5></label>
-        <div class="pt-xxs">
-          <input type="text" id="email" name="email" placeholder="maltclub@gmail.com" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+    <div class="flex flex-col w-full justify-center mx-auto px-sm md:px-xl gap-md pt-md md:pt-none">
+      <div class="grid grid-cols-3 justify-between items-center w-full">
+        <h5 class="font-semibold">MALTCLUB</h5>
+        <div class="flex justify-center items-center">
+          <img src="/material-symbols_delete-outline.svg" alt="delete ikon" class="w-ml opacity-60 cursor-pointer" />
         </div>
-        <div class="flex items-baseline gap-xxs pt-xs">
-          <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" class="bg-neutral-200 border-0 rounded-[2px]" />
-          <label for="checkbox" class="text-primary-400"> Send mails til mig om nyheder og tilbud</label>
-        </div>
-        <label for="maltclub" class="pt-md pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Telefonnummer <span class="text-accent-800">*</span></h5></label>
-        <div class="pt-xxs">
-          <input type="text" id="telefon" name="telefon" placeholder="+45 11 22 33" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
-        </div>
+        <h5 class="font-semibold flex justify-center items-center">DKK 275</h5>
       </div>
-    </article>
 
-    <article class="andenprocess">
-      <h1 class="flex w-full pt-xl pb-ml text-h1-mobile lg:text-h4-desktop text-primary-400">Adresse</h1>
-      <div class="flex flex-col">
-        <div class="flex flex-col md:grid md:grid-cols-2 md:gap-md">
+      <div class="grid grid-cols-3 justify-between items-center">
+        <h5 class="font-regular">Antal</h5>
+        <h5 class="font-regular col-start-3 flex justify-center items-center">1 kasse</h5>
+      </div>
+
+      <div class="grid grid-cols-3 justify-between items-center">
+        <h5 class="font-regular">Levering</h5>
+        <h5 class="font-regular col-start-3 flex justify-center items-center">Inkl. fragt</h5>
+      </div>
+
+      <div class="grid grid-cols-3 justify-between items-center">
+        <h5 class="font-semibold">I alt</h5>
+        <h5 class="font-semibold col-start-3 flex justify-center items-center">DKK 275</h5>
+      </div>
+      <div class="col-start-2 pt-sm">
+        <Secondarybutton variant="primary" size="medium" width="large" className="sm:size-small md:size-medium lg:size-large">Bekræft og forsæt</Secondarybutton>
+      </div>
+    </div>
+  </section>
+
+  <!-------------------------- Betalingkort valgmuligheder ------------------------------------>
+  <section class="max-w-7xl mx-auto flex flex-col flex-wrap py-xl mb-md bg-neutral-300 items-center">
+    <div class="mx-auto flex flex-col justify-center items-center">
+      <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-400">Hurtig betaling</h1>
+      <div class="flex flex-wrap justify-center items-center gap-md w-full">
+        <img src="/mastercard_ikon.svg" alt="master card ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
+        <img src="/visa_ikon.svg" alt="visa card ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
+        <img src="/unionpay_ikon.svg" alt="unionpay card ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
+      </div>
+
+      <div class="relative w-full flex items-baseline py-md">
+        <div class="flex-1 border-t-2 border-primary-400"></div>
+        <span class="text-h1-mobile pb-xl lg:text-h5-desktop font-semibold text-primary-400">Ellers</span>
+        <div class="flex-1 border-t-2 border-primary-400"></div>
+      </div>
+
+      <h1 class="text-h1-mobile pb-xl lg:text-h4-desktop text-primary-400">Betal med kort</h1>
+      <div class="flex flex-wrap justify-center items-center gap-md w-full">
+        <img src="/applepay_ikon.svg" alt="applepay  ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
+        <img src="/googlepay_ikon.svg" alt="googlepay  ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
+        <img src="/mobilepay_ikon.svg" alt="mobilepay  ikon" class="w-24 h-auto md:w-32 lg:w-40 object-contain" />
+      </div>
+    </div>
+  </section>
+  <!-------------------------- Formular-------------------------------->
+
+  <!-- 1. step-- -->
+  <section class="w-full pt-ml max-w-7xl mx-auto flex flex-col bg-accent-500">
+    <form class="flex flex-col max-w-7xl px-s lg:py-md lg:mr-md lg:ml-md">
+      <article class="førsteprogress">
+        <h1 class="text-h1-mobile pb-sm lg:text-h4-desktop text-primary-400">Kontaktoplysninger</h1>
+
+        <div class="flex flex-col lg:pt-sm">
+          <label for="maltclub" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">E-mail <span class="text-accent-800">*</span></h5></label>
+          <div class="pt-xxs">
+            <input type="text" id="email" name="email" placeholder="maltclub@gmail.com" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+          </div>
+          <div class="flex items-baseline gap-xxs pt-xs">
+            <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" class="bg-neutral-200 border-0 rounded-[2px]" />
+            <label for="checkbox" class="text-primary-400"> Send mails til mig om nyheder og tilbud</label>
+          </div>
+          <label for="maltclub" class="pt-md pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Telefonnummer <span class="text-accent-800">*</span></h5></label>
+          <div class="pt-xxs">
+            <input type="text" id="telefon" name="telefon" placeholder="+45 11 22 33" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. step-- -->
+      <article class="andenprocess">
+        <h1 class="flex w-full pt-xl pb-ml text-h1-mobile lg:text-h4-desktop text-primary-400">Adresse</h1>
+        <div class="flex flex-col">
+          <div class="flex flex-col md:grid md:grid-cols-2 md:gap-md">
+            <div>
+              <label for="fornavn" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Fornavn <span class="text-accent-800">*</span></h5></label>
+              <div class="pt-xxs">
+                <input type="text" id="fornavn" name="fornavn" placeholder="Lars" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+              </div>
+            </div>
+            <div class="pb-xxs pt-md md:pt-none">
+              <label for="efternavn" class="text-primary-400"><h5 class="md:text-h5-mobile">Efternavn <span class="text-accent-800">*</span></h5></label>
+              <div class="pt-xxs">
+                <input type="text" id="efternavn" name="efternavn" placeholder="Jensen" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+              </div>
+            </div>
+          </div>
+          <label for="firma" class="pb-xxs pt-sm text-primary-400"><h5 class="md:text-h5-mobile">Firma (valgfri)</h5></label>
+          <div class="pt-xxs">
+            <input type="text" id="fornavn" name="fornavn" placeholder="Jensen" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+          </div>
+          <label for="adresse" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">Adresses<span class="text-accent-800">*</span></h5></label>
+          <div class="pt-xxs">
+            <input type="text" id="adresse" name="adresse" placeholder="Engersleve 82" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+          </div>
+          <div class="flex flex-col md:grid md:grid-cols-2 md:gap-md md:pt-md">
+            <div class="pt-sm md:pt-none">
+              <label for="postnummer" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">Postnummer<span class="text-accent-800">*</span></h5></label>
+              <div class="pt-xxs">
+                <input type="text" id="postnummer" name="postnummer" placeholder="2981" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+              </div>
+            </div>
+            <div class="pt-sm md:pt-none">
+              <label for="by" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">By<span class="text-accent-800">*</span></h5></label>
+              <div class="pt-xxs">
+                <input type="text" id="by" name="by" placeholder="Almind" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+              </div>
+            </div>
+          </div>
+          <label for="land" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">Land / områder<span class="text-accent-800">*</span></h5></label>
+          <select id="event" class="w-full border bg-neutral-200 border-neutral-200 text-primary-500/60" required onchange="this.className = this.value ? 'w-full border bg-neutral-200 border-neutral-200 text-primaty-500' : 'w-full border border-neutral-200 '" name="Land" aria-placeholder="Land / områder">
+            <option value="Vælg en mulighed her*">Vælg en mulighed her*</option>
+            <option value="Danmark">Danmark</option>
+            <option value="Sverige">Sverige</option>
+            <option value="Norge">Norge</option>
+          </select>
+        </div>
+      </article>
+
+      <!-- 3. step-- -->
+      <article>
+        <h3 class="flex w-full pt-xl pb-ml text-h1-mobile lg:text-h4-desktop text-primary-400">Leveringsmetode</h3>
+        <div class="flex flex-col gap-xxs py-sm px-xs items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
+          <div class="flex flex-col gap-xxs">
+            <h5 class="">Afhentning på lager.8300 Odder</h5>
+            <p class="text-primaty-500 opacity-60 font-semibold">Du vil blive kontaktet når din ordre er klar</p>
+          </div>
+          <h5 class="text-primary-500">0,00 DKK</h5>
+        </div>
+        <div class="flex flex-col gap-xxs py-sm px-xs mt-ml items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
+          <div class="flex flex-col gap-xxs">
+            <h5 class="">Levering</h5>
+            <div class="flex gap-xs items-center">
+              <p class="text-primaty-500 opacity-60 font-semibold">PostNord</p>
+              <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
+              <p class="text-primaty-500 opacity-60 font-semibold">Pakkeshop</p>
+            </div>
+          </div>
           <div>
-            <label for="fornavn" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Fornavn <span class="text-accent-800">*</span></h5></label>
-            <div class="pt-xxs">
-              <input type="text" id="fornavn" name="fornavn" placeholder="Lars" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
-            </div>
-          </div>
-          <div class="pb-xxs pt-md md:pt-none">
-            <label for="efternavn" class="text-primary-400"><h5 class="md:text-h5-mobile">Efternavn <span class="text-accent-800">*</span></h5></label>
-            <div class="pt-xxs">
-              <input type="text" id="efternavn" name="efternavn" placeholder="Jensen" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
-            </div>
+            <h5 class="text-primary-500">62,00 DKK</h5>
+            <p class="text-primaty-500 opacity-60 font-semibold">Inkl. moms</p>
           </div>
         </div>
-        <label for="firma" class="pb-xxs pt-sm text-primary-400"><h5 class="md:text-h5-mobile">Firma (valgfri)</h5></label>
-        <div class="pt-xxs">
-          <input type="text" id="fornavn" name="fornavn" placeholder="Jensen" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
-        </div>
-        <label for="adresse" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">Adresses<span class="text-accent-800">*</span></h5></label>
-        <div class="pt-xxs">
-          <input type="text" id="adresse" name="adresse" placeholder="Engersleve 82" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
-        </div>
-        <div class="flex flex-col md:grid md:grid-cols-2 md:gap-md md:pt-md">
-          <div class="pt-sm md:pt-none">
-            <label for="postnummer" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">Postnummer<span class="text-accent-800">*</span></h5></label>
-            <div class="pt-xxs">
-              <input type="text" id="postnummer" name="postnummer" placeholder="2981" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+        <div class="flex flex-col gap-xxs py-sm px-xs mt-ml items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
+          <div class="flex flex-col gap-xxs">
+            <h5 class="">Levering</h5>
+            <div class="flex gap-xs items-center">
+              <p class="text-primaty-500 opacity-60 font-semibold">PostNord</p>
+              <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
+              <p class="text-primaty-500 opacity-60 font-semibold">Levering til døren</p>
             </div>
           </div>
-          <div class="pt-sm md:pt-none">
-            <label for="by" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">By<span class="text-accent-800">*</span></h5></label>
-            <div class="pt-xxs">
-              <input type="text" id="by" name="by" placeholder="Almind" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
-            </div>
+          <div>
+            <h5 class="text-primary-500">112,50 DKK</h5>
+            <p class="text-primaty-500 opacity-60 font-semibold">Inkl. moms</p>
           </div>
         </div>
-        <label for="land" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">Land / områder<span class="text-accent-800">*</span></h5></label>
-        <select id="event" class="w-full border bg-neutral-200 border-neutral-200 text-primary-500/60" required onchange="this.className = this.value ? 'w-full border bg-neutral-200 border-neutral-200 text-primaty-500' : 'w-full border border-neutral-200 '" name="Land" aria-placeholder="Land / områder">
-          <option value="Vælg en mulighed her*">Vælg en mulighed her*</option>
-          <option value="Danmark">Danmark</option>
-          <option value="Sverige">Sverige</option>
-          <option value="Norge">Norge</option>
-        </select>
-      </div>
-    </article>
+      </article>
 
-    <article>
-      <h3 class="flex w-full pt-xl pb-ml text-h1-mobile lg:text-h4-desktop text-primary-400">Leveringsmetode</h3>
-      <div class="flex flex-col gap-xxs py-sm px-xs items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
-        <div class="flex flex-col gap-xxs">
-          <h5 class="">Afhentning på lager.8300 Odder</h5>
-          <p class="text-primaty-500 opacity-60 font-semibold">Du vil blive kontaktet når din ordre er klar</p>
-        </div>
-        <h5 class="text-primary-500">0,00 DKK</h5>
-      </div>
-      <div class="flex flex-col gap-xxs py-sm px-xs mt-ml items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
-        <div class="flex flex-col gap-xxs">
-          <h5 class="">Levering</h5>
-          <div class="flex gap-xs items-center">
-            <p class="text-primaty-500 opacity-60 font-semibold">PostNord</p>
-            <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
-            <p class="text-primaty-500 opacity-60 font-semibold">Pakkeshop</p>
+      <!-- 4. step-- -->
+      <article class="førsteprogress pt-xl pb-ml">
+        <h1 class="text-h1-mobile pb-sm lg:text-h4-desktop text-primary-400">Betaling</h1>
+
+        <div class="flex flex-col">
+          <div>
+            <label for="kortnummer" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Kortnummer <span class="text-accent-800">*</span></h5></label>
+            <div class="pt-xxs">
+              <input type="text" id="kortnummer" name="kortnummer" placeholder=" 1234 5678 0987 6543" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+            </div>
+          </div>
+          <div class="flex flex-col md:grid md:grid-cols-2 md:gap-md">
+            <div class="py-sm">
+              <label for="Uløbsdato" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Uløbsdato (MM / ÅÅ) <span class="text-accent-800">*</span></h5></label>
+              <div class="pt-xxs">
+                <input type="text" id="Uløbsdato" name="Uløbsdato" placeholder=" 12/24" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+              </div>
+            </div>
+            <div class="md:py-sm">
+              <label for="Sikkerhedskode" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Sikkerhedskode (CVV)<span class="text-accent-800">*</span></h5></label>
+              <div class="pt-xxs">
+                <input type="text" id="Sikkerhedskode" name="Sikkerhedskode" placeholder="123" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <label for="kortnavn" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Navn på kort<span class="text-accent-800">*</span></h5></label>
+            <div class="pt-xxs">
+              <input type="text" id="kortnavn" name="kortnavn" placeholder="Lars Jensen" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+            </div>
+          </div>
+          <div class="flex items-baseline gap-xxs pt-xs">
+            <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" class="bg-neutral-200 border-0 rounded-[2px]" />
+            <label for="checkbox" class="text-primary-400"> Brug leveringsadresse som faktureringsadresse</label>
           </div>
         </div>
-        <div>
-          <h5 class="text-primary-500">62,00 DKK</h5>
-          <p class="text-primaty-500 opacity-60 font-semibold">Inkl. moms</p>
+        <div class="py-ml">
+          <Secondarybutton variant="primary" size="medium" width="medium" className="sm:size-small md:size-medium lg:size-large">Betal nu</Secondarybutton>
         </div>
+      </article>
+    </form>
+
+    <!-- 5. step---->
+
+    <article class="flex flex-col items-center mx-auto justify-center max-w-7xl">
+      <div class="flex items-center justify-center gap-sm">
+        <h3 class="flex pt-xl text-h1-mobile lg:text-h4-desktop text-primary-500">Betaling er gennemført!</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-xl pt-xl">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+        </svg>
       </div>
-      <div class="flex flex-col gap-xxs py-sm px-xs mt-ml items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
-        <div class="flex flex-col gap-xxs">
-          <h5 class="">Levering</h5>
-          <div class="flex gap-xs items-center">
-            <p class="text-primaty-500 opacity-60 font-semibold">PostNord</p>
-            <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
-            <p class="text-primaty-500 opacity-60 font-semibold">Levering til døren</p>
-          </div>
-        </div>
-        <div>
-          <h5 class="text-primary-500">112,50 DKK</h5>
-          <p class="text-primaty-500 opacity-60 font-semibold">Inkl. moms</p>
-        </div>
+      <div class="mx-auto flex justify-center py-ml">
+        <img src="/beer_ikon_progressbar_4.svg" alt="gennemført formular" class="w-[200px]" />
+      </div>
+      <p class="md:text-body-lg">Vi har hermed modtaget din ordre, og vil behandle din pakke hurtigst muligt.</p>
+      <div class="py-ml">
+        <Secondarybutton variant="primary" size="medium" width="medium" className="sm:size-small md:size-medium lg:size-large">Gå til forsiden</Secondarybutton>
       </div>
     </article>
-  </form>
+  </section>
 </section>
