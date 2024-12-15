@@ -2,29 +2,25 @@
 const { img, name, description, beer} = Astro.props
 ---
 <div class="px-2">
-  <div class="bg-accent-500 ">
-    <div class="flex flex-col items-center max-w-[284px] lg:max-w-[370px] mx-auto p-sm pb-xs h-[300px] relative">
+  <div class="bg-accent-500 pb-2xl">
+    <div class="flex flex-col items-center max-w-[284px] lg:max-w-[600px] mx-auto p-sm pb-xs h-[300px] relative">
       <!-- IMG centered -->
-      <img src={img} alt="Ølentusiast" class="h-20 w-20 rounded-sm mx-auto">
+      <img src={img} alt="Ølentusiast" class="h-40 w-240 rounded-sm mx-auto mt-sm">
       
       <!-- H3 centered -->
-      <h3-desktop class="text-left p-xs">{name}</h3-desktop>
+      <h3-desktop class="text-h1-mobile md:text-h5-tablet lg:text-h5-desktop text-left mt-sm">{name}</h3-desktop>
     
       <!-- Content container that adjusts based on description size -->
       <div class="flex flex-col justify-between items-start w-full">
         <div class="flex-grow">
-          <p class="text-left">{description}</p>
+          <p class="font-serif text-body-lg md:text-body-md-tablet lg:text-body-md-desktop text-primary-400 text-left mt-xxs">{description}</p>
         </div>
       </div>
   
       <!-- Beer icon aligned horizontally, fixed vertical position -->
-      <img src={beer} alt="beer-icon" class="h-18 absolute bottom-0 left-0 right-20 p-sm pb-xs">
+      <img src={beer} alt="beer-icon" class="h-18 absolute bottom-0 left-0 top-[22.6rem] md:top-[22.6rem] lg:top-[22.6rem] p-sm pb-xs">
+     
     </div>
   </div>
 </div>
-  
-  
-  
-  
-
   
