@@ -1,8 +1,86 @@
 ---
 import ServiceGaranti from "../components/ServiceGaranti.astro";
+import Accordion from "../components/Accordion.astro";
 ---
 
+<div class="bg-primary-500 lg:p-l lg:pl-20">
+  <div class="flex flex-col lg:flex-row pt-ml py-lg px-ml lg:p-2xl text-accent-500">
+    <!-- Text Section (Heading, Image, and Paragraph) -->
+    <div class="flex flex-col lg:max-w-md lg:pr-0">
+      <!-- Heading -->
+      <h2 class="pb-sm lg:pb-xl">
+        <span>Teamet bag </span><span>Maltclub</span>
+      </h2>
+      
+      <!-- Image Section -->
+      <div class="flex justify-center lg:hidden mb-4">
+        <img 
+          src="img/img_profil/malt_team.webp" 
+          alt="profilbilleder af virksomhedens ejere" 
+          class="w-96 h-96">
+      </div>
+
+      <!-- Paragraph -->
+      <p class="font-serif text-base lg:text-lg leading-relaxed">
+        Hos MaltClub brænder vi for at dele passionen for øl med historie og kvalitet. Hver måned sammensætter vi en kasse med spændende øl fra bryghuse med noget på hjerte – altid ledsaget af inspirerende fortællinger om øllet og bryghuset.
+        <br><br>Vi glæder os til at pirre dine smagsløg med næste MaltClub ølpakke!
+      </p>
+    </div>
+
+    <!-- Image Section for Desktop -->
+    <div class="hidden lg:flex justify-center lg:ml-48 mt-6 lg:mt-0">
+      <img 
+        src="img/img_profil/malt_team.webp" 
+        alt="profilbilleder af virksomhedens ejere" 
+        class="lg:w-[24rem] lg:h-[24rem]">
+    </div>
+  </div>
+</div>
 
 
 
 <ServiceGaranti />
+
+ <div class="flex flex-col pt-ml py-lg px-ml lg:p-2xl bg-primary-500">
+    <div class="flex items-center space-x-2 text-accent-500">
+        <!-- SVG Icon -->
+        <div class="lg:pl-20">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
+            <path d="M5 12l14 0"></path>
+          </svg></div>
+        <!-- Text -->
+        <p class="text-accent-500 lg:pb-l">Vi er her for at hjælpe</p>
+      </div>
+    <h3 class="text-accent-500 lg:pb-xl lg:pl-20 ">Ofte stillede spørgsmål</h3>
+    
+  <div>
+  <Accordion 
+    question="Hvordan bestiller jeg et Maltclub abonnement?"
+    answer="Du bestiller et MaltClub abonnement lige her. "
+    index="1" />
+
+  <Accordion 
+    question="Hvor lang tid binder jeg mig?"
+    answer="Vi har ingenbinding hos MaltClub, og du kan til enhver tid opsige dit abonnement. Vær dog opmærksom på at dit abonnement skal opsiges senest den 20. i måneden for at være gældende fra den efterfølgende måned."
+    index="2" />
+
+  <Accordion
+    question="Hvor meget koster et Maltclub abonnemet?"
+    answer="Et MaltClub abonnement med levering hver måned koster fra 275 kr. pr. md. inkl. fragt. Du kan få 20% i rabat på den første måned ved tilmelding til vores nyhedsbrev. "
+    index="3" />
+
+  <Accordion
+    question="Hvordan kan jeg betale på Maltclub?"
+    answer="På MaltClub.dk kan du betale med Dankort, Visakort og Masterkort, når du opretter et abonnement. Betaling med debet-eller kreditkort er gebyrfrit (dog kan der forekomme gebyr på betaling med firmakort)."
+    index="4" />
+
+  <Accordion 
+    question="Hvordan opsiger jeg mit abonnement?"
+    answer="Ønsker du at opsige dit abonnement bedes du kontakte os på info.maltclub@gmail.com eller via vores kontaktformular her. Du modtager herefter en skriftlig bekræftelse på din opsigelse."
+    index="5" />
+  </div>
+ </div>
+</div>
+
+
+

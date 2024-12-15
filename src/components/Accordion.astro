@@ -1,0 +1,52 @@
+---
+const { question, answer, index } = Astro.props;
+---
+
+<!-- Accordion Container -->
+<div class="max-w-md lg:max-w-2xl mx-auto overflow-hidden ">
+
+  <!-- Accordion Header -->
+  <div class="accordion-header flex items-center justify-between px-2 py-8 cursor-pointer" data-index={index}>
+
+    <!-- Question -->
+    <span class="body-md-desktop text-accent-500 text-lg font-semibold">{question}</span>
+    
+    <!-- Icon -->
+    <span class="accordion-icon transition-transform duration-300 text-accent-500 lg:mr-6 ">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
+        <path d="M12 5l0 14"></path>
+        <path d="M5 12l14 0"></path>
+      </svg>
+    </span>
+  </div>
+
+  <!-- Accordion Content -->
+  <div class="accordion-content overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out font-serif">
+    <div class="px-2 py-2 text-accent-500 max-w-xl">
+      {answer}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const headers = document.querySelectorAll('.accordion-header');
+
+    headers.forEach((header) => {
+      const content = header.nextElementSibling; // Accordion content
+      const icon = header.querySelector('.accordion-icon');
+
+      header.addEventListener('click', () => {
+        // Hvis indholdet er skjult, åbn det
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null; // Luk
+          icon.classList.remove('rotate-45'); // Fjern rotation
+        } else {
+          // Beregn højde dynamisk
+          content.style.maxHeight = content.scrollHeight + 'px'; // Åbn
+          icon.classList.add('rotate-45'); // Tilføj rotation
+        }
+      });
+    });
+  });
+</script>
