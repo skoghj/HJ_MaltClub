@@ -9,7 +9,7 @@ const { question, answer, index } = Astro.props;
   <div class="accordion-header flex items-center justify-between px-2 py-8 cursor-pointer" data-index={index}>
 
     <!-- Question -->
-    <span class="body-md-desktop text-accent-500 text-lg font-semibold">{question}</span>
+    <span class="text-body-md md:text-body-md-tablet lg:text-body-lg-desktop text-accent-500 font-semibold">{question}</span>
     
     <!-- Icon -->
     <span class="accordion-icon transition-transform duration-300 text-accent-500 lg:mr-6 ">
@@ -22,7 +22,7 @@ const { question, answer, index } = Astro.props;
 
   <!-- Accordion Content -->
   <div class="accordion-content overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out font-serif">
-    <div class="px-2 py-2 text-accent-500 max-w-xl">
+    <div class="font-serif text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-neutral-500 px-2 py-2 max-w-xl pr-lg lg:pr-lg">
       {answer}
     </div>
   </div>
