@@ -8,17 +8,17 @@ const { imgimage = "", imagealt = "", subtitle, title, text } = Astro.props
       <div class="flex items-center justify-center">
         <div class="relative w-full h-auto md:w-[540px] md:h-[520px]">
           <!-- Billede (Skjules på mobil, vises på større skærme) -->
-          <img src={imgimage} alt={imagealt} class="hidden md:block absolute w-full h-auto md:h-full md:-ml-[5.5rem]">
+          <img src={imgimage} alt={imagealt} class="hidden md:block absolute w-full h-auto md:h-full md:-ml-[6.5rem] md:top-0">
         </div>
       </div>
       
       <!-- Højre side med tekst -->
-      <div class="p-xl md:p-xxs lg:p-xl md:-ml-[5%] lg:-ml-[12rem]">
+      <div class="p-xl md:p-xxs lg:pl-2xl lg:pr-2xl md:-ml-[5%] lg:-ml-[12rem]">
         <!-- Bruger h3 typografier til mobil, tablet og desktop -->
         <h5 class="text-h4-mobile md:text-h5-tablet lg:text-h5-desktop text-primary-400 mb-2">
           {subtitle}
         </h5>
-        <h3 class="text-h1-mobile md:text-h3-tablet lg:text-h3-desktop text-primary-400 mb-4">
+        <h3 class="text-h1-mobile md:text-h3-tablet lg:text-h3-desktop text-primary-400 mb-4 md:mt-xl">
           {title}
         </h3>
         
