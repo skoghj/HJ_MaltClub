@@ -2,13 +2,13 @@
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {
+    extend: { 
     colors: {
       transparent: "transparent",
       current: "currentColor",
       primary: {
         50: "#DFF1ED",
-        100: "##C3E4DD",
+        100: "#C3E4DD",
         200: "#88C9BB",
         300: "#4CA995",
         400: "#316D5F",
@@ -141,4 +141,4 @@ export default {
       require('@tailwindcss/aspect-ratio'),
       require('@tailwindcss/container-queries')
     ],
-  }}
+  }

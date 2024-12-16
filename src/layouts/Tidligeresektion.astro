@@ -1,0 +1,116 @@
+---
+import TidligereCard from "../components/TidligereCard.astro";
+---
+       
+
+
+<div class="bg-neutral-500 pt-ml py-lg px-ml lg:p-2xl border-solid">
+    <!-- <h2-desktop class="text-accent-500 font-bold font-title pb-s">
+        Nysgerrrig på tidligere MaltClub kasser? 
+    </h2-desktop> -->
+     <div>
+      <h3 class="text-primary-500 pb-xs">
+        Nysgerrig på tidligere MaltClub kasser? 
+      </h3>
+
+      <div class="flex items-center gap-xxs lg:pb-2xl">
+        <h5 class="text-primary-500 font-bold font-title pb-xxxs">
+          Spin hjulet
+        </h5>
+        <img src="svg/ic_round-play-arrow.svg" alt="Play arrow" class="w-10">
+      </div>
+    </div>
+      
+      <!-- Selve hjulet /m knap-->
+      <div class="relative flex justify-center items-center lg:mt-48">
+        <!-- Knappen -->
+        <button
+          id="spinButton"
+          class="absolute z-10 flex justify-start items-start">
+          <img src="img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="lg:w-40 lg:-mt-60"><!-- har bibeholdt default spacing -->
+        </button>
+ 
+     <!-- Container for kortene -->
+<div id="carousel-wrapper" class="relative w-[300px] h-[300px] mx-auto mt-80"><!-- har bibeholdt default spacing -->
+    <div id="carousel" class="absolute w-[280px] h-[280px] flex items-center justify-center transition-transform">
+      <!-- Januar (300 grader) -->
+      <div class="absolute" style="transform: rotate(330deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/januar.webp" alt="billed af ølflasker" month="Januar">
+        </TidligereCard>
+      </div>
+      <!-- Februar (500 grader) -->
+      <div class="absolute" style="transform: rotate(300deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/februar.webp" alt="billed af ølflasker" month="Februar">
+        </TidligereCard>
+      </div>
+      <!-- Marts (270 grader) -->
+      <div class="absolute" style="transform: rotate(270deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/marts.webp" alt="billed af ølflasker" month="Marts" class="w-[4px] h-[4px]">
+        </TidligereCard>
+      </div>
+      <!-- April (240 grader) -->
+      <div class="absolute" style="transform: rotate(240deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/april.webp" alt="billed af ølflasker" month="April">
+        </TidligereCard>
+      </div>
+      <!-- Maj (210 grader) -->
+      <div class="absolute" style="transform: rotate(210deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/maj.webp" alt="billed af ølflasker" month="Maj">
+        </TidligereCard>
+      </div>
+      <!-- Juni (180 grader) -->
+      <div class="absolute" style="transform: rotate(180deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/juni.webp" alt="billed af ølflasker" month="Juni">
+        </TidligereCard>
+      </div>
+      <!-- Juli (150 grader) -->
+      <div class="absolute" style="transform: rotate(150deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/juli.webp" alt="billed af ølflasker" month="Juli">
+        </TidligereCard>
+      </div>
+      <!-- August (120 grader) -->
+      <div class="absolute" style="transform: rotate(120deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/august.webp" alt="billed af ølflasker" month="August">
+        </TidligereCard>
+      </div>
+      <!-- September (90 grader) -->
+      <div class="absolute" style="transform: rotate(90deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/september.webp" alt="billed af ølflasker" month="September">
+        </TidligereCard>
+      </div>
+      <!-- Oktober (60 grader) -->
+      <div class="absolute" style="transform: rotate(60deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/oktober.webp" alt="billed af ølflasker" month="Oktober">
+        </TidligereCard>
+      </div>
+      <!-- November (30 grader) -->
+      <div class="absolute" style="transform: rotate(30deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/november.webp" alt="billed af ølflasker" month="November">
+        </TidligereCard>
+      </div>
+      <!-- December ( grader) -->
+      <div class="absolute" style="transform: rotate(0deg) translate(600px) rotate(-270deg);">
+        <TidligereCard img="img/img_hjul/december.webp" alt="billed af ølflasker" month="December">
+        </TidligereCard>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Button for at starte rotation -->
+  <button id="spinButton"></button>
+  
+  <script>
+    let angle = 0;
+    const carousel = document.getElementById('carousel');
+    const spinButton = document.getElementById('spinButton');
+    
+    spinButton.addEventListener('click', () => {
+      angle += -30; // Rotér 30 grader pr. klik
+      carousel.style.transform = `rotate(${angle}deg)`; // Rotér hele containeren
+    });
+  </script>
+        
+</div>
+
+

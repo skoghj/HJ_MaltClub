@@ -1,0 +1,51 @@
+---
+import Olgave from "../components/Olgave.astro";
+---
+<section class="px-7 py-8 bg-[url('../img/ol_gave.webp')] bg-cover bg-center bg-no-repeat flex flex-col items-center md:items-end p-md">
+    <div class="grid grid-cols-1 gap-m w-full md:w-auto">
+      <h3 class="h3-desktop h3-tablet h3-mobile text-accent-800 text-center md:text-left md:text-large md:pb-lg">
+        På udkig efter en ølgave?
+      </h3>
+      <p class="flex text-left p-md md:text-right text-accent-500 pl-lg pr-lg lg:ml-xl lg:pr:lg">
+        Giv en skummende gave med MaltClub! Overrask en ølentusiast med en gave, der virkelig smager af noget! 
+        Med vores MaltClub gaveabonnement kan du dele glæden ved kvalitetsøl, håndplukket og leveret direkte til døren.
+      </p>
+    </div>
+  
+    <div class="flex flex-col gap-md p-lg">
+      <Olgave
+        icon="./svg/line-md_calendar.png"
+        title="Vælg varighed"
+        text="Du bestemmer, om gaven skal vare en måned, to, eller mere – helt uden binding."
+        class="bg-cover bg-center bg-no-repeat py-8"
+        alt="Billede af en ølgavekasse liggende på hø"
+      ></Olgave>
+  
+      <Olgave
+        icon="./svg/akar-icons_stop.png"
+        title="Problemfrit"
+        text="Abonnementet stopper automatisk, så du skal ikke tænke på noget bagefter."
+      ></Olgave>
+  
+      <Olgave
+        icon="./svg/Group 140.png"
+        title="Vælg varighed"
+        text="Fra spændende mikrobryg til ikoniske klassikere – hver levering er en oplevelse"
+      ></Olgave>
+  
+      <Olgave
+        icon="./svg/mdi_gift-outline.png"
+        text="Giv en gave, der gør indtryk – og som kan nydes i godt selskab!"
+      ></Olgave>
+    </div>
+  
+    <!-- Responsiv knap og layout -->
+    <div class="flex flex-col md:flex-row gap-4 mt-m w-full md:w-auto p-lg md:mt-sm md:mr-[20rem]">
+      <button class="w-full md:w-auto bg-primary-400 text-accent-500 px-6 py-3 rounded-sm hover:bg-primary-600">
+        Bestil allerede idag!
+      </button>
+    </div>
+  </section>
+  
+  
+  
