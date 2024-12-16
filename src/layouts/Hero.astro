@@ -2,21 +2,29 @@
 import Organicbutton from "../components/Organicbutton.astro"
 ---
 
-<div class=" flex flex-col-reverse sm:flex-row bg-gradient-to-r from-primary-500 to-primary-700 justify-between text-accent-500">
+<div class="flex flex-col-reverse sm:flex-row bg-gradient-to-r from-primary-500 to-primary-700 justify-between text-accent-500">
     <!-- Left Content -->
-    <div class="flex flex-col pt-lg  items-center text-center flex-1">
-        <h1 class="font-body">MALTCLUB</h1>
+    <div class="flex flex-col pt-lg items-center text-center flex-1">
+        <h1 class="font-body">
+            <div class="word-wrapper"><span class="word">MALTCLUB</span></div>
+        </h1>
         <div class="flex items-center justify-center">
             <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 mr-sm"></div>
-            <h2 class="font-body">DIN ØL</h2>
+            <h2 class="font-body">
+                <div class="word-wrapper"><span class="word">DIN</span></div>
+                <div class="word-wrapper"><span class="word">ØL</span></div>
+            </h2>
             <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 ml-sm"></div>
         </div>
-        <h1 class="font-body">DIT ØJEBLIK</h1>
-        <div class="pt-xl">
+        <h1 class="font-body">
+            <div class="word-wrapper"><span class="word">DIT</span></div>
+            <div class="word-wrapper"><span class="word">ØJEBLIK</span></div>
+        </h1>
+        <div class="pt-xl pb-md">
             <p class="text-body-lg-desktop text-accent-700 max-w-[400px]">Øl på abonnement - smag på nye favoritter hver måned.</p>
         </div>
         <div class="pt-xl">
-        <Organicbutton link="/Ølpakker" variant="tertiary" size="medium" text="SE ØLKASSER" />
+            <Organicbutton link="/Ølpakker" variant="tertiary" size="small" text="SE ØLKASSER" />
         </div>
     </div>
 
@@ -24,22 +32,42 @@ import Organicbutton from "../components/Organicbutton.astro"
     <div class="flex items-end sm:w-[45%] pb-lg h-full">
         <img src="../img/heroindex3.webp" alt="Beer being poured into glass" class="w-full max-w-full object-contain">
     </div>
-</div>    
-
+</div>
 <style>
-    
-@keyframes riseUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+
+
+.word-wrapper {
+    overflow: hidden;      /* Skjuler det, der er uden for denne container */
+    display: inline-block; /* Bevarer inline-layout */
+    position: relative;
+    height: 1em;           /* Justér så det matcher tekstens højde */
+    line-height: 1em;      /* Matcher tekstens linjehøjde */
 }
 
-.animate-riseUp {
-    animation: riseUp 1s ease-out forwards;
+.word {
+    display: inline-block;
+    transform-origin: center;
+    position: relative;
+    transform: translateY(50px); /* Start med at være under "muren" */
 }
 </style>
+
+<script>
+     import { animate } from 'motion';
+
+// Select the elements
+const words = document.querySelectorAll('.word');
+
+// Animate each word individually with a delay
+words.forEach((word, index) => {
+    animate(word, {
+        opacity: [1, 1],         // Fade in from 0 to 1
+        transform: ['translateY(150px)', 'translateY(0)'],  // Move from 50px below to its original position
+    }, {
+        duration: 1,             // Duration for the animation
+        delay: index * 0.1,      // Sequential delay based on index
+    });
+});
+
+</script>
+
