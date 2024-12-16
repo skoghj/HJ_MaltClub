@@ -4,6 +4,17 @@ import Accordion from "../components/Accordion.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 <MainLayout>
+
+  <div class="relative w-full overflow-hidden bg-neutral-500">
+    <svg id="svg-mask" class="absolute top-0 left-0 w-full h-full">
+        <defs>
+            <clipPath id="clip">
+                <circle cx="20%" cy="20%" r="0" id="circle-mask" />
+            </clipPath>
+        </defs>
+    </svg>
+    <div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out " style="clip-path: url(#clip)">
+
 <div class="bg-primary-500 lg:p-l lg:pl-20">
   <div class="flex flex-col lg:flex-row pt-ml py-lg px-ml lg:p-2xl text-accent-500">
     <!-- Text Section (Heading, Image, and Paragraph) -->
@@ -83,6 +94,68 @@ import MainLayout from "../layouts/MainLayout.astro";
   </div>
  </div>
 </div>
+</div>
 </MainLayout>
 
 
+<script>
+  import { animate } from "motion";
+  window.addEventListener('load', () => {
+    const circleMask = document.getElementById('circle-mask');
+    
+    // Define the center and radius
+    const centerX = 50;  // Center of the circle (in percentage)
+    const centerY = 20;  // Center of the circle (in percentage)
+    const radius = 10;   // Radius in percentage
+    let angle = 0;       // Initial angle (in radians)
+    
+    // Animate the circle by first scaling it slightly
+    animate(circleMask, 
+      { 
+        r: ['0', '10%'],  // Start with radius 0, then scale to 10% size
+      },
+      {
+        duration: 0.3,      // Duration of the scaling animation
+        
+      });
+
+    // Use setTimeout to delay the movement by 1.4 seconds (the duration of the scaling animation)
+    setTimeout(() => {
+      // Animate circular motion continuously using requestAnimationFrame
+      function animateCircularMotion() {
+        // Calculate the new position based on the angle
+        const cx = centerX + radius * Math.cos(angle);  // X position (percentage)
+        const cy = centerY + radius * Math.sin(angle);  // Y position (percentage)
+
+        // Update the circle's position
+        animate(circleMask, 
+          { 
+            cx: `${cx}%`,  // Update horizontal position (in percentage)
+            cy: `${cy}%`,  // Update vertical position (in percentage)
+          },
+          {
+            duration: 0.0005,       // Shortened duration for faster movement
+                // Smooth and continuous movement
+          });
+
+        // Increment the angle for continuous movement
+        angle += 0.07;  // Increased angle increment for faster rotation
+
+        // Continue the animation
+        if (angle <= 2 * Math.PI) {
+          requestAnimationFrame(animateCircularMotion);
+        } else {
+          // Once the full circle is completed, stop and scale to full size
+          animate(circleMask, 
+            { r: ['10%', '150%'] },  // Scale from 10% to 150%
+            {
+              duration: 1,        // Slightly reduced scaling duration
+            });
+        }
+      }
+  
+		// Start the continuous animation
+		animateCircularMotion();
+	  },
+	)});
+</script>
