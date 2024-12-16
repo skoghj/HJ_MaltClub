@@ -7,8 +7,9 @@ import AnmeldelsesCard from "../components/AnmeldelsesCard.astro";
         Læs anmeldelser af vores produkter
     </h2>
 
-    <div x-data="{ currentIndex: 0, cardWidth: 590, totalCards: 3 }" class="relative overflow-hidden">
-      
+    <div x-data="{ currentIndex: 0, cardWidth: 590, totalCards: 3 }" class="relative overflow-hidden ">
+      <div class="border border-solid border-6 border-red-600  ml-28">
+        
       <!-- Cards Container -->
       <div class="flex transition-transform duration-500 border-solid pt-xl"
         :style="`transform: translateX(-${currentIndex * cardWidth}px);`">
@@ -62,6 +63,8 @@ import AnmeldelsesCard from "../components/AnmeldelsesCard.astro";
         </div>
       
       </div>
+
+    </div>
 
       <!-- Navigation Controls (Arrows) -->
       <button 
