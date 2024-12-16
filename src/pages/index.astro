@@ -3,7 +3,7 @@ import Listeviewanimation from "../components/Listeviewanimation.astro";
 import Productlist from "../layouts/Productlist.astro";
 import Hero from "../layouts/Hero.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-
+import TidligereCard from "../components/TidligereCard.astro";
 import Anmeldersektion from "../layouts/Anmeldersektion.astro";
 import Tidligeresektion from "../layouts/Tidligeresektion.astro";
 import OmOs from"../layouts/OmOs.astro";
@@ -12,11 +12,13 @@ import Nyhedsbrevsektion from "../layouts/Nyhedsbrevsektion.astro";
 import Olgavesektion from "../layouts/Olgavesektion.astro";
 ---
 <MainLayout title="Titel">
-    <Olgavesektion/>
+    <Hero />
     <Historiesektion/>
+    <Olgavesektion/>
+   
+    <Anmeldersektion/>
      <Nyhedsbrevsektion/>
-     <Anmeldersektion/>
-    <!--  <Tidligeresektion/>  -->
-     <OmOs/>
+    <TidligereCard />
+    <Olgavesektion />
 </MainLayout>
 

@@ -1,5 +1,5 @@
 ---
-const { variant = "primary", size = "medium", width = "medium" } = Astro.props;
+const { variant = "primary", size = "medium", width = "medium", link } = Astro.props;
 
 const buttonStyling = "rounded-sm px-ml py-[12px] font-title font-semibold";
 
@@ -20,4 +20,8 @@ const widthClasses = {
 };
 ---
 
-<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size], widthClasses[width]]}><slot /></button>
+<a href={link}>
+  <button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size], widthClasses[width]]}>
+    <slot />
+  </button>
+</a>
