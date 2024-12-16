@@ -1,0 +1,16 @@
+---
+const { title, icon, text} = Astro.props
+---
+
+<div class="max-w-lg flex items-start gap-4 text-accent-500 ">
+  <!-- Icon -->
+  <div class="flex-shrink-0">
+    <img src={icon} alt="Teambuilding Icon" class="h-8 w-8">
+  </div>
+
+  <!-- Content -->
+  <div>
+    <h5 class="lg:h5-desktop md:h5-tablet sm:h5-mobile mb-xxs">{title}</h5>
+    <p class="sm:body-sm md:body-sm-tablet lg:body-sm-desktop">{text}</p>
+  </div>
+</div>
