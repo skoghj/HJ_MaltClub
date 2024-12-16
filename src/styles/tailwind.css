@@ -75,6 +75,6 @@
 
     }
     p {
-      @apply text-body-sm
+      @apply text-body-sm-desktop;
       }
 }
