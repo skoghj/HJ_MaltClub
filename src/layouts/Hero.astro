@@ -2,26 +2,44 @@
 import Organicbutton from "../components/Organicbutton.astro"
 ---
 
-<div class="relative flex flex-col-reverse items-center sm:items-start sm:flex-row bg-gradient-to-r from-primary-500 to-primary-700 justify-between text-accent-500">
+<div class="flex flex-col-reverse sm:flex-row bg-gradient-to-r from-primary-500 to-primary-700 justify-between text-accent-500">
     <!-- Left Content -->
-    <div class="sm:pl-xl py-lg">
-        <!-- Heading -->
-        <h1 class="text-display-mobile md:text-display-tablet2 lg:text-display-tablet xl:text-display-desktop">
-            DIN ØL<br>DIT ØJEBLIK
-        </h1>
-        <!-- Subheading -->
-        <h5 class="text-accent-700 py-sm md:py-md lg:py-lg xl:text-h4-desktop ">
-            Øl på abonnement - smag på <br> nye favoritter hver måned
-        </h5>
-        <!-- Button -->
-        <Organicbutton
-        size="large"
-        variant="tertiary"
-        text="SE ØLKASSERNE">
+    <div class="flex flex-col pt-lg  items-center text-center flex-1">
+        <h1 class="font-body">MALTCLUB</h1>
+        <div class="flex items-center justify-center">
+            <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 mr-sm"></div>
+            <h2 class="font-body">DIN ØL</h2>
+            <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 ml-sm"></div>
+        </div>
+        <h1 class="font-body">DIT ØJEBLIK</h1>
+        <div class="pt-xl">
+            <p class="text-body-lg-desktop text-accent-700 max-w-[400px]">Øl på abonnement - smag på nye favoritter hver måned.</p>
+        </div>
+        <div class="pt-xl">
+        <Organicbutton link="/Ølpakker" variant="tertiary" size="medium" text="SE ØLKASSER" />
+        </div>
     </div>
 
     <!-- Right Image Wrapper -->
-    <div class=" sm:w-[50%] lg:pb-lg ">
-        <img src="../img/hero_index2.webp" alt="Beer being poured into glass" class="">
+    <div class="flex items-end sm:w-[45%] pb-lg h-full">
+        <img src="../img/heroindex3.webp" alt="Beer being poured into glass" class="w-full max-w-full object-contain">
     </div>
-</div>
+</div>    
+
+<style>
+    
+@keyframes riseUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-riseUp {
+    animation: riseUp 1s ease-out forwards;
+}
+</style>

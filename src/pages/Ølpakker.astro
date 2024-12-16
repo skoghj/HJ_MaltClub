@@ -7,13 +7,13 @@ import Productlist from "../layouts/Productlist.astro";
   
 
     <!-- Page content -->
-        <div class="flex flex-col sm:flex-row text-accent-500 px-sm md:px-md lg:px-lg py-lg">
-               <div class="w-1/2">
-                <h1>VÆLG DIT ØL ABONNEMENT</h1>
-                <p class="text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop">Hver måned sammensætter vi en ny spændende kasse med kvalitetsøl. Vælg en kasse, der passer til dit behov</p>
+       
+               <div class="flex flex-col items-center text-accent-500 text-center px-lg py-lg">
+                <h2 class="font-body">VÆLG DIT <span class="text-accent-700">ØL ABONNEMENT</span></h2>
+                <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop max-w-[450px] pt-md">Hver måned sammensætter vi en ny spændende kasse med kvalitetsøl. Vælg en kasse, der passer til dit behov</p>
             </div>
             <div>
-                <img src="../img/ølkasse_blob.png" alt="Ølkasse">
+                <img src="../img/skyline.webp" alt="Ølkasse" class="w-full max-h-[450px] object-cover">
             </div>
         </div>
         <Productlist />
@@ -21,3 +21,5 @@ import Productlist from "../layouts/Productlist.astro";
 </MainLayout>
 
 
+
+   
