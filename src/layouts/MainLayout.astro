@@ -61,4 +61,28 @@ const { title } = Astro.props;
             { duration: 2.8 }       // Set the animation duration
         );
     });
+
+	document.addEventListener('DOMContentLoaded', () => {
+				  const mainContents = document.querySelectorAll('.main-content');
+			  
+				  mainContents.forEach((mainContent) => {
+					const children = Array.from(mainContent.children);
+			  
+					children.forEach((child) => {
+					  // Use inView to detect when the element enters the viewport
+					  inView(child, ({ target }) => {
+						animate(target, 
+						  { 
+							opacity: [0, 1], // Fade in
+							transform: ['translateY(50px) scale(0.8)', 'translateY(0px) scale(1.0)'] // Move up and scale
+						  },
+						  {
+							duration: 0.8, // Duration of the animation
+							easing: 'ease-out'
+						  }
+						);
+					  });
+					});
+				  });
+				});
 </script>
