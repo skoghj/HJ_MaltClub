@@ -50,3 +50,25 @@ const { title } = Astro.props;
 
 	</body>
 </html>
+
+<script>
+	import { animate, inView } from "motion";
+   
+   inView(".content", () => {
+	 animate(".content", { opacity: [0, 1] }, { duration: 2 });
+   });
+
+   window.addEventListener('load', () => {
+   const circleMask = document.getElementById('circle-mask');
+
+   // Animate the circle radius using Motion One
+   animate(circleMask, 
+	   { r: ['0', '150%'] },  // Start with radius 0 and animate to 150%
+	   {
+		   duration: 2.8,      // Animation duration of 2.8 seconds
+		   ease: 'ease-out',   // Easing function
+		   fill: 'forwards'    // Keep the final state after animation
+	   }
+   );
+});
+</script>
