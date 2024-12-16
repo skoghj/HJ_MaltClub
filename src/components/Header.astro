@@ -1,2 +1,138 @@
----
----
+<div x-data="{ open: false }" class="relative ">
+ <!-- Mobile Navigation -->
+<div class="flex md:hidden items-center justify-between px-sm py-sm">
+    <!-- Burger Menu Icon -->
+    <button @click="open = !open" class="flex items-center">
+        <!-- Burger Menu Icon (visible when open is false) -->
+        <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 text-white">
+            <path d="M3 12h18m-18-6h18m-18 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    
+        <!-- Close (X) Icon (visible when open is true) -->
+        <svg x-show="open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 text-white">
+            <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Logo -->
+    <img src="../svg/logo.svg" alt="Logo" class="h-10 mx-auto">
+
+    <!-- Cart Icon -->
+    <img src="../svg/cart.svg" alt="Cart" class="h-8">
+</div>
+
+<!-- Overlay and Dropdown Menu -->
+<div 
+    x-show="open" 
+    class="absolute inset-x-0 top-[80px] bg-black bg-opacity-50 z-40" 
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+>
+    <!-- Dropdown Menu -->
+    <div 
+        class="absolute inset-x-0 top-0 bg-primary-500 shadow-lg z-50 px-md py-md"
+
+    >
+        <!-- Close Button -->
+        <!-- Menu Items -->
+        <ul class="text-accent-500 font-title text-body-lg-tablet font-semibold space-y-sm">
+            <!-- ØLPAKKER Accordion Item -->
+            <li x-data="{ openDropdown: false }">
+                <!-- Dropdown Toggle Button -->
+                <button @click="openDropdown = !openDropdown" class="flex justify-between items-center w-full">
+                    ØLPAKKER</>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 ml-2 transform transition-transform" :class="{ 'rotate-180': openDropdown }">
+                        <path d="M7 10l5 5 5-5H7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+              
+                <!-- Accordion Content -->
+                <ul 
+                    x-show="openDropdown" 
+                    x-transition:enter="transition-opacity ease-out duration-300 transform"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition-opacity ease-in duration-200 transform"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0"
+                    class="font-regular text-body-md space-y-xxxs px-xs">
+                    <li class="hover:bg-primary-300 py-xxxs">
+                        <a href="#ølpakke1" class="block">MALTCLUB</a>
+                    </li>
+                    <li class="hover:bg-primary-300 py-xxxs">
+                        <a href="#ølpakke2" class="block">MALTCLUB XL</a>
+                    </li>
+                    <li class="hover:bg-primary-300 py-xxxs">
+                        <a href="#ølpakke3" class="block">MALTCLUB UDEN IPA</a>
+                    </li>
+                </ul>
+            </li>
+    
+            <li class="hover:bg-primary-300 py-2">
+                <a href="#ølgaver" class="block">ØLGAVER</a>
+            </li>
+            <li class="hover:bg-primary-300 py-2">
+                <a href="#omos" class="block">OM OS</a>
+            </li>
+            <li class="hover:bg-primary-300 py-2">
+                <a href="#omos" class="block">PROFIL</a>
+            </li>
+            <li class="hover:bg-primary-300 py-2">
+                <a href="#omos" class="block"><img src="../svg/trustpilot_mobile.svg" alt="Trustpilot"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Desktop Menu -->
+<div class="hidden md:flex justify-between items-center w-full md:px-md lg:px-xl py-sm">
+    <!-- Left Navigation -->
+    <nav>
+        <ul class="flex md:space-x-md lg:space-x-xl font-title text-accent-500 font-semibold">
+            <!-- ØLPAKKER with Hover Dropdown -->
+            <li class="relative group">
+                <a href="/Ølpakker" class="flex items-center hover:text-primary-300 text-body-md-desktop"> ØLPAKKER
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[24px] w-[24px] ml-xs transition-transform transform group-hover:rotate-180 group-hover:text-primary-300">
+                        <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
+                    </svg>
+                </a>
+                <!-- Dropdown Menu -->
+                <div class="absolute left-0 mt-xs w-48 bg-white text-accent-500 rounded-md shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out" >
+                    <ul class="bg-primary-400">
+                        <li class="hover:bg-primary-300 px-sm py-xxs">
+                            <a href="#subscription" class="block">MALTCLUB</a>
+                        </li>
+                        <li class="hover:bg-primary-300 px-sm py-xxs">
+                            <a href="#seasonal" class="block">MALTCLUB XL</a>
+                        </li>
+                        <li class="hover:bg-primary-300 px-sm py-xxs">
+                            <a href="#specials" class="block">MALTCLUB UDEN IPA</a>
+                        </li>
+                    </ul>
+                </div>  
+            </li>
+            <li>
+                <a href="#ølgaver" class="hover:text-primary-300 text-body-md-desktop ">ØLGAVER</a>
+            </li>
+            <li>
+                <a href="#omos" class="hover:text-primary-300 text-body-md-desktop ">OM OS</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Center Logo -->
+    <div>
+        <img src="../svg/logo.svg" alt="Logo">
+    </div>
+
+    <!-- Right Section -->
+    <div class="flex items-center md:space-x-md lg:space-x-xl">
+        <img src="../svg/trustpilot.svg" alt="Trustpilot">
+        <img src="../svg/person.svg" alt="Profile">
+        <img src="../svg/cart.svg" alt="Cart" >
+    </div>
+</div>

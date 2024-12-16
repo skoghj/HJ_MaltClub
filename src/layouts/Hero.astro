@@ -1,0 +1,27 @@
+---
+import Organicbutton from "../components/Organicbutton.astro"
+---
+
+<div class="relative flex flex-col-reverse items-center sm:items-start sm:flex-row bg-gradient-to-r from-primary-500 to-primary-700 justify-between text-accent-500">
+    <!-- Left Content -->
+    <div class="sm:pl-xl py-lg">
+        <!-- Heading -->
+        <h1 class="text-display-mobile md:text-display-tablet2 lg:text-display-tablet xl:text-display-desktop">
+            DIN ØL<br>DIT ØJEBLIK
+        </h1>
+        <!-- Subheading -->
+        <h5 class="text-accent-700 py-sm md:py-md lg:py-lg xl:text-h4-desktop ">
+            Øl på abonnement - smag på <br> nye favoritter hver måned
+        </h5>
+        <!-- Button -->
+        <Organicbutton
+        size="large"
+        variant="tertiary"
+        text="SE ØLKASSERNE">
+    </div>
+
+    <!-- Right Image Wrapper -->
+    <div class=" sm:w-[50%] lg:pb-lg ">
+        <img src="../img/hero_index2.webp" alt="Beer being poured into glass" class="">
+    </div>
+</div>

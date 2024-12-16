@@ -1,0 +1,99 @@
+---
+const { text, size = "medium", variant = "primary" } = Astro.props;
+
+const sizeClasses = {
+  small: "px-md py-md text-h5-mobile md:text-h5-tablet lg:text-h5-desktop",
+  medium:"px-lg py-md text-h4-mobile md:text-h4-tablet lg:text-h4-desktop",
+  large: "px-xl py-md text-h3-mobile md:text-h3-tablet lg:text-h3-desktop",
+};
+
+const variantClasses = {
+  
+
+  primary:
+    "bg-primary-500 text-accent-500 font-title border-primary-500 hover:bg-primary-400 hover:text-white",
+  secondary:
+    "text-primary-500 border-primary-500 font-title hover:bg-primary-500 hover:text-accent-500",
+    tertiary:
+    "bg-neutral-500 border text-primary-500 font-title font-semibold border-primary-500 hover:bg-primary-400 hover:text-accent-500 transition"
+};
+
+const baseClasses =
+  "inline-block magnetic-btn border transition-transform ease-out duration-100 flex justify-center items-center animate-liquidShape";
+---
+
+<button class={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]}`}>
+  {text}
+</button>
+
+<style>
+  @keyframes liquidShape {
+    0% {
+      border-radius: 30% 70% 60% 40% / 60% 40% 70% 50%;
+    }
+    25% {
+      border-radius: 50% 50% 70% 30% / 50% 60% 40% 70%;
+    }
+    50% {
+      border-radius: 35% 65% 50% 50% / 65% 35% 60% 40%;
+    }
+    75% {
+      border-radius: 45% 55% 40% 60% / 55% 45% 50% 50%;
+    }
+    100% {
+      border-radius: 30% 70% 60% 40% / 60% 40% 70% 50%;
+    }
+  }
+
+  .animate-liquidShape {
+    animation: liquidShape 4s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  // Select all buttons with the class "magnetic-btn"
+  const buttons = document.querySelectorAll('.magnetic-btn');
+
+  // Function to calculate distance between two points
+  function getDistance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+  }
+
+  // Mousemove event to track the mouse position
+  document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    // Loop through all buttons and apply the effect
+    buttons.forEach((button) => {
+      const buttonRect = button.getBoundingClientRect();
+
+      // Calculate the distance between the button and the mouse
+      const distance = getDistance(
+        mouseX,
+        mouseY,
+        buttonRect.x + buttonRect.width / 2,
+        buttonRect.y + buttonRect.height / 2
+      );
+
+      // If the distance is smaller than a certain threshold, move and stretch the button
+      if (distance < 200) {
+        const angle = Math.atan2(
+          mouseY - (buttonRect.y + buttonRect.height / 2),
+          mouseX - (buttonRect.x + buttonRect.width / 2)
+        );
+        const distanceFactor = (200 - distance) / 200;
+
+        // Calculate the stretch factor based on proximity to the mouse
+        const scaleX = 1 + distanceFactor * 0.4; // Stretch factor in X direction
+        const scaleY = 1 + distanceFactor * 0.4; // Stretch factor in Y direction
+        const moveX = Math.cos(angle) * distanceFactor * 50;
+        const moveY = Math.sin(angle) * distanceFactor * 50;
+
+        button.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scaleX}, ${scaleY})`;
+      } else {
+        button.style.transform = 'translate(0, 0) scale(1, 1)';
+      }
+    });
+  });
+</script>
