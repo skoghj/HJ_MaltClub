@@ -3,8 +3,19 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Productlist from "../layouts/Productlist.astro";
 
 ---
+
 <MainLayout>
+       <div class="relative w-full overflow-hidden bg-neutral-500">
+        <svg id="svg-mask" class="absolute top-0 left-0 w-full h-full">
+            <defs>
+                <clipPath id="clip">
+                    <circle cx="20%" cy="20%" r="0" class="circle-mask" />
+                </clipPath>
+            </defs>
+        </svg>
+        <div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out " style="clip-path: url(#clip)">
   
+ 
 
     <!-- Page content -->
        
@@ -17,6 +28,8 @@ import Productlist from "../layouts/Productlist.astro";
             </div>
         </div>
         <Productlist />
+        </div>
+       
 
 </MainLayout>
 

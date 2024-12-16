@@ -24,15 +24,7 @@ const { title } = Astro.props;
 	<body>
 	
 		<AgeVerification />
-		<div class="relative w-full overflow-hidden bg-neutral-500">
-			<svg id="svg-mask" class="absolute top-0 left-0 w-full h-full">
-				<defs>
-					<clipPath id="clip">
-						<circle cx="20%" cy="20%" r="0" id="circle-mask" />
-					</clipPath>
-				</defs>
-			</svg>
-			<div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out " style="clip-path: url(#clip)">
+
 
 		<header >
 			<Header></Header>
@@ -59,16 +51,14 @@ const { title } = Astro.props;
 	 animate(".content", { opacity: [0, 1] }, { duration: 2 });
    });
 
-   window.addEventListener('load', () => {
-   const circleMask = document.getElementById('circle-mask');
+    // Animate the circle radius using Motion One
+	window.addEventListener('load', () => {
+        const circleMask = document.querySelector('.circle-mask');  // Target by class instead of ID
 
-   // Animate the circle radius using Motion One
-   animate(circleMask, 
-	   { r: ['0', '150%'] },  // Start with radius 0 and animate to 150%
-	   {
-		   duration: 2.8,      // Animation duration of 2.8 seconds
-		 // Keep the final state after animation
-	   }
-   );
-}); 
+        // Animate the circle radius using Motion One
+        animate(circleMask, 
+            { r: ['0', '150%'] },  // Animate the radius from 0 to 150%
+            { duration: 2.8 }       // Set the animation duration
+        );
+    });
 </script>
