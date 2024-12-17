@@ -1,11 +1,21 @@
 ---
-import ImgTextcard from "../components/ImgTextcard.astro";
+
 ---
-<div id="sektion2" class="flex">
-    <ImgTextcard
-      imgimage="img/oltonder.webp" 
-      class="hidden md:block absolute md:w-full md:h-full md:-ml-[5.5rem]" 
-      alt="Billede, der viser øltønder liggende tilfældigt sammen"
-      title="Oplev øl med kvalitet og historie"
-      text="Hos MaltClub ønsker vi at dele vores passion for øl med dig. Hver måned sammensætter vi en kasse med nøje udvalgte øl fra bryghuse, der har noget særligt at byde på. Vi tror på, at øl med en god historie smager bedre, og vi glæder os til at bringe nye smagsoplevelser direkte til din dør.">
+
+<article id="sektion2" class="bg-accent-500">
+  <div class="flex flex-col sm:flex-row">
+    <!-- Left Box: 32% -->
+    <div class="w-full sm:w-4/12">
+      <img src="../img/oltonder.webp" alt="" class="hidden sm:block w-full h-full">
     </div>
+    <!-- Right Box: 68% -->
+    <div class="w-full sm:w-8/12 flex items-center justify-center">
+      <div class="max-w-[60%] py-lg">
+        <h3 class="text-primary-400 text-left pb-xxs">Øl med kvalitet og historie</h3>
+        <p class="font-serif text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-primary-400">
+          Hos MaltClub ønsker vi at dele vores passion for øl med dig. Hver måned sammensætter vi en kasse med nøje udvalgte øl fra bryghuse, der har noget særligt at byde på. Vi tror på, at øl med en god historie smager bedre, og vi glæder os til at bringe nye smagsoplevelser direkte til din dør.
+        </p>
+      </div>
+    </div>
+  </div>
+</article>
