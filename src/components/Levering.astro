@@ -1,9 +1,9 @@
 ---
 import Secondarybutton from "./Secondarybutton.astro"
 ---
-<article class="bg-primary-500 text-accent-500 py-xl flex justify-center">
-  <div id="sektion3" class="content max-w-7xl">
-    <h2 class="text-accent-500 text-center pb-xl"> 
+<article class="bg-primary-500 text-accent-500 flex justify-center">
+  <div id="sektion3" class="content max-w-7xl pt-xl pb-xl lg:pb-2xl">
+    <h2 class="text-accent-500 text-center pb-xl lg:pb-2xl"> 
       Sådan virker dit Maltclub abonnement
     </h2>
     <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
@@ -15,15 +15,20 @@ import Secondarybutton from "./Secondarybutton.astro"
           Bestil det øl abonnement, der passer til dig
         </p>
       </div>
+      <div class="flex items-center self-center">
+        <img id="buetLinie1" src="svg/buet_linie.svg" alt="vektorgrafik af en ølkasse" class="hidden md:block"/>
+      </div>
     
       <!-- Anden kolonne -->
       <div class="flex flex-col max-w-[250px] items-center">
         <img src="svg/ladcykel.svg" alt="vektorgrafik af en ladcykel" class="w-32 h-32" />
         <h4>2. Levér</h4>
         <p class="text-center">
-          Vi leverer dine øl  i starten af hver måned.
+          Vi leverer dine øl i starten af hver måned.
         </p>
-      
+      </div>
+      <div class="flex items-center self-center">
+        <img id="buetLinie2" src="svg/buet_linie.svg" alt="vektorgrafik af en ølkasse" class="hidden md:block"/>
       </div>
     
       <!-- Tredje kolonne -->
@@ -31,10 +36,9 @@ import Secondarybutton from "./Secondarybutton.astro"
         <img src="svg/handbottle.svg" alt="vektorgrafik af hænder der holder øl" class="w-32 h-32" />
         <h4>3. Enjoy</h4>
         <p class="text-center">
-       Nyd og byd på kvalitet til enhver lejlighed!
+          Nyd og byd på kvalitet til enhver lejlighed!
         </p>
       </div>
-      
     </div>
     
     </div>
