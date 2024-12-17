@@ -2,60 +2,41 @@
 import Olgave from "../components/Olgave.astro";
 import Secondarybutton from "../components/Secondarybutton.astro";
 ---
-<section class="bg-[url('../img/ol_gave.webp')] bg-cover bg-center bg-no-repeat flex flex-col items-center p-md relative z-20 -mt-[160%] sm:-mt-[70%] md:-mt-[48%] lg:-mt-[33%] xl:-mt-[24%]">
-  <div class="grid grid-cols-1 gap-6 w-full md:max-w-2xl md:ml-auto">
-    <h2 class="text-accent-500 text-center md:text-left pb-4 md:pb-0 px-4 md:px-8">
-      <span class="text-h2-mobile md:text-h2-tablet lg:text-h3-desktop">
-        Sådan virker dit Maltclub abonnement
-      </span>
-    </h2>
-    <p class="text-accent-500 text-left px-4 md:pl-8 md:pr-12">
-      Giv en skummende gave med MaltClub! Overrask en ølentusiast med en gave, der virkelig smager af noget! 
-      Med vores MaltClub gaveabonnement kan du dele glæden ved kvalitetsøl, håndplukket og leveret direkte til døren.
-    </p>
-    <div class="flex flex-col gap-6 px-4 md:px-8 py-6 md:py-12 w-full">
-      <Olgave
-        icon="./svg/line-md_calendar.png"
-        title="Vælg varighed"
-        text="Du bestemmer, om gaven skal vare en måned, to, eller mere – helt uden binding."
-        class="bg-cover bg-center bg-no-repeat py-8"
-        alt="Billede af en ølgavekasse liggende på hø"></Olgave>
 <section> <!-- Parent Section -->
   <!-- Background with Overlay -->
   <div class="relative bg-[url('../img/ol_gave.webp')] bg-cover bg-center">
     <!-- Dark Overlay -->
     <div class="absolute inset-0 bg-black/70"></div>
+      
+  <!-- Content Container -->
+  <div class="relative max-w-7xl mx-auto content py-xl">
+    <!-- Header Section -->
+    <div class="pb-lg text-center">
+      <h2 class="text-accent-500 text-h2-mobile md:text-h2-desktop">
+        På udkig efter en ølgave?
+      </h2>
+    </div>
 
-    <!-- Content Container -->
-    <div id="sektion6" class="relative  max-w-7xl mx-auto content py-xl">
-      <!-- Header Section -->
-      <div class="pb-lg text-center">
-        <h2 class="text-accent-500 text-h2-mobile md:text-h2-desktop">
-          På udkig efter en ølgave?
-        </h2>
-      </div>
+    <!-- Olgave Items -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-16">
+      <Olgave
+        icon="./svg/line-md_calendar.png"
+        title="Vælg varighed"
+        text="Du bestemmer, om gaven skal vare en måned, to, eller mere – helt uden binding."
+        class="text-center"></Olgave>
 
-      <!-- Olgave Items -->
-      <div class="flex flex-col md:flex-row items-center justify-center gap-16">
-        <Olgave
-          icon="./svg/line-md_calendar.png"
-          title="Vælg varighed"
-          text="Du bestemmer, om gaven skal vare en måned, to, eller mere – helt uden binding."
-          class="text-center"></Olgave>
 
-        <Olgave
+  <Olgave
           icon="./svg/akar-icons_stop.png"
           title="Problemfrit"
           text="Abonnementet stopper automatisk, så du skal ikke tænke på noget bagefter."
           class="text-center"></Olgave>
-
         <Olgave
           icon="./svg/Group 140.png"
           title="Unikke oplevelser"
           text="Fra spændende mikrobryg til ikoniske klassikere – hver levering er en oplevelse."
           class="text-center"></Olgave>
       </div>
-
       <!-- Button Section -->
       <div class="flex justify-center pt-lg">
         <Secondarybutton 
