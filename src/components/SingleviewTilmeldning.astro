@@ -89,21 +89,25 @@ import Secondarybutton from "./Secondarybutton.astro";
 
             <!-- Circle steps -->
             <div class="flex justify-between w-full z-20 transition-all duration-400 ease-in-out">
-              <div class="circle bg-accent-500">
+              <div class="circle bg-accent-500 items-center flex flex-col">
                 <img src="/beer_ikon_progressbar.svg" alt="progressbar" class="inactive block w-ml h-ml" />
                 <img src="/beer_ikon_progressbar_1.svg" alt="progressbar" class="active hidden w-ml h-ml" />
+                <h5 class="text-h5-mobile font-regular">Kontakt</h5>
               </div>
-              <div class="circle bg-accent-500">
+              <div class="circle bg-accent-500 items-center flex flex-col">
                 <img src="/beer_ikon_progressbar.svg" alt="progressbar" class="inactive block w-ml h-ml" />
                 <img src="/beer_ikon_progressbar_2.svg" alt="progressbar" class="active hidden w-ml h-ml" />
+                <h5 class="text-h5-mobile font-regular">Adresse</h5>
               </div>
-              <div class="circle bg-accent-500">
+              <div class="circle bg-accent-500 items-center flex flex-col">
                 <img src="/beer_ikon_progressbar.svg" alt="progressbar" class="inactive block w-ml h-ml" />
                 <img src="/beer_ikon_progressbar_3.svg" alt="progressbar" class="active hidden w-ml h-ml" />
+                <h5 class="text-h5-mobile font-regular">Levering</h5>
               </div>
-              <div class="circle bg-accent-500">
+              <div class="circle bg-accent-500 items-center flex flex-col">
                 <img src="/beer_ikon_progressbar.svg" alt="progressbar" class="inactive block w-ml h-ml" />
                 <img src="/beer_ikon_progressbar_4.svg" alt="progressbar" class="active hidden w-ml h-ml" />
+                <h5 class="text-h5-mobile font-regular">Betaling</h5>
               </div>
             </div>
           </div>
@@ -183,13 +187,7 @@ import Secondarybutton from "./Secondarybutton.astro";
         <!-- 3. step-- -->
         <article class="step">
           <h3 class="flex w-full pt-sm pb-ml text-h1-mobile lg:text-h4-desktop text-primary-400">Leveringsmetode</h3>
-          <div id="clickable-div" class="flex flex-col gap-xxs py-sm px-xs md:items-center border-2 border-transparent bg-neutral-200 md:flex-row md:justify-between md:w-full">
-            <div class="flex flex-col gap-xxs">
-              <h5 class="">Afhentning på lager.8300 Odder</h5>
-              <p class="text-primaty-500 opacity-60 font-semibold">Du vil blive kontaktet når din ordre er klar</p>
-            </div>
-            <h5 class="text-primary-500">0,00 DKK</h5>
-          </div>
+
           <div class="flex flex-col gap-xxs py-sm px-xs mt-ml md:items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
             <div class="flex flex-col gap-xxs">
               <h5 class="">Levering</h5>
@@ -204,6 +202,7 @@ import Secondarybutton from "./Secondarybutton.astro";
               <p class="text-primaty-500 opacity-60 font-semibold">Inkl. moms</p>
             </div>
           </div>
+
           <div class="flex flex-col gap-xxs py-sm px-xs mt-ml md:items-center bg-neutral-200 md:flex-row md:justify-between md:w-full">
             <div class="flex flex-col gap-xxs">
               <h5 class="">Levering</h5>
@@ -217,6 +216,24 @@ import Secondarybutton from "./Secondarybutton.astro";
               <h5 class="text-primary-500">112,50 DKK</h5>
               <p class="text-primaty-500 opacity-60 font-semibold">Inkl. moms</p>
             </div>
+          </div>
+
+          <div class="flex flex-col gap-xxs my-sm py-sm px-xs md:items-center border-2 border-transparent bg-neutral-200 md:flex-row md:justify-between md:w-full">
+            <div class="flex flex-col gap-xxs">
+              <h5 class="">Afhentning på lager.8300 Odder</h5>
+              <p class="text-primaty-500 opacity-60 font-semibold">Du vil blive kontaktet når din ordre er klar</p>
+            </div>
+            <h5 class="text-primary-500">0,00 DKK</h5>
+          </div>
+          <div class="flex gap-xxs md:items-center md:flex-row md:justify-between md:w-full">
+            <label class="w-full gap-sm py-sm px-sm flex bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400 has-[:checked]:ring-indigo-200">
+              <input type="radio" class="checked:border-indigo-500 px-sm" />
+              <div class="flex flex-col gap-xxs w-full">
+                <h5 class="">Afhentning på lager.8300 Odder</h5>
+                <p class="text-primaty-500 opacity-60 font-semibold">Du vil blive kontaktet når din ordre er klar</p>
+              </div>
+              <h5 class="text-primary-500">0,00 DKK</h5>
+            </label>
           </div>
         </article>
 
@@ -284,18 +301,6 @@ import Secondarybutton from "./Secondarybutton.astro";
 </section>
 
 <script>
-  //step 3. kasser selected//
-  //const div = document.getElementById("clickable-div");
-
-  //div.addEventListener("click", function () {
-  // 클릭 시 border-primary-400을 추가하거나 제거
-  //if (div.classList.contains("border-primary-400")) {
-  //div.classList.remove("border-primary-400"); // 선택 해제
-  //} else {
-  //div.classList.add("border-primary-400"); // 선택 상태로 설정
-  //}
-  //});
-
   //odreoversigt til betalingsmuligheder hændelse//
   let currentSection = 0; // start første section
 
