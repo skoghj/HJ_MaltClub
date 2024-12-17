@@ -19,17 +19,17 @@ import TidligereCard from "../components/TidligereCard.astro";
     </div>
       
       <!-- Selve hjulet /m knap-->
-      <div class="relative flex justify-center items-center mt-[90%] md:mt-[52%] lg:mt-48">
+      <div class="relative flex justify-center items-center mt-[90%] md:mt-[52%] lg:mt-48 md: lg:             xl:ml-[6.5%]">
         <!-- Knappen -->
         <button
           id="spinButton"
-          class="absolute z-10 flex justify-start items-start">
-          <img src="img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="w-10 -mt-60 lg:w-40 lg:-mt-60"><!-- har bibeholdt default spacing -->
+          class="absolute z-10 flex justify-start items-start sm:ml-[14%] sm:mt[90%] md:ml-[10.8]  md:mt-[]     lg:mt-[2%]   -mt-60   lg:-ml-[25%]"><!-- op og ned knap -->
+          <img src="img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="w-16 sm:w-[70%] md:w-[70%] lg:w-40"><!-- vemstre højre knap -->
         </button>
  
      <!-- Container for kortene -->
- <div id="carousel-wrapper" class="relative w-[300px] h-[300px] mx-auto mt-[160%] md:mt-80"><!-- har bibeholdt default spacing -->
-    <div id="carousel" class="absolute w-[280px] h-[280px] flex items-center justify-center transition-transform">
+ <div id="carousel-wrapper" class="relative w-[300px] h-[300px] ml-[6.5%] mt-[160%] sm:ml-[12.5%] sm:mt-[33%] md:ml-[3.8%] md:mt-[44%] lg:ml-[2.5%] lg:mt-[52%] xl:ml-[4.5] xl:mt-[34%]">
+    <div id="carousel" class="absolute w-[280px] h-[280px] transition-transform">
       <!-- Januar (300 grader) -->
       <div class="absolute" style="transform: rotate(330deg) translate(600px) rotate(-270deg);">
         <TidligereCard img="img/img_hjul/januar.webp" alt="billed af ølflasker" month="Januar">
