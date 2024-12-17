@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import '../styles/tailwind.css';
 import AgeVerification from "../components/AgeVerification.astro";
 import 'animate.css';
+
 const { title } = Astro.props;
 
 ---
@@ -14,7 +15,6 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<meta name="viewport" content="width=device-width" />
@@ -24,15 +24,7 @@ const { title } = Astro.props;
 	<body>
 	
 		<AgeVerification />
-		<div class="relative w-full overflow-hidden bg-neutral-500">
-			<svg id="svg-mask" class="absolute top-0 left-0 w-full h-full">
-				<defs>
-					<clipPath id="clip">
-						<circle cx="20%" cy="20%" r="0" id="circle-mask" />
-					</clipPath>
-				</defs>
-			</svg>
-			<div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out " style="clip-path: url(#clip)">
+
 
 		<header >
 			<Header></Header>
@@ -51,24 +43,46 @@ const { title } = Astro.props;
 	</body>
 </html>
 
-<script>
+<script>  
+
 	import { animate, inView } from "motion";
    
    inView(".content", () => {
 	 animate(".content", { opacity: [0, 1] }, { duration: 2 });
    });
 
-   window.addEventListener('load', () => {
-   const circleMask = document.getElementById('circle-mask');
+    // Animate the circle radius using Motion One
+	window.addEventListener('load', () => {
+        const circleMask = document.querySelector('.circle-mask');  // Target by class instead of ID
 
-   // Animate the circle radius using Motion One
-   animate(circleMask, 
-	   { r: ['0', '150%'] },  // Start with radius 0 and animate to 150%
-	   {
-		   duration: 2.8,      // Animation duration of 2.8 seconds
-		   ease: 'ease-out',   // Easing function
-		   fill: 'forwards'    // Keep the final state after animation
-	   }
-   );
-});
+        // Animate the circle radius using Motion One
+        animate(circleMask, 
+            { r: ['0', '150%'] },  // Animate the radius from 0 to 150%
+            { duration: 2.8 }       // Set the animation duration
+        );
+    });
+
+	document.addEventListener('DOMContentLoaded', () => {
+				  const mainContents = document.querySelectorAll('.main-content');
+			  
+				  mainContents.forEach((mainContent) => {
+					const children = Array.from(mainContent.children);
+			  
+					children.forEach((child) => {
+					  // Use inView to detect when the element enters the viewport
+					  inView(child, ({ target }) => {
+						animate(target, 
+						  { 
+							opacity: [0, 1], // Fade in
+							transform: ['translateY(50px) scale(0.8)', 'translateY(0px) scale(1.0)'] // Move up and scale
+						  },
+						  {
+							duration: 0.8, // Duration of the animation
+							easing: 'ease-out'
+						  }
+						);
+					  });
+					});
+				  });
+				});
 </script>

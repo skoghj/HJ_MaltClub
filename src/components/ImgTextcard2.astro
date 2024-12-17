@@ -1,21 +1,22 @@
 ---
-const { imgimage = "", imagealt = "", email = "", subtitle, title, text, mailtext, btntext } = Astro.props
+const { imgimage = "", imagealt = "", email = "", subtitle, title, text, mailtext } = Astro.props
+import Secondarybutton from "./Secondarybutton.astro";
 ---
 
 <article id="sektion2" class="bg-accent-500">
     <div class="grid grid-cols-1 md:grid-cols-2">
       <!-- Venstre side med billede -->
       <div class="flex items-center justify-center">
-        <div class="relative w-full h-auto md:w-[540px] md:h-[520px]">
+        <div class="relative w-full h-auto md:w-[525px] md:h-[520px]">
           <!-- Billede (Skjules på mobil, vises på større skærme) -->
-          <img src={imgimage} alt={imagealt} class="hidden md:block absolute w-full h-auto md:h-full md:-ml-[5.5rem]">
+          <img src={imgimage} alt={imagealt} class="hidden md:block absolute w-full h-auto md:h-full md:-ml-[6.2rem]">
         </div>
       </div>
       
       <!-- Højre side med tekst -->
-      <div class="p-xl md:p-xxs lg:p-xl md:-ml-[5%] lg:-ml-[12rem]">
+      <div class="p-lg md:p-xxs lg:p-xl md:-ml-[5%] lg:-ml-[12rem]">
         <!-- Bruger h3 typografier til mobil, tablet og desktop -->
-        <h5 class="text-h4-mobile md:text-h5-tablet lg:text-h5-desktop text-primary-400 mb-2">
+        <h5 class="text-h5-mobile md:text-h5-tablet lg:text-h5-desktop text-primary-400 mb-2">
           {subtitle}
         </h5>
         <h3 class="text-h1-mobile md:text-h3-tablet lg:text-h3-desktop text-primary-400 mb-4">
@@ -30,13 +31,11 @@ const { imgimage = "", imagealt = "", email = "", subtitle, title, text, mailtex
         <div class="mb-xs">
           <!-- Dynamisk placeholder og type værdier -->
           <input type={email} placeholder={mailtext} 
-          class="mt-xs w-full lg:w-[48rem] rounded-sm bg-neutral-300 p-3 border border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+          class="mt-xs w-full lg:w-[47rem] rounded-sm bg-neutral-300 p-3 border border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
         </div>
 
         <div class="flex flex-col md:flex-row gap-4">
-          <button class="w-28 md:w-auto bg-primary-400 text-accent-500 px-6 py-3 rounded-sm hover:bg-primary-600">
-            {btntext}
-          </button>
+          <Secondarybutton variant="primary" size="medium" width="large" className="sm:size-small md:size-medium lg:size-large">Tilmeld</Secondarybutton>
         </div>
       </div>
     </div>

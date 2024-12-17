@@ -1,9 +1,5 @@
-<div 
-    x-data="ageVerification" 
-    x-init="checkVerification" 
-    x-show="!ageVerified" 
-   class="fixed inset-0 z-50 bg-gradient-to-b from-primary-500 to-primary-700 flex items-center justify-center"
-    x-cloak>
+<div id="age-verification-modal" class="hidden">
+<div id="age-verification-modal" class="fixed inset-0 z-50 bg-gradient-to-b from-primary-500 to-primary-700 flex items-center justify-center">
     <!-- Container -->
     <div class="text-center max-w-xl w-full p-8 relative">
         <!-- Logo øverst -->
@@ -19,47 +15,51 @@
         <div class="flex justify-center gap-4">
             <!-- Ja-knap -->
             <button 
-                @click="verifyAge" 
+                id="verify-age-btn" 
                 class="bg-neutral-500 text-primary-500 px-6 py-3 w-full max-w-xs rounded-lg hover:bg-primary-400 hover:text-accent-500 transition">
                 Ja, jeg er
             </button>
             <!-- Nej-knap -->
             <button 
-                @click="denyAge" 
+                id="deny-age-btn" 
                 class="border-2 border-neutral-500 text-neutral-500 px-6 py-3 w-full max-w-xs rounded-lg hover:bg-transparent hover:text-primary-300 hover:border-primary-300 transition">
                 Nej, jeg er ikke
             </button>
         </div>
         
         <!-- Fejlbesked -->
-        <p x-show="showError" class="text-red-600 mt-xs text-body-lg">
+        <p id="error-message" class="text-red-600 mt-xs text-body-lg hidden">
             Du skal være over 18 år for at bruge denne side.
         </p>
     </div>
 </div>
+</div>
 <script>
-    document.addEventListener('alpine:init', () => {
-        // Registering the ageVerification Alpine.js component
-        Alpine.data('ageVerification', () => ({
-            ageVerified: false,
-            showError: false,
+    // On page load
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const modal = document.getElementById('age-verification-modal');
+        const errorMessage = document.getElementById('error-message');
+        const verifyAgeBtn = document.getElementById('verify-age-btn');
+        const denyAgeBtn = document.getElementById('deny-age-btn');
+        
+        // Check if the user is already verified
+        const ageVerified = localStorage.getItem('ageVerified') === 'true';
 
-            // Check if the user is already verified
-            checkVerification() {
-                this.ageVerified = localStorage.getItem('ageVerified') === 'true';
-            },
+        // If not verified, show the modal
+        if (!ageVerified) {
+            modal.classList.remove('hidden');
+        }
 
-            // Handle "Yes, I am over 18"
-            verifyAge() {
-                localStorage.setItem('ageVerified', 'true');
-                this.ageVerified = true; // Hide the modal
-            },
+        // When "Yes, I am over 18" is clicked
+        verifyAgeBtn.addEventListener('click', () => {
+            localStorage.setItem('ageVerified', 'true');
+            modal.classList.add('hidden'); // Hide the modal
+        });
 
-            // Handle "No, I am under 18"
-            denyAge() {
-                localStorage.removeItem('ageVerified');
-                this.showError = true; // Show the error message
-            }
-        }));
+        // When "No, I am under 18" is clicked
+        denyAgeBtn.addEventListener('click', () => {
+            localStorage.removeItem('ageVerified');
+            errorMessage.classList.remove('hidden'); // Show error message
+        });
     });
 </script>
