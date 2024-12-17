@@ -39,13 +39,13 @@
                     <!-- Accordion Content -->
                     <ul id="beer-dropdown" class="font-regular text-body-md space-y-xxxs px-xs hidden">
                         <li class="hover:bg-primary-300 py-xxxs">
-                            <a href="#ølpakke1" class="block">MALTCLUB</a>
+                            <a href="/singleview" class="block">MALTCLUB</a>
                         </li>
                         <li class="hover:bg-primary-300 py-xxxs">
-                            <a href="#ølpakke2" class="block">MALTCLUB XL</a>
+                            <a href="/singleview" class="block">MALTCLUB XL</a>
                         </li>
                         <li class="hover:bg-primary-300 py-xxxs">
-                            <a href="#ølpakke3" class="block">MALTCLUB UDEN IPA</a>
+                            <a href="/singleview" class="block">MALTCLUB UDEN IPA</a>
                         </li>
                     </ul>
                 </li>
@@ -54,10 +54,10 @@
                     <a href="/singleview" class="block">ØLGAVER</a>
                 </li>
                 <li class="hover:bg-primary-300 py-2">
-                    <a href="/singleview" class="block">OM OS</a>
+                    <a href="/OmOs" class="block">OM OS</a>
                 </li>
                 <li class="hover:bg-primary-300 py-2">
-                    <a href="/singleview" class="block">PROFIL</a>
+                    <a href="/" class="block">PROFIL</a>
                 </li>
                 <li class="hover:bg-primary-300 py-2">
                     <a href="/singleview" class="block"><img src="../svg/trustpilot_mobile.svg" alt="Trustpilot"></a>
@@ -67,81 +67,82 @@
     </div>
 
     <!-- Desktop Menu -->
-    <div class="hidden md:flex justify-between items-center w-full md:px-md lg:px-xl py-sm bg-gradient-to-r from-[#16312B] to-[#0C1C19]">
+    <div class="hidden md:flex items-center justify-between w-full py-sm bg-gradient-to-r from-[#16312B] to-[#0C1C19]">
         <!-- Left Navigation -->
-        <nav>
-            <ul class="flex md:space-x-md lg:space-x-xl font-title text-accent-500 font-semibold">
-                <!-- ØLPAKKER with Hover Dropdown -->
-                <li class="relative group">
-                    <a href="/Ølpakker" class="flex items-center hover:text-primary-300 text-body-sm-desktop"> ØLPAKKER
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[24px] w-[24px] ml-xs transition-transform transform group-hover:rotate-180 group-hover:text-primary-300">
-                            <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
-                        </svg>
+        <nav class="flex-1">
+          <ul class="flex justify-start ml-lg md:space-x-md lg:space-x-xl font-title text-accent-500 font-semibold">
+            <!-- ØLPAKKER with Hover Dropdown -->
+            <li class="relative group">
+              <a href="/Ølpakker" class="flex items-center hover:text-primary-300 text-body-sm-desktop"> ØLPAKKER
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[24px] w-[24px] ml-xs transition-transform transform group-hover:rotate-180 group-hover:text-primary-300">
+                  <path d="M7 10l5 5 5-5H7z" fill="currentColor" />
+                </svg>
+              </a>
+              <!-- Dropdown Menu -->
+              <div class="absolute left-0 mt-xs w-48 bg-white text-accent-500 rounded-md shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
+                <ul class="bg-accent-400 font-bold">
+                  <li class="border border-neutral-300 hover:bg-accent-600 px-sm py-xs">
+                    <a href="/singleview" class="block font-body">
+                      <div class="flex flex-col text-center items-center">
+                        <p class="text-neutral-900 text-body-sm">MALTCLUB</p>
+                        <div class="flex items-center">
+                          <div class="w-8 h-[2px] bg-neutral-900 mr-xxs"></div>
+                          <p class="text-accent-800 text-body-sm font-body">EXTRA</p>
+                          <div class="w-8 h-[2px] bg-neutral-900 ml-xxs"></div>
+                        </div>
+                      </div>
                     </a>
-                    <!-- Dropdown Menu -->
-                    <div class="absolute left-0 mt-xs w-48 bg-white text-accent-500 rounded-md shadow-lg z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
-                        <ul class="bg-accent-400 font-bold">
-                            <li class="border border-neutral-300 hover:bg-accent-600 px-sm py-xs">
-                                <a href="/singleview" class="block font-body">
-                                    <div class="flex flex-col text-center items-center">
-                                        <p class="text-neutral-900 text-body-sm">MALTCLUB</p>
-                                        <div class="flex items-center">
-                                            <div class="w-8 h-[2px] bg-neutral-900 mr-xxs"></div>
-                                            <p class="text-accent-800 text-body-sm font-body">EXTRA</p>
-                                            <div class="w-8 h-[2px] bg-neutral-900 ml-xxs"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="border border-neutral-300 hover:bg-neutral-400 px-sm py-xs">
-                                <a href="/singleview" class="block">
-                                    <div class="flex flex-col text-center items-center">
-                                        <p class="text-neutral-900 text-body-sm">MALTCLUB</p>
-                                        <div class="flex items-center">
-                                            <div class="w-8 h-[2px] bg-neutral-900 mr-xxs"></div>
-                                            <p class="text-neutral-800 text-body-sm font-body">CLASSIC</p>
-                                            <div class="w-8 h-[2px] bg-neutral-900 ml-xxs"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="border border-neutral-300 hover:bg-primary-200 px-sm py-xs">
-                                <a href="/singleview" class="block">
-                                    <div class="flex flex-col text-center items-center">
-                                        <p class="text-neutral-900 text-body-sm">MALTCLUB</p>
-                                        <div class="flex items-center">
-                                            <div class="w-8 h-[2px] bg-neutral-900 mr-xxs"></div>
-                                            <p class="text-primary-400 text-body-sm font-body">PILSNER</p>
-                                            <div class="w-8 h-[2px] bg-neutral-900 ml-xxs"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="/singleview" class="hover:text-primary-300 text-body-sm-desktop ">ØLGAVER</a>
-                </li>
-                <li>
-                    <a href="/OmOs" class="hover:text-primary-300 text-body-sm-desktop ">OM OS</a>
-                </li>
-            </ul>
+                  </li>
+                  <li class="border border-neutral-300 hover:bg-neutral-400 px-sm py-xs">
+                    <a href="/singleview" class="block">
+                      <div class="flex flex-col text-center items-center">
+                        <p class="text-neutral-900 text-body-sm">MALTCLUB</p>
+                        <div class="flex items-center">
+                          <div class="w-8 h-[2px] bg-neutral-900 mr-xxs"></div>
+                          <p class="text-neutral-800 text-body-sm font-body">CLASSIC</p>
+                          <div class="w-8 h-[2px] bg-neutral-900 ml-xxs"></div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="border border-neutral-300 hover:bg-primary-200 px-sm py-xs">
+                    <a href="/singleview" class="block">
+                      <div class="flex flex-col text-center items-center">
+                        <p class="text-neutral-900 text-body-sm">MALTCLUB</p>
+                        <div class="flex items-center">
+                          <div class="w-8 h-[2px] bg-neutral-900 mr-xxs"></div>
+                          <p class="text-primary-400 text-body-sm font-body">PILSNER</p>
+                          <div class="w-8 h-[2px] bg-neutral-900 ml-xxs"></div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="/singleview" class="hover:text-primary-300 text-body-sm-desktop">ØLGAVER</a>
+            </li>
+            <li>
+              <a href="/OmOs" class="hover:text-primary-300 text-body-sm-desktop">OM OS</a>
+            </li>
+          </ul>
         </nav>
-
+      
         <!-- Center Logo -->
-        <div>
-            <a href="/"><img src="../svg/logo.svg" alt="Logo"></a>
+        <div class="flex-shrink-0 flex items-center justify-center">
+          <a href="/">
+            <img src="../svg/logo.svg" alt="Logo" class="h-16 w-auto">
+          </a>
         </div>
-
+      
         <!-- Right Section -->
-        <div class="flex items-center md:space-x-md lg:space-x-xl">
-            <img src="../svg/trustpilot.svg" alt="Trustpilot">
-            <img src="../svg/person.svg" alt="Profile">
-            <img src="../svg/cart.svg" alt="Cart">
+        <div class="flex-1 mr-lg flex justify-end items-center space-x-sm md:space-x-md lg:space-x-lg">
+          <img src="../svg/trustpilot.svg" alt="Trustpilot" class="w-20 h-20">
+          <img src="../svg/person.svg" alt="Profile" class="w-8 h-8">
+          <img src="../svg/cart.svg" alt="Cart" class="w-8 h-8">
         </div>
-    </div>
-</div>
+      </div>
 
 <script>
     // Mobile Menu Toggle (Burger Menu)

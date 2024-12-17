@@ -2,112 +2,115 @@
 import TidligereCard from "../components/TidligereCard.astro";
 ---
        
+<section class="bg-neutral-500 h-[800px] overflow-hidden flex flex-col items-center relative">
+  <div id="sektion6">
+  <!-- Heading Section -->
+  
+  <div class="text-center">
+    <h3 class="text-primary-500 pt-lg">
+      Nysgerrig på tidligere MaltClub kasser?
+    </h3>
+      <!-- 
+    <div class="flex items-center justify-center gap-1 pb-8">
+      <h5 class="text-primary-500 font-bold font-title">Spin hjulet</h5>
+      <img src="svg/ic_round-play-arrow.svg" alt="Play arrow" class="w-6 sm:w-10">
+    </div>-->
+  </div>
 
-
-<div class="bg-neutral-500 p-lg sm:p-lg md:p-lg lg:p-xl lg:pl-2xl z-10 relative overflow-hidden">
-     <div>
-      <h3 class="text-primary-500 pb-xs">
-        Nysgerrig på tidligere MaltClub kasser? 
-      </h3>
-
-      <div class="flex items-center gap-xxxs lg:pb-2xl">
-        <h5 class="text-primary-500 font-bold font-title pb-xxxs">
-          Spin hjulet
-        </h5>
-        <img src="svg/ic_round-play-arrow.svg" alt="Play arrow" class="w-6 sm:w-10 md:w-10 lg:w-10 xl:w-10">
-      </div>
-    </div>
-      
-      <!-- Selve hjulet /m knap-->
-      <div class="relative flex justify-center items-center mt-[90%] md:mt-[52%]"> 
-        <!-- Knappen -->
-        <button
-          id="spinButton"
-          class="absolute z-10 flex justify-start items-start ml-[30%] -mt-[188%] sm:ml-[21%] sm:-mt-[100%] md:ml-[9.8%] md:-mt-[42%] lg:-mt-[54%] lg:-ml-[5.5%] xl:-mt-[54%] xl:-ml-[2%]">
-          <img src="img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="w-[50%] sm:w-[50%] md:w-[70%] lg:w-[90%]">
-        </button>
- 
-     <!-- Container for kortene -->
- <div id="carousel-wrapper" class="relative w-[300px] h-[300px] ml-[2.5%] mt-[200%] sm:ml-[13.2%] sm:mt-[33%] md:ml-[11.8%] md:mt-[44%] lg:-ml-[0.4%] lg:mt-[12%] xl:-ml-[0.4%] xl:-mt-[12%]">
-    <div id="carousel" class="absolute w-[280px] h-[280px] transition-transform">
-      <!-- Januar (300 grader) -->
+  <!-- Container for the carousel with absolute positioning -->
+  <div class="flex justify-center items-center">
+    <div id="carousel" class="absolute top-[100%] w-[280px] h-[280px] transition-transform">
+      <!-- Carousel Items (Months) -->
+      <!-- January -->
       <div class="absolute" style="transform: rotate(330deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/januar.webp" alt="billed af ølflasker" month="Januar">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/januar.webp" alt="billed af ølflasker" month="Januar"></TidligereCard>
       </div>
-      <!-- Februar (500 grader) -->
+      <!-- February -->
       <div class="absolute" style="transform: rotate(300deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/februar.webp" alt="billed af ølflasker" month="Februar">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/februar.webp" alt="billed af ølflasker" month="Februar"></TidligereCard>
       </div>
-      <!-- Marts (270 grader) -->
+      <!-- March -->
       <div class="absolute" style="transform: rotate(270deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/marts.webp" alt="billed af ølflasker" month="Marts" class="w-[4px] h-[4px]">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/marts.webp" alt="billed af ølflasker" month="Marts"></TidligereCard>
       </div>
-      <!-- April (240 grader) -->
+      <!-- April -->
       <div class="absolute" style="transform: rotate(240deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/april.webp" alt="billed af ølflasker" month="April">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/april.webp" alt="billed af ølflasker" month="April"></TidligereCard>
       </div>
-      <!-- Maj (210 grader) -->
+      <!-- May -->
       <div class="absolute" style="transform: rotate(210deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/maj.webp" alt="billed af ølflasker" month="Maj">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/maj.webp" alt="billed af ølflasker" month="Maj"></TidligereCard>
       </div>
-      <!-- Juni (180 grader) -->
+      <!-- June -->
       <div class="absolute" style="transform: rotate(180deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/juni.webp" alt="billed af ølflasker" month="Juni">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/juni.webp" alt="billed af ølflasker" month="Juni"></TidligereCard>
       </div>
-      <!-- Juli (150 grader) -->
+      <!-- July -->
       <div class="absolute" style="transform: rotate(150deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/juli.webp" alt="billed af ølflasker" month="Juli">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/juli.webp" alt="billed af ølflasker" month="Juli"></TidligereCard>
       </div>
-      <!-- August (120 grader) -->
+      <!-- August -->
       <div class="absolute" style="transform: rotate(120deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/august.webp" alt="billed af ølflasker" month="August">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/august.webp" alt="billed af ølflasker" month="August"></TidligereCard>
       </div>
-      <!-- September (90 grader) -->
+      <!-- September -->
       <div class="absolute" style="transform: rotate(90deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/september.webp" alt="billed af ølflasker" month="September">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/september.webp" alt="billed af ølflasker" month="September"></TidligereCard>
       </div>
-      <!-- Oktober (60 grader) -->
+      <!-- October -->
       <div class="absolute" style="transform: rotate(60deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/oktober.webp" alt="billed af ølflasker" month="Oktober">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/oktober.webp" alt="billed af ølflasker" month="Oktober"></TidligereCard>
       </div>
-      <!-- November (30 grader) -->
+      <!-- November -->
       <div class="absolute" style="transform: rotate(30deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/november.webp" alt="billed af ølflasker" month="November">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/november.webp" alt="billed af ølflasker" month="November"></TidligereCard>
       </div>
-      <!-- December ( grader) -->
+      <!-- December -->
       <div class="absolute" style="transform: rotate(0deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="img/img_hjul/december.webp" alt="billed af ølflasker" month="December">
-        </TidligereCard>
+        <TidligereCard img="../img/img_hjul/december.webp" alt="billed af ølflasker" month="December"></TidligereCard>
       </div>
     </div>
   </div>
-  
-  
-  <!-- Button for at starte rotation -->
-  <button id="spinButton"></button>
-  
-  <script>
-    let angle = 0;
-    const carousel = document.getElementById('carousel');
-    const spinButton = document.getElementById('spinButton');
-    
-    spinButton.addEventListener('click', () => {
-      angle += -30; // Rotér 30 grader pr. klik
-      carousel.style.transform = `rotate(${angle}deg)`; // Rotér hele containeren
-    });
-  </script>
-        
+
+  <!-- Spin Button -->
+  <div class="absolute bottom-32 left-0 right-0 flex justify-center items-center z-10">
+    <button id="spinButton" class="pulse-animation">
+      <img src="../img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="w-32">
+    </button>
+  </div>
 </div>
+</section>
 
+<style>
+  @keyframes pulseCustom {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      
+    }
+  }
 
+  .pulse-animation {
+    animation: pulseCustom 1s infinite;
+  }
+</style>
+
+<script>
+  let angle = 0;
+  const carousel = document.getElementById('carousel');
+  const spinButton = document.getElementById('spinButton');
+
+  // Sæt transform-origin til center, så rotationen sker fra midten
+  carousel.style.transformOrigin = 'center';
+
+  spinButton.addEventListener('click', () => {
+    angle += -30; // Rotér 30 grader pr. klik
+    carousel.style.transform = `rotate(${angle}deg)`; // Rotér hele containeren
+  });
+</script>

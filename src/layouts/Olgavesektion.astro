@@ -2,49 +2,53 @@
 import Olgave from "../components/Olgave.astro";
 import Secondarybutton from "../components/Secondarybutton.astro";
 ---
-<section> <!-- Parent Section -->
-  <!-- Background with Overlay -->
+<section> 
   <div class="relative bg-[url('../img/ol_gave.webp')] bg-cover bg-center">
     <!-- Dark Overlay -->
     <div class="absolute inset-0 bg-black/70"></div>
       
-  <!-- Content Container -->
-  <div class="relative max-w-7xl mx-auto content py-xl">
-    <!-- Header Section -->
-    <div class="pb-lg text-center">
-      <h2 class="text-accent-500 text-h2-mobile md:text-h2-desktop">
-        På udkig efter en ølgave?
-      </h2>
-    </div>
-
-    <!-- Olgave Items -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-16">
-      <Olgave
-        icon="./svg/line-md_calendar.png"
-        title="Vælg varighed"
-        text="Du bestemmer, om gaven skal vare en måned, to, eller mere – helt uden binding."
-        class="text-center"></Olgave>
-
-
-  <Olgave
+    <!-- Content Container -->
+    <div id="sektion7" class="relative py-xl flex flex-col items-center">
+      <!-- Header Section -->
+      <div class="pb-lg text-center w-full">
+        <h2 class="text-accent-500 text-h2-mobile md:text-h2-desktop">
+          På udkig efter en ølgave?
+        </h2>
+      </div>
+    
+      <!-- Olgave Items -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-16 w-full max-w-7xl px-sm">
+        <Olgave
+          icon="./svg/line-md_calendar.png"
+          title="Vælg varighed"
+          text="Du bestemmer, om gaven skal vare en måned, to, eller mere – helt uden binding."
+          class="text-center">
+        </Olgave>
+    
+        <Olgave
           icon="./svg/akar-icons_stop.png"
           title="Problemfrit"
           text="Abonnementet stopper automatisk, så du skal ikke tænke på noget bagefter."
-          class="text-center"></Olgave>
+          class="text-center">
+        </Olgave>
+    
         <Olgave
           icon="./svg/Group 140.png"
           title="Unikke oplevelser"
           text="Fra spændende mikrobryg til ikoniske klassikere – hver levering er en oplevelse."
-          class="text-center"></Olgave>
+          class="text-center">
+        </Olgave>
       </div>
+    
       <!-- Button Section -->
-      <div class="flex justify-center pt-lg">
+      <div class="flex justify-center pt-xl">
         <Secondarybutton 
-          variant="primary" 
+        link="/singleview"
+          variant="pilsner" 
           size="medium" 
           width="large" 
           className="w-full md:w-auto">
-          Bestil gave idag!
+          Bestil gave i dag!
         </Secondarybutton>
       </div>
     </div>
