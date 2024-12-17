@@ -2,7 +2,7 @@
 import TidligereCard from "../components/TidligereCard.astro";
 ---
        
-<div class="bg-neutral-500 h-[700px] md:h-[800px] lg:h-[800px] overflow-hidden flex flex-col items-center relative">
+<div class="bg-neutral-500 h-[800px] overflow-hidden flex flex-col items-center relative">
   <!-- Heading Section -->
   <div class="text-center">
     <h3 class="text-primary-500 pt-lg">
@@ -82,10 +82,11 @@ import TidligereCard from "../components/TidligereCard.astro";
   const carousel = document.getElementById('carousel');
   const spinButton = document.getElementById('spinButton');
 
+  // Sæt transform-origin til center, så rotationen sker fra midten
+  carousel.style.transformOrigin = 'center';
+
   spinButton.addEventListener('click', () => {
     angle += -30; // Rotér 30 grader pr. klik
     carousel.style.transform = `rotate(${angle}deg)`; // Rotér hele containeren
   });
 </script>
-
-
