@@ -19,7 +19,7 @@ import TidligereCard from "../components/TidligereCard.astro";
 
   <!-- Container for the carousel with absolute positioning -->
   <div class="flex justify-center items-center">
-    <div id="carousel" class="absolute top-[100%] w-[280px] h-[280px] transition-transform">
+    <div id="carousel" class="absolute top-[100%] w-[280px] h-[280px] transition-transform" style="transform-origin: center;">
       <!-- Carousel Items (Months) -->
       <!-- January -->
       <div class="absolute" style="transform: rotate(330deg) translate(600px) rotate(-270deg);">
@@ -106,11 +106,9 @@ import TidligereCard from "../components/TidligereCard.astro";
   const carousel = document.getElementById('carousel');
   const spinButton = document.getElementById('spinButton');
 
-  // Sæt transform-origin til center, så rotationen sker fra midten
-  carousel.style.transformOrigin = 'center';
 
   spinButton.addEventListener('click', () => {
-    angle += -30; // Rotér 30 grader pr. klik
-    carousel.style.transform = `rotate(${angle}deg)`; // Rotér hele containeren
+    angle += -30; // Rotate 30 degrees per click
+    carousel.style.transform = `rotate(${angle}deg)`; // Rotate the entire container
   });
 </script>
