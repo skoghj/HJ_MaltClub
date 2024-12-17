@@ -5,14 +5,14 @@ const { url = "#", cardimage = "", cardimagealt = "", procuktnavn = "", kortbesk
 ---
 
 <article class="card @container">
-  <a href={url} class="flex flex-col justify-between h-full">
+  <a href={url} class="flex flex-col justify-between">
     <header class="daseholdheader relative w-full h-auto">
       <div class="relative">
         <div class="absolute inset-0 w-full z-10"></div>
         <img src={cardimage} alt={cardimagealt} class="w-full object-cover h-auto bg-neutral-400 z-10" />
       </div>
     </header>
-    <section class="bg-primary-700 w-full grow flex flex-col">
+    <section class="bg-primary-700 w-full grow flex flex-col h-auto">
       <div class="flex flex-col grow text-accent-500">
         <div class="flex justify-between items-baseline px-xs pt-xs">
           <h3 class="text-h3-mobile">{procuktnavn}</h3>
@@ -25,7 +25,7 @@ const { url = "#", cardimage = "", cardimagealt = "", procuktnavn = "", kortbesk
           </div>
         </div>
       </div>
-      <div class="grow flex flex-wrap gap-xs px-xs py-md items-baseline justify-between text-accent-500">
+      <div class="grow flex flex-wrap gap-xs px-xs py-xs md:py-md items-baseline justify-between text-accent-500">
         <h3 class="text-h3-mobile">{pris}</h3>
         <Secondarybutton variant="primary" size="small" width="small">Se mere</Secondarybutton>
       </div>

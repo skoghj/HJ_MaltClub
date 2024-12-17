@@ -3,91 +3,92 @@ const { url = "#", cardimage = "", cardimagealt = "", procuktnavn = "", kortbesk
 import Secondarybutton from "./Secondarybutton.astro";
 ---
 
-<section class="flex flex-wrap justify-center items-center mx-auto px-sm bg-primary-500 text-accent-500">
-  <section class="md:grid md:grid-cols-2 md:gap-2xl md:items-center">
-    <div class="">
-      <!--<img src={cardimage} alt={cardimagealt}  -->
-      <img src="/maltclub.webp" alt="maltclub xl abonnement" class="md:col-start-1" />
-    </div>
-
-    <div class="md:col-start-2">
-      <h3 class="text-h1-mobile lg:text-h3-desktop">Maltclub</h3>
-      <div class="flex flex-wrap gap-xs py-xxs">
-        <div class="flex bg-accent-500 px-xs py-xxs rounded-full gap-xxs">
-          <img src="/quality_icon.svg" alt="quality ikon" class="w-md" />
-          <p class="text-primary-500">5-6 kvalitetsøl</p>
-        </div>
-        <div class="flex bg-accent-500 px-xs py-xxs rounded-full gap-xxs">
-          <img src="/lock_icon.svg" alt="ingen binding ikon" class="w-xs" />
-          <p class="text-primary-500">Ingen binding</p>
-        </div>
+<section class="w-full flex flex-wrap justify-center items-center mx-auto bg-primary-500 text-accent-500">
+  <div class="px-sm w-full lg:max-w-7xl mx-auto items-center flex flex-col">
+    <section class="w-full lg:grid lg:grid-cols-2 lg:gap-2xl lg:items-center">
+      <div class="pt-sm pb-xl lg:pt-none lg:pb-none">
+        <img src="/maltclub.webp" alt="maltclub xl abonnement" class="items-center justify-center flex mx-auto md:w-[500px] lg:col-start-1" />
       </div>
-      <div class="pt-sm">
-        <p>Vi håndplukker et udvalg af gode specialøl til dig hver måned og leverer til nærmeste pakkeshop.</p>
-      </div>
-      <div class="w-full py-md">
-        <div class="flex w-full border-b-2 border-accent-500 py-xxs justfify-between items-center gap-md">
-          <div>
-            <img src="/Ol_ks_levering.svg" alt="levering icon" class="w-lg" />
-          </div>
-          <div class="flex gap-xxs">
-            <p>DKK 275</p>
-            <p>/ md. inkl. moms</p>
-          </div>
-          <!--desktop version shopping cart count nummer -->
-          <div class="hidden md:flex py-xxs gap-sm ml-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtn">
-              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
-            </svg>
-            <p id="cartCount">01</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtn">
-              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
-        </div>
-        <!--mobile version shopping cart count nummer -->
-        <div class="flex justify-between items-center gap-xs py-xs">
-          <div class="flex py-xxs gap-sm md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtnMobil">
-              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
-            </svg>
-            <p id="cartCountMobil">01</p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtnMobil">
-              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
-            </svg>
-          </div>
-         <div class="w-full py-sm"> <Secondarybutton variant="secondary" size="small" link="/tilmeld" width="large" className="sm:size-small md:size-medium lg:size-large">Tilføj til kurv</Secondarybutton></div>
-        </div>
 
-        <!--Shopping cart i headeren (mulig at tilføje til kurvikon) 
+      <div class="md:col-start-2">
+        <h3 class="text-h1-mobile lg:text-h3-desktop">Maltclub</h3>
+        <div class="flex flex-wrap gap-xs py-xxs">
+          <div class="flex bg-accent-500 px-xs py-xxs rounded-full gap-xxs">
+            <img src="/quality_icon.svg" alt="quality ikon" class="w-md" />
+            <p class="text-primary-500">5-6 kvalitetsøl</p>
+          </div>
+          <div class="flex bg-accent-500 px-xs py-xxs rounded-full gap-xxs">
+            <img src="/lock_icon.svg" alt="ingen binding ikon" class="w-xs" />
+            <p class="text-primary-500">Ingen binding</p>
+          </div>
+        </div>
+        <div class="pt-sm">
+          <p>Vi håndplukker et udvalg af gode specialøl til dig hver måned og leverer til nærmeste pakkeshop.</p>
+        </div>
+        <div class="w-full py-md">
+          <div class="flex w-full border-b-2 border-accent-500 py-xxs justfify-between items-center gap-md">
+            <div>
+              <img src="/Ol_ks_levering.svg" alt="levering icon" class="w-lg" />
+            </div>
+            <div class="flex gap-xxs">
+              <p>DKK 275</p>
+              <p>/ md. inkl. moms</p>
+            </div>
+            <!--desktop version shopping cart count nummer -->
+            <div class="hidden md:flex py-xxs gap-sm ml-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtn">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
+              </svg>
+              <p id="cartCount">01</p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtn">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+          <!--mobile version shopping cart count nummer -->
+          <div class="flex justify-between items-center gap-xs py-xs">
+            <div class="flex py-xxs gap-sm md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtnMobil">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
+              </svg>
+              <p id="cartCountMobil">01</p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtnMobil">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="w-full py-sm"><Secondarybutton variant="secondary" size="medium" link="/tilmeld" width="large" className="sm:size-small md:size-medium lg:size-large">Tilføj til kurv</Secondarybutton></div>
+          </div>
+
+          <!--Shopping cart i headeren (mulig at tilføje til kurvikon) 
         <p id="totalItems">Total Items: 0</p>-->
-      </div>
-    </div>
-  </section>
-
-  <section class="w-full py-xxs justify-start items-center gap-xxs md:grid md:grid-cols-2 md:gap-2xl md:max-w-7xl">
-    <div class="accordion-item item flex flex-col w-full justify-between items-center gap-xs md:col-start-2">
-      <div class="accordion-header w-full flex justify-between border-b-2 border-accent-500 py-xxxs">
-        <p>Beskrivelser</p>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-sm accordion-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-        </svg>
-      </div>
-      <div class="accordion-content hidden">
-        <p>{detajerbeskrivelse}</p>
-        <div>
-          <p class="py-xs">MaltClub Øl Abonnement – Kvalitetsøl leveret til døren for kun DKK 275/md. inkl. fragt.</p>
-          <div>
-            <li>5-6 nøje udvalgte specialøl – Håndplukket fra både ind- og udland.</li>
-            <li>Unikke øloplevelser – Øl, du sjældent finder i supermarkedet.</li>
-            <li>Tilpasset sæson og højtider – Vi vælger øl, der passer perfekt til tiden på året.</li>
-            <li>Respekt for håndværk og historie – Kvalitet og tradition er i fokus.</li>
-          </div>
-          <p class="py-xs">Læn dig tilbage og glæd dig til nye, lækre øloplevelser hver måned!</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="w-full py-xxs justify-start items-center gap-xxs lg:grid lg:grid-cols-2 lg:gap-2xl lg:max-w-7xl">
+      <div class="accordion-item item flex flex-col w-full justify-between items-center gap-xs md:col-start-2">
+        <div class="accordion-header w-full flex justify-between border-b-2 border-accent-500 py-xxxs">
+          <p>Beskrivelser</p>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-sm accordion-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+          </svg>
+        </div>
+        <div class="accordion-content hidden">
+          <p>{detajerbeskrivelse}</p>
+          <div>
+            <p class="py-xs">MaltClub Øl Abonnement – Kvalitetsøl leveret til døren for kun DKK 275/md. inkl. fragt.</p>
+            <div>
+              <li>5-6 nøje udvalgte specialøl – Håndplukket fra både ind- og udland.</li>
+              <li>Unikke øloplevelser – Øl, du sjældent finder i supermarkedet.</li>
+              <li>Tilpasset sæson og højtider – Vi vælger øl, der passer perfekt til tiden på året.</li>
+              <li>Respekt for håndværk og historie – Kvalitet og tradition er i fokus.</li>
+            </div>
+            <p class="py-xs">Læn dig tilbage og glæd dig til nye, lækre øloplevelser hver måned!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </section>
 
 <script>
