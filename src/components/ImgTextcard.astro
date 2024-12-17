@@ -3,31 +3,25 @@ const { imgimage = "", imagealt = "", subtitle, title, text } = Astro.props
 ---
 
 <article id="sektion2" class="bg-accent-500">
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      <!-- Venstre side med billede -->
-      <div class="flex items-center justify-center">
-        <div class="relative w-full h-auto md:w-[540px] md:h-[520px]">
-          <!-- Billede (Skjules på mobil, vises på større skærme) -->
-          <img src={imgimage} alt={imagealt} class="hidden md:block absolute w-full h-auto md:h-full md:-ml-[6.5rem] md:top-0">
+    <div class="flex flex:col sm:flex-row">
+        <div class="">
+          <img src={imgimage} alt={imagealt} class="hidden md:block w-full h-auto md:h-full md:-ml-[6.5rem] md:top-0">
         </div>
-      </div>
-      
-      <!-- Højre side med tekst -->
-      <div class="p-ml md:p-xxs lg:pl-2xl lg:pr-2xl md:-ml-[5%] lg:-ml-[12rem]">
-        <!-- Bruger h3 typografier til mobil, tablet og desktop -->
-        <h5 class="text-h4-mobile md:text-h5-tablet lg:text-h5-desktop text-primary-400 mb-2">
-          {subtitle}
-        </h5>
-        <h3 class="text-h1-mobile md:text-h3-tablet lg:text-h3-desktop text-primary-400 mb-4 md:mt-xl">
-          {title}
-        </h3>
+    
+        <div class="">
         
-        <!-- Bruger body typografier til mobil, tablet og desktop -->
-        <p class="font-serif text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-primary-400 pt-sm mb-4 md:mb-6 lg:mb-xxs lg:mr-xl">
-          {text}
-        </p>
-         
-      </div>
+          <h5 class=" text-primary-400">
+            {subtitle}
+          </h5>
+          <h3 class="text-primary-400">
+            {title}
+          </h3>
+          
+
+          <p class="font-serif text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-primary-400">
+            {text}
+          </p>
+        </div>
     </div>
 </article>
 
