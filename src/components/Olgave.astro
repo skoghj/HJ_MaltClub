@@ -2,15 +2,14 @@
 const { title, icon, text} = Astro.props
 ---
 
-<div class="max-w-lg flex items-start gap-4 text-accent-500 ">
-  <!-- Icon -->
-  <div class="flex-shrink-0">
-    <img src={icon} alt="Information Icon" class="h-6 w-6">
-  </div>
-
-  <!-- Content -->
+<div class=" flex items-center max-w-[250px] gap-4 text-accent-500">
+  <!-- CText -->
   <div>
-    <h5 class="lg:h5-desktop md:h5-tablet sm:h5-mobile mb-xxs">{title}</h5>
-    <p class="sm:body-sm md:body-sm-tablet lg:body-sm-desktop">{text}</p>
+    <h5 class="flex items-center gap-2">
+      <!-- Icon -->
+      <img src={icon} alt="Information Icon" class="h-6 w-6">
+      {title}
+    </h5>
+    <p class="">{text}</p>
   </div>
 </div>
