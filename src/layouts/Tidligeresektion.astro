@@ -73,12 +73,32 @@ import TidligereCard from "../components/TidligereCard.astro";
 
   <!-- Spin Button -->
   <div class="absolute bottom-32 left-0 right-0 flex justify-center items-center z-10">
-    <button id="spinButton">
+    <button id="spinButton" class="pulse-animation">
       <img src="img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="w-32">
     </button>
   </div>
 </div>
 </section>
+
+<style>
+  @keyframes pulseCustom {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      
+    }
+  }
+
+  .pulse-animation {
+    animation: pulseCustom 1s infinite;
+  }
+</style>
 
 <script>
   let angle = 0;
