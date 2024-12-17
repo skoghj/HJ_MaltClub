@@ -7,27 +7,27 @@ import SingleviewAnbefalecard from "../components/SingleviewAnbefalecard.astro";
 ---
 
 <MainLayout title="singleview">
-  <section class="bg-primary-500 pt-xl main-content ">
+  <section class="bg-primary-500 pt-xl main-content">
     <div class="max-w-7xl mx-auto opacity-0 flex"><SingleviewProduktcard /></div>
   </section>
 
   <section class="bg-primary-500">
     <div class="pt-md pb-xl px-sm md:pt-ml lg:pt-xl text-accent-500 flex flex-col max-w-7xl mx-auto">
-      <h4 class="text-h1-mobile lg:text-h4-desktop py-ml md:px-sm">Andre kunder købte også</h4>
+      <h4 class="text-h1-mobile lg:text-h4-desktop py-ml">Andre kunder købte også</h4>
       <div id="controls-carousel" class="relative w-full md:hidden" data-carousel="static">
         <!-------------------- Carousel wrapper til mobil ---------------------------------->
         <div class="aspect-[16/20] overflow-hidden rounded-xs md:h-auto">
           <!-- Item 1 -->
           <div class="duration-700 ease-in-out w-full" data-carousel-item>
-            <SingleviewAnbefalecard url="" cardimage="maltclub_xl.webp" cardimagealt="maltclub xl abonnement" procuktnavn="MALTCLUB XL" , kortbeskrivelse="Består af 9-11 kvalitetsøl" , pris="DKK 465" />
+            <SingleviewAnbefalecard url="" cardimage="maltclub_xl.webp" cardimagealt="maltclub xl abonnement" procuktnavn="MALTCLUB EXTRA" , kortbeskrivelse="Består af 9-11 kvalitetsøl" , pris="DKK 465" />
           </div>
           <!-- Item 2 -->
           <div class="duration-700 ease-in-out w-full" data-carousel-item>
-            <SingleviewAnbefalecard url="" cardimage="maltclub.webp" cardimagealt="maltclub abonnement" procuktnavn="MALTCLUB" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+            <SingleviewAnbefalecard url="" cardimage="maltclub.webp" cardimagealt="maltclub abonnement" procuktnavn="MALTCLUB CLASSIC" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
           </div>
           <!-- Item 3 -->
           <div class="duration-700 ease-in-out w-full" data-carousel-item>
-            <SingleviewAnbefalecard url="" cardimage="maltclub_u_ipa.webp" cardimagealt="maltclub uden ipa abonnement" procuktnavn="MALTCLUB U/IPA" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+            <SingleviewAnbefalecard url="" cardimage="maltclub_u_ipa.webp" cardimagealt="maltclub uden ipa abonnement" procuktnavn="MALTCLUB PILSNER" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
           </div>
           <!-- Item 4 -->
           <div class="duration-700 ease-in-out w-full" data-carousel-item>
@@ -54,11 +54,11 @@ import SingleviewAnbefalecard from "../components/SingleviewAnbefalecard.astro";
       </div>
       <!-------------------Desktop------------------------------------------------------------->
       <div class="hidden md:max-w-7xl md:grid md:grid-cols-[repeat(auto-fill,_minmax(290px,_1fr))] md:gap-sm pb-2xl">
-        <SingleviewAnbefalecard url="" cardimage="maltclub_xl.webp" cardimagealt="maltclub xl abonnement" procuktnavn="MALTCLUB XL" , kortbeskrivelse="Består af 9-11 kvalitetsøl" , pris="DKK 456" />
+        <SingleviewAnbefalecard url="" cardimage="maltclub_xl.webp" cardimagealt="maltclub xl abonnement" procuktnavn="MALTCLUB EXTRA" , kortbeskrivelse="Består af 9-11 kvalitetsøl" , pris="DKK 456" />
 
-        <SingleviewAnbefalecard url="" cardimage="maltclub.webp" cardimagealt="maltclub abonnement" procuktnavn="MALTCLUB" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+        <SingleviewAnbefalecard url="" cardimage="maltclub.webp" cardimagealt="maltclub abonnement" procuktnavn="MALTCLUB CLASSIC" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
 
-        <SingleviewAnbefalecard url="" cardimage="maltclub_u_ipa.webp" cardimagealt="maltclub uden ipa abonnement" procuktnavn="MALTCLUB U/IPA" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
+        <SingleviewAnbefalecard url="" cardimage="maltclub_u_ipa.webp" cardimagealt="maltclub uden ipa abonnement" procuktnavn="MALTCLUB PILSNER" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
 
         <SingleviewAnbefalecard url="" cardimage="maltclub_gave.webp" cardimagealt="maltclub gave abonnement" procuktnavn="MALTCLUB GAVE" , kortbeskrivelse="Består af 5-6 kvalitetsøl" , pris="DKK 275" />
       </div>
