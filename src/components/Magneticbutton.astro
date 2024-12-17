@@ -2,20 +2,19 @@
 const { text, link, size = "medium", variant = "primary" } = Astro.props;
 
 const sizeClasses = {
-  small: "px-md py-md text-h5-mobile md:text-h5-tablet lg:text-h5-desktop",
-  medium:"px-lg py-md text-h4-mobile md:text-h4-tablet lg:text-h4-desktop",
-  large: "px-xl py-xl text-h3-mobile md:text-h3-tablet lg:text-h3-desktop",
+  small: "px-[80px] py-sm text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop",
+  medium:"px-[80px] py-sm text-body-md md:text-body-md-tablet lg:text-body-md-desktop",
+  large: "px-[80px] py-sm text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop",
 };
 
 const variantClasses = {
   
-
   primary:
     "bg-primary-500 text-accent-500 font-title border-primary-500 hover:bg-primary-400 hover:text-white",
   secondary:
-    "text-primary-500 border-primary-500 font-title hover:bg-primary-500 hover:text-accent-500",
-    tertiary:
-     "bg-neutral-500 border text-primary-500 font-title font-semibold border-primary-500 hover:bg-primary-400 hover:text-accent-500 transition"
+    "bg-accent-500 hover:bg-neutral-300 focus:bg-accent-500 focus:border-3 focus:border-accent-200 active:bg-accent-200 text-primary-500",
+    accent:
+     "bg-accent-700 border text-accent-950 font-title font-semibold border-primary-500 hover:bg-accent-800 transition"
 };
 
 const baseClasses =
@@ -27,22 +26,6 @@ const baseClasses =
 </button>
 </a>
 
-<style>@keyframes subtlePulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.05);
-  }
-  50% {
-    transform: scale(1.03);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.05);
-  }
-}
-
-</style>
 
 <script>
 const buttons = document.querySelectorAll('.magnetic-btn');

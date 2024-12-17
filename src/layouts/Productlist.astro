@@ -1,6 +1,6 @@
 ---
-import Listproduct from "../components/Listproduct.astro"
-import Organicbutton from "../components/Organicbutton.astro"
+import Secondarybutton from "../components/Secondarybutton.astro"
+
 ---
 <div>
     <!-- Top Box, all content -->
@@ -23,10 +23,13 @@ import Organicbutton from "../components/Organicbutton.astro"
               </div>
                 <!-- Button -->
               <div class="flex justify-center">
-                <a href="https://example.com" 
-                  class="bg-accent-800 hover:bg-accent-700 text-neutral-100 font-semibold py-sm px-xl transition duration-300">
-                    KOM I GANG
-                </a>
+                <Secondarybutton 
+                link="/singleview"
+                variant="extra" 
+                size="medium" 
+                width="base" >
+               GØR ØLKÆLDEREN KLAR
+              </Secondarybutton>
             </div>
             </div>
           </div>
@@ -45,6 +48,7 @@ import Organicbutton from "../components/Organicbutton.astro"
   <article class="left-box py-lg bg-neutral-400 flex flex-col flex-[0_0_62%] md:flex-[0_0_62%]">
     <!-- Title, text, button -->
     <div class="flex flex-col items-center">
+      
       <!-- Title -->
       <div class="flex flex-col items-center">
         <h3 class="text-neutral-900 font-body">MALTCLUB</h3>
@@ -56,15 +60,22 @@ import Organicbutton from "../components/Organicbutton.astro"
         <div class="flex justify-center pt-sm">
           <img src="../img/maltClub.webp" alt="Description of image" class="w-full max-w-[60%] h-auto object-cover">
         </div>
+
         <!-- Text -->
         <div class="pt-sm pb-lg max-w-[300px] font-medium text-center">
           <p>5-6 nøje udvalgte specialøl – Håndplukket fra både ind- og udland.</p>
         </div>
+
         <!-- Button -->
         <div class="flex justify-center">
-          <a href="https://example.com" class="bg-neutral-800 hover:bg-accent-700 text-neutral-100 font-semibold py-sm px-xl transition duration-300">
-            KOM I GANG
-          </a>
+          <Secondarybutton 
+                link="/singleview"
+                variant="classic" 
+                size="medium" 
+                width="base" 
+                >
+                KOM I GANG
+              </Secondarybutton>
         </div>
       </div>
     </div>
@@ -91,9 +102,14 @@ import Organicbutton from "../components/Organicbutton.astro"
         </div>
         <!-- Button -->
         <div class="flex justify-center">
-          <a href="https://example.com" class="bg-primary-500 hover:bg-accent-700 text-neutral-100 font-semibold py-sm px-xl transition duration-300">
-            KOM I GANG
-          </a>
+          <Secondarybutton 
+          link="/singleview"
+          variant="pilsner" 
+          size="medium" 
+          width="base" 
+          >
+         GØR ØLKÆLDEREN KLAR
+        </Secondarybutton>
         </div>
       </div>
     </div>
