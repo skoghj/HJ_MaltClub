@@ -17,18 +17,19 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 
 <div class="bg-primary-500 lg:p-l lg:pl-20">
+  <div class="hidden lg:block w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bg-accent-800 rounded-full -z-1 absolute top-0 left-0 lg:translate-x-[155%] lg:translate-y-[35%]"></div>
   <div class="flex flex-col lg:flex-row pt-ml py-lg px-ml lg:p-2xl text-accent-500">
     <!-- Text Section (Heading, Image, and Paragraph) -->
     <div class="flex flex-col lg:max-w-md lg:pr-0">
       <!-- Heading -->
       <h2 class="text-h2-mobile md:text-h2-tablet lg:text-h2-desktop pb-sm lg:pb-xl font-serif">
-        <span>Øl med perfektion  </span><span>i hver tør!</span>
-      </h2>
+        <span class="mr-4">Øl med perfektion</span> <span>i hver tør!</span>
+      </h2>      
       
       <!-- Image Section -->
-      <div class="flex justify-center lg:hidden mb-4">
+      <div class="flex justify-center lg:hidden mb-4 z-20">
         <img 
-          src="img/img_profil/malt_team.webp" 
+          src="svg/beergroup.svg" 
           alt="profilbilleder af virksomhedens ejere" 
           class="w-96 h-96">
       </div>
@@ -40,11 +41,11 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
 
     <!-- Image Section for Desktop -->
-    <div class="hidden lg:flex justify-center lg:ml-48 mt-6 lg:mt-0">
+    <div class="hidden lg:flex justify-center lg:ml-48 mt-6 lg:mt-0 z-20">
       <img 
-        src="img/img_profil/malt_team.webp" 
-        alt="profilbilleder af virksomhedens ejere" 
-        class="lg:w-[28rem] lg:h-[28rem]">
+        src="svg/beergroup.svg"  
+        alt="Billed af ølflasker liggende med forskellige vinkler"  
+        class="lg:w-[29rem] lg:h-[29rem]">
     </div>
   </div>
 </div>
