@@ -70,7 +70,7 @@ import AnmeldelsesCard from "../components/AnmeldelsesCard.astro";
       <!-- Navigation Controls (Arrows) -->
       <button 
         @click="currentIndex = (currentIndex === 0) ? totalCards - 1 : currentIndex - 1"  
-        class="absolute top-1/2 left-0 transform -translate-y-1/2 text-accent-800 p-3">
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 text-accent-800 p-3 bg-neutral-300 rounded-full shadow-lg">
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
@@ -78,7 +78,7 @@ import AnmeldelsesCard from "../components/AnmeldelsesCard.astro";
 
       <button 
         @click="currentIndex = (currentIndex + 1) % totalCards"
-        class="absolute top-1/2 right-0 transform -translate-y-1/2 text-accent-800 p-3">
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 text-accent-800 p-3 bg-neutral-300 rounded-full shadow-lg">
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
