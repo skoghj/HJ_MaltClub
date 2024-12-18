@@ -5,23 +5,23 @@ import Secondarybutton from "./Secondarybutton.astro";
 <!-------------------------- Odreoversigt ------------------------------------>
 <section class="bg-accent-500 py-[70px] px-sm">
   <section id="odreoversigt" class="section lg:max-w-7xl mx-auto flex flex-col flex-wrap items-center">
-    <div class="">
-      <h1 class="text-h1-mobile pb-xl md:px-xl lg:text-h4-desktop text-primary-400">Ordreoversigt</h1>
+    <div class="bg-neutral-300 px-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-h1-mobile py-md md:px-xl lg:text-h4-desktop text-primary-400">Ordreoversigt</h1>
+        <h4 class="text-primary-400" id="backButton">x</h4>
+      </div>
 
-      <div class="md:grid md:grid-cols-2 md:gap-ml lg:gap-2xl">
+      <div class="md:grid md:grid-cols-2 pb-ml md:gap-ml lg:gap-2xl">
         <!--cirkelform bg med billedet -->
         <div class="relative">
-          <div class="w-[250px] h-[250px] md:h-[350px] md:w-[350px] lg:w-[450px] lg:h-[450px] bg-accent-700 rounded-full flex items-center justify-center">
+          <div class="w-[250px] h-[250px] md:h-[300px] md:w-[300px] lg:w-[370px] lg:h-[370px] bg-accent-700 rounded-full flex items-center justify-center">
             <img src="../img/maltclub.webp" alt="maltclub xl abonnement" class="items-center justify-center flex mx-auto w-[300px] md:w-[400px] lg:col-start-1" />
           </div>
         </div>
 
-        <div class="flex flex-col w-full justify-center mx-auto gap-ml pt-xl md:pt-none">
-          <div class="flex flex-row justify-between items-center w-full">
+        <div class="flex flex-col w-full justify-center mx-auto gap-xxxs pt-xl md:pt-none">
+          <div class="flex flex-row justify-between pb-ml items-center w-full">
             <h3 class="font-bold text-h3-mobile">MALTCLUB</h3>
-            <div class="flex justify-center items-center">
-              <img src="/material-symbols_delete-outline.svg" alt="delete ikon" class="w-ml opacity-60 cursor-pointer" />
-            </div>
             <h3 class="font-bold text-h3-mobile flex justify-center items-center">DKK 275</h3>
           </div>
 
@@ -35,10 +35,14 @@ import Secondarybutton from "./Secondarybutton.astro";
             <h3 class="font-regular flex justify-center items-center text-h3-mobile">Inkl. fragt</h3>
           </div>
 
-          <div class="flex flex-row justify-between items-center">
-            <h3 class="font-bold text-h3-mobile">I alt</h3>
-            <h3 class="font-bold flex justify-center items-center text-h3-mobile">DKK 275</h3>
+          <div class="pt-ml items-center">
+            <div class="w-full h-[2px] bg-primary-500 mr-sm"></div>
+            <div class="flex flex-row justify-between pt-1">
+              <h3 class="font-bold text-h3-mobile">I alt</h3>
+              <h3 class="font-bold flex justify-center items-center text-h3-mobile">DKK 275</h3>
+            </div>
           </div>
+
           <div class="col-start-2 pt-sm" id="btn-bekraeft">
             <Secondarybutton variant="primary" size="small" width="large" className="sm:size-small md:size-medium lg:size-large">Bekræft og forsæt</Secondarybutton>
           </div>
@@ -384,6 +388,10 @@ import Secondarybutton from "./Secondarybutton.astro";
     });
   });
 
+  //odreoversigt til x
+  document.getElementById("backButton").addEventListener("click", function () {
+    history.back(); // Navigerer tilbage til forrige side
+  });
   //odreoversigt til betalingsmuligheder hændelse//
   let currentSection = 0; // start første section
 
