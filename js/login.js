@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       // Modal content
       div.innerHTML = `
-        <div class="bg-neutral-200 p-8 max-w-sm w-full rounded-md shadow-md">
+        <div class="bg-neutral-200 p-8 max-w-sm w-full rounded-md shadow-md z-1000">
           <h1 class="text-center text-2xl font-bold mb-4">Login</h1>
           <p class="text-center text-sm mb-2">This is a school project</p>
           <p class="text-center text-sm mb-6">Enter password below <code class="bg-primary-500 p-1 rounded"> </code></p>
