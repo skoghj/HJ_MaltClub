@@ -14,11 +14,11 @@ const variantClasses = {
   secondary:
     "bg-accent-500 hover:bg-neutral-300 focus:bg-accent-500 focus:border-3 focus:border-accent-200 active:bg-accent-200 text-primary-500",
     accent:
-     "bg-accent-800 border text-accent-950 font-title text-white font-semibold border-primary-500 hover:bg-accent-700 transition"
+     "bg-accent-800 border text-accent-950 font-title text-white font-semibold border-primary-500 hover:bg-accent-900 transition"
 };
 
 const baseClasses =
-  "inline-block magnetic-btn border transition-transform ease-out duration-100 flex justify-center items-center";
+  "inline-block rounded-sm magnetic-btn border transition-transform ease-out duration-100 flex justify-center items-center";
 ---
 
 <a href={link}><button class={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]}`}>
