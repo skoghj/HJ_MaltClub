@@ -16,39 +16,27 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out " style="clip-path: url(#clip)">
 
 
-<div class="bg-primary-500 lg:p-l lg:pl-20">
-  <div class="hidden lg:block w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bg-accent-800 rounded-full -z-1 absolute top-0 left-0 lg:translate-x-[155%] lg:translate-y-[35%]"></div>
-  <div class="flex flex-col lg:flex-row pt-ml py-lg px-ml lg:p-2xl text-accent-500">
-    <!-- Text Section (Heading, Image, and Paragraph) -->
-    <div class="flex flex-col lg:max-w-md lg:pr-0">
-      <!-- Heading -->
-      <h2 class="text-h2-mobile md:text-h2-tablet lg:text-h2-desktop pb-sm lg:pb-xl font-serif">
-        <span class="mr-4">Øl med perfektion</span> <span>i hver tør!</span>
-      </h2>      
+      <div class="bg-primary-500">
+        <div class="flex pt-ml py-lg px-[15%] text-accent-500 justify-between items-center max-h-[90vh]">
+          <!-- Text Section (Heading, Image, and Paragraph) -->
+          <div class="lg:max-w-md px-md">
+            <h2 class="text-h2-mobile md:text-h2-tablet lg:text-h2-desktop pb-sm lg:pb-xl font-serif">
+              <span class="mr-4">Øl med perfektion</span> <span>i hver tår!</span>
+            </h2>
+            <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop font-serif">
+              Hos MaltClub forener vi passionen for øl med historik og eksklusiv kvalitet. Hver måned kuraterer vi en unik ølpakke, fyldt med udsøgte bryg og fængende fortællinger fra bryghuse med et særligt præg.
+            </p>
+          </div>
       
-      <!-- Image Section -->
-      <div class="flex justify-center lg:hidden mb-4 z-20">
-        <img 
-          src="svg/beergroup.svg" 
-          alt="profilbilleder af virksomhedens ejere" 
-          class="w-96 h-96">
+            <div class="bg-accent-800 rounded-full absolute w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] -z-10"></div>
+            <!-- Image -->
+            <img 
+              src="../img/Beers.png"  
+              alt="Billed af ølflasker liggende med forskellige vinkler"  
+              class="relative z-10 object-contain max-w-[44%] hidden sm:block">
+
+        </div>
       </div>
-
-      <!-- Paragraph -->
-      <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop font-serif">
-        Hos MaltClub forener vi passionen for øl med historik og eksklusiv kvalitet. Hver måned kuraterer vi en unik ølpakke, fyldt med udsøgte bryg og fængende fortællinger fra bryghuse med et særligt præg.
-      </p>
-    </div>
-
-    <!-- Image Section for Desktop -->
-    <div class="hidden lg:flex justify-center lg:ml-48 mt-6 lg:mt-0 z-20">
-      <img 
-        src="svg/beergroup.svg"  
-        alt="Billed af ølflasker liggende med forskellige vinkler"  
-        class="lg:w-[29rem] lg:h-[29rem]">
-    </div>
-  </div>
-</div>
 
 <ServiceGaranti />
 
