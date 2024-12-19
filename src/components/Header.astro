@@ -29,26 +29,43 @@
             <ul class="text-accent-500 font-title text-body-lg-tablet font-semibold space-y-sm">
                 <!-- ØLPAKKER Accordion Item -->
                 <li id="beer-packages" class="relative">
-                    <a href="javascript:void(0);" class="flex justify-between items-center w-full">
-                        ØLPAKKER
-                        <svg id="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 ml-2 transform transition-transform">
-                            <path d="M7 10l5 5 5-5H7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    
-                    <!-- Accordion Content -->
-                    <ul id="beer-dropdown" class="font-regular text-body-md space-y-xxxs px-xs hidden">
-                        <li class="hover:bg-primary-300 py-xxxs">
-                            <a href="/singleview" class="block">MALTCLUB</a>
-                        </li>
-                        <li class="hover:bg-primary-300 py-xxxs">
-                            <a href="/singleview" class="block">MALTCLUB XL</a>
-                        </li>
-                        <li class="hover:bg-primary-300 py-xxxs">
-                            <a href="/singleview" class="block">MALTCLUB UDEN IPA</a>
-                        </li>
-                    </ul>
-                </li>
+                  <!-- Link for ØLPAKKER -->
+                  <a href="/Ølpakker" class="flex items-center justify-between w-full">
+                      ØLPAKKER
+                      <!-- Arrow Button -->
+                      <button id="arrow-toggle" class="flex items-center justify-center px-sm">
+                          <svg 
+                              id="arrow-icon" 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              viewBox="0 0 24 24" 
+                              class="h-4 w-4 transform transition-transform origin-center"
+                          >
+                              <path 
+                                  d="M7 10l5 5 5-5H7z" 
+                                  stroke="currentColor" 
+                                  stroke-width="2" 
+                                  stroke-linecap="round" 
+                                  stroke-linejoin="round"
+                              />
+                          </svg>
+                      </button>
+                  </a>
+                  <!-- Accordion Content -->
+                  <ul 
+                      id="beer-dropdown" 
+                      class="font-regular text-body-md space-y-xxxs px-xs hidden"
+                  >
+                      <li class="hover:bg-primary-300 py-xxxs">
+                          <a href="/singleview" class="block">MALTCLUB</a>
+                      </li>
+                      <li class="hover:bg-primary-300 py-xxxs">
+                          <a href="/singleview" class="block">MALTCLUB XL</a>
+                      </li>
+                      <li class="hover:bg-primary-300 py-xxxs">
+                          <a href="/singleview" class="block">MALTCLUB UDEN IPA</a>
+                      </li>
+                  </ul>
+              </li>
         
                 <li class="hover:bg-primary-300 py-2">
                     <a href="/singleview" class="block">ØLGAVER</a>
@@ -147,27 +164,26 @@
 <script>
     // Mobile Menu Toggle (Burger Menu)
     const burgerMenuBtn = document.getElementById('burger-menu');
-    const burgerIcon = document.getElementById('burger-icon');
-    const closeIcon = document.getElementById('close-icon');
-    const dropdownOverlay = document.getElementById('dropdown-overlay');
-    const beerDropdown = document.getElementById('beer-dropdown');
-    const arrowIcon = document.getElementById('arrow-icon');
+const burgerIcon = document.getElementById('burger-icon');
+const closeIcon = document.getElementById('close-icon');
+const dropdownOverlay = document.getElementById('dropdown-overlay');
+const beerDropdown = document.getElementById('beer-dropdown');
+const arrowIcon = document.getElementById('arrow-icon');
+const arrowToggle = document.getElementById('arrow-toggle');
 
-    // Toggle Burger Menu and Dropdown
-    burgerMenuBtn.addEventListener('click', () => {
-        const isOpen = dropdownOverlay.classList.contains('hidden');
-        
-        // Toggle mobile menu visibility
-        dropdownOverlay.classList.toggle('hidden');
-        
-        // Toggle burger/close icon
-        burgerIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-    });
+// Toggle Burger Menu and Dropdown
+burgerMenuBtn.addEventListener('click', () => {
+    // Toggle mobile menu visibility
+    dropdownOverlay.classList.toggle('hidden');
+    // Toggle burger/close icon
+    burgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
 
-    // Toggle Accordion Dropdown
-    document.getElementById('beer-packages').addEventListener('click', () => {
-        beerDropdown.classList.toggle('hidden');
-        arrowIcon.classList.toggle('rotate-180');
-    });
+// Toggle Accordion Dropdown (Arrow Button Only)
+arrowToggle.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent link navigation
+    beerDropdown.classList.toggle('hidden'); // Show/hide dropdown content
+    arrowIcon.classList.toggle('rotate-180'); // Rotate the arrow icon
+});
 </script>
