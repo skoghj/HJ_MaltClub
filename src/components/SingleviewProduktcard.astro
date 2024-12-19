@@ -2,18 +2,19 @@
 import Secondarybutton from "./Secondarybutton.astro";
 ---
 
-<section class="w-full flex flex-wrap justify-center items-center mx-auto text-accent-500 px-md md:max-w-7xl">
-  <section class="w-full flex flex-col items-center justify-center mx-auto lg:grid lg:grid-cols-2 lg:gap-md lg:items-center">
-    <!--cirkelform bg med billedet -->
+<section class="w-full flex flex-wrap text-neutral-100 px-sm md:max-w-7xl">
+  <section class="w-full flex flex-col items-center justify-center mx-auto lg:grid lg:grid-cols-2 lg:gap-md">
+    <!--cirkelform background med billedet -->
     <div class="relative inline-block pt-sm pb-xl lg:pt-none lg:pb-none">
       <div class="w-[250px] h-[250px] md:w-[450px] md:h-[450px] bg-accent-800 rounded-full flex items-center justify-center">
         <img src="../img/extra.webp" alt="maltclub xl abonnement" class="items-center justify-center flex mx-auto w-[300px] md:w-[600px] lg:col-start-1" />
       </div>
     </div>
 
-    <!--ordre -->
-    <div class="md:col-start-2">
-      <div class="flex flex-col items-center pb-md">
+    <!------------------ordre højreside ----------------------------->
+    <!--title -->
+    <article class="md:col-start-2">
+      <div class="overflow-x-hidden flex flex-col items-center pb-md">
         <h2 class="font-body">MALTCLUB</h2>
         <div class="flex items-center">
           <div class="w-16 md:w-24 lg:w-56 h-[2px] bg-accent-800 mr-sm"></div>
@@ -21,6 +22,7 @@ import Secondarybutton from "./Secondarybutton.astro";
           <div class="w-16 md:w-24 lg:w-56 h-[2px] bg-accent-800 ml-sm"></div>
         </div>
       </div>
+      <!--badge -->
       <div class="flex flex-wrap mx-auto items-center justify-center gap-xs py-xxs">
         <div class="flex bg-accent-500 px-xs py-xxs rounded-full gap-xxs">
           <img src="/quality_icon.svg" alt="quality ikon" class="w-md" />
@@ -31,21 +33,24 @@ import Secondarybutton from "./Secondarybutton.astro";
           <p class="text-primary-500">Ingen binding</p>
         </div>
       </div>
+      <!--introduktion -->
       <div class="pt-sm">
         <p>Vi håndplukker et udvalg af gode specialøl til dig hver måned og leverer til nærmeste pakkeshop.</p>
       </div>
+
+      <!--price-->
       <div class="w-full py-md">
         <div class="grid grid-cols-auto w-full border-b-2 border-accent-500 py-xxs justfify-between items-center gap-xxs">
-          <div class="flex items-center justify-start gap-4 col-start-1">
+          <div class="flex items-center justify-start gap-4">
             <img src="/Ol_ks_levering.svg" alt="levering icon" class="w-lg" />
-            <div class="flex flex-wrap gap-xxs">
+            <div class="flex gap-xxs">
               <p>DKK 465</p>
               <p>/ md. inkl. moms</p>
             </div>
           </div>
 
-          <!--desktop version shopping cart count nummer -->
-          <div class="flex items-center justify-end col-start-2 py-xxs gap-sm">
+          <!-- items count nummer til desktop layout-->
+          <div class="flex items-center justify-end col-start-2 py-xxs gap-sm" id="responsiveDiv">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtn">
               <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
             </svg>
@@ -55,23 +60,23 @@ import Secondarybutton from "./Secondarybutton.astro";
             </svg>
           </div>
         </div>
-        <!--mobile version shopping cart count nummer 
-          <div class="flex justify-between items-center gap-xs py-xs">
-            <div class="flex py-xxs gap-sm md:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtnMobil">
-                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
-              </svg>
-              <p id="cartCountMobil">01</p>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtnMobil">
-                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
-              </svg>
-            </div>-->
-
+        <!-- items count nummer breakpoint fra 320 til 420 layout -->
+        <div class="flex items-center justify-end py-xxs gap-sm" id="mobileSection">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="decreaseBtn">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm3 10.5a.75.75 0 0 0 0-1.5H9a.75.75 0 0 0 0 1.5h6Z" clip-rule="evenodd"></path>
+          </svg>
+          <p id="cartCount">01</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-md cursor-pointer" id="increaseBtn">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
         <div class="w-full py-sm"><Secondarybutton variant="secondary" size="small" link="/tilmeld" width="fill">BESTIL ABONNEMENT</Secondarybutton></div>
       </div>
+
+      <!-- Produktbeskrivelse -->
       <div class="accordion-item item flex flex-col w-full justify-between items-center gap-xs md:col-start-2">
         <div class="accordion-header w-full flex justify-between border-b-2 border-accent-500 py-xxxs cursor-pointer">
-          <p>Beskrivelser</p>
+          <p>Beskrivelse</p>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-sm accordion-icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
           </svg>
@@ -80,7 +85,7 @@ import Secondarybutton from "./Secondarybutton.astro";
           <div>
             <p class="py-xs">MaltClub Øl Abonnement – Kvalitetsøl leveret til døren for kun DKK 465/md. inkl. fragt.</p>
             <div class="font-body">
-              <li>5-6 nøje udvalgte specialøl – Håndplukket fra både ind- og udland.</li>
+              <li>9-11 nøje udvalgte specialøl – Håndplukket fra både ind- og udland.</li>
               <li>Unikke øloplevelser – Øl, du sjældent finder i supermarkedet.</li>
               <li>Tilpasset sæson og højtider – Vi vælger øl, der passer perfekt til tiden på året.</li>
               <li>Respekt for håndværk og historie – Kvalitet og tradition er i fokus.</li>
@@ -89,68 +94,92 @@ import Secondarybutton from "./Secondarybutton.astro";
           </div>
         </div>
       </div>
-    </div>
+    </article>
   </section>
-
-  <script>
-    ///////////////////////////////////////////////////Items counter////////////////////
-    // Elementet, der viser antallet af varer i kurven
-    const cartCountElements = document.querySelectorAll("#cartCount, #cartCountMobil");
-    const totalItemsElement = document.getElementById("totalItems");
-
-    // Start antal varer
-    let cartCount = 1;
-
-    // plus og minus knap
-    const increaseBtns = document.querySelectorAll("#increaseBtn, #increaseBtnMobil");
-    const decreaseBtns = document.querySelectorAll("#decreaseBtn, #decreaseBtnMobil");
-
-    // Opdater antallet i visningen
-    function updateCart() {
-      // Opdater begge cart counters
-      cartCountElements.forEach((el) => (el.textContent = cartCount.toString().padStart(2, "0")));
-
-      // Opdater det samlede antal varer
-      if (totalItemsElement) {
-        totalItemsElement.textContent = `Total Items: ${cartCount}`;
-      }
-    }
-
-    // Event handlers for plus-knapper
-    increaseBtns.forEach((btn) =>
-      btn.addEventListener("click", () => {
-        cartCount++;
-        updateCart();
-      })
-    );
-
-    // Event handlers for minus-knapper
-    decreaseBtns.forEach((btn) =>
-      btn.addEventListener("click", () => {
-        if (cartCount > 0) {
-          cartCount--;
-          updateCart();
-        }
-      })
-    );
-
-    // Initial visning
-    updateCart();
-
-    ///////////////////////////////Accordion produkt beskrivelser////////////////////
-
-    document.querySelectorAll(".accordion-header").forEach((header) => {
-      header.addEventListener("click", function () {
-        //Find den tilsvarende accordion-content og skift dens synlighed//
-        const content = this.nextElementSibling; //I dette tilfælde er accordion-content placeret lige efter det næste element.//
-        const icon = this.querySelector(".accordion-icon");
-
-        // content toggle
-        content.classList.toggle("hidden");
-
-        // icon rotate toggle (active)
-        icon.classList.toggle("rotate-180");
-      });
-    });
-  </script>
 </section>
+
+<style>
+  /* Første sektion vises kun ved skærme over 420px (items counter) */
+  #responsiveDiv {
+    display: none;
+  }
+
+  @media (min-width: 420px) {
+    #responsiveDiv {
+      display: flex;
+    }
+  }
+
+  /* Anden sektion vises kun ved skærme under 420px (items counter)*/
+  #mobileSection {
+    display: flex;
+  }
+
+  @media (min-width: 420px) {
+    #mobileSection {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  //////////////////////////////Items counter////////////////////
+  // Elementet, der viser antallet af varer i kurven
+  const cartCountElements = document.querySelectorAll("#cartCount, #cartCountMobil");
+  const totalItemsElement = document.getElementById("totalItems");
+
+  // Start antal varer
+  let cartCount = 1;
+
+  // plus og minus knap
+  const increaseBtns = document.querySelectorAll("#increaseBtn, #increaseBtnMobil");
+  const decreaseBtns = document.querySelectorAll("#decreaseBtn, #decreaseBtnMobil");
+
+  // Opdater antallet i visningen
+  function updateCart() {
+    // Opdater begge cart counters
+    cartCountElements.forEach((el) => (el.textContent = cartCount.toString().padStart(2, "0")));
+
+    // Opdater det samlede antal varer
+    if (totalItemsElement) {
+      totalItemsElement.textContent = `Total Items: ${cartCount}`;
+    }
+  }
+
+  // Event handlers for plus-knapper
+  increaseBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      cartCount++;
+      updateCart();
+    })
+  );
+
+  // Event handlers for minus-knapper
+  decreaseBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      if (cartCount > 0) {
+        cartCount--;
+        updateCart();
+      }
+    })
+  );
+
+  // Initial visning
+  updateCart();
+
+  ///////////////////////////////Accordion produkt beskrivelser////////////////////
+
+  document.querySelectorAll(".accordion-header").forEach((header) => {
+    header.addEventListener("click", function () {
+      //Find den tilsvarende accordion-content og skift dens synlighed//
+      const content = this.nextElementSibling; //I dette tilfælde er accordion-content placeret lige efter det næste element.//
+      const icon = this.querySelector(".accordion-icon");
+
+      // content toggle
+      content.classList.toggle("hidden");
+
+      // icon rotate toggle (active)
+      icon.classList.toggle("rotate-180");
+    });
+  });
+</script>
