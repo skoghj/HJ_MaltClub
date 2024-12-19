@@ -7,88 +7,58 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout>
   <div class="relative w-full overflow-hidden bg-neutral-500">
     <svg id="svg-mask" class="absolute top-0 left-0 w-full h-full">
-        <defs>
-            <clipPath id="clip">
-                <circle cx="20%" cy="20%" r="0" class="circle-mask" />
-            </clipPath>
-        </defs>
+      <defs>
+        <clipPath id="clip">
+          <circle cx="20%" cy="20%" r="0" class="circle-mask"></circle>
+        </clipPath>
+      </defs>
     </svg>
-    <div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out " style="clip-path: url(#clip)">
-
-
+    <div class="relative top-0 left-0 bg-gradient-to-r from-[#16312B] to-[#0C1C19] transition-all duration-300 ease-out" style="clip-path: url(#clip)">
       <div class="relative bg-gradient-to-r from-[#16312B] to-[#0C1C19]">
         <div class="flex pt-ml py-lg px-[5%] text-accent-500 justify-between items-center max-h-[80vh] relative">
           <!-- Text Section (Heading, Image, and Paragraph) -->
           <div class="lg:max-w-3xl px-md z-10">
-            <h3 class="pb-sm lg:pb-md xl:text-h2-desktop">Øl med <span class="text-accent-800">perfektion</span><br>i hver eneste tår...</h3>
-            <p class="max-w-md text-body-md md:text-body-md-tablet lg:text-body-md-desktop">
-              Hos MaltClub forener vi passionen for øl med historik og eksklusiv kvalitet. Hver måned kuraterer vi en unik ølpakke, fyldt med udsøgte bryg og fængende fortællinger fra bryghuse med et særligt præg.
-            </p>
+            <h3 class="pb-sm lg:pb-md xl:text-h2-desktop">Øl med <span class="text-accent-800">perfektion</span><br />i hver eneste tår...</h3>
+            <p class="max-w-md text-body-md md:text-body-md-tablet lg:text-body-md-desktop">Hos MaltClub forener vi passionen for øl med historik og eksklusiv kvalitet. Hver måned kuraterer vi en unik ølpakke, fyldt med udsøgte bryg og fængende fortællinger fra bryghuse med et særligt præg.</p>
           </div>
-      
+
           <!-- Background Circle -->
           <div class="bg-accent-800 rounded-full absolute top-[90%] right-[-10%] transform -translate-y-1/2 md:w-[500px] md:h-[500px] lg:w-[700px] lg:h-[700px] xl:w-[900px] xl:h-[900px] z-1"></div>
-      
+
           <!-- Image -->
-          <img 
-            src="../img/Beers.png"  
-            alt="Billed af ølflasker liggende med forskellige vinkler"  
-            class="relative z-10 object-contain max-w-[44%] hidden sm:block">
+          <img src="../img/Beers.webp" alt="Billed af ølflasker liggende med forskellige vinkler" class="relative z-10 object-contain max-w-[44%] hidden sm:block" />
         </div>
       </div>
 
-<ServiceGaranti />
+      <ServiceGaranti />
 
- <div class="flex flex-col pt-ml py-lg px-ml sm:p-xl lg:p-2xl bg-primary-500">
-    <div class="flex items-center space-x-2 text-accent-500">
-        <!-- SVG Icon -->
-        <div class="lg:pl-20">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
-            <path d="M5 12l14 0"></path>
-          </svg></div>
-        <!-- Text -->
-        <p class="font-serif text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-accent-500 lg:pb-l">Vi er her for at hjælpe</p>
+      <div class="flex flex-col pt-ml py-lg px-ml sm:p-xl lg:p-2xl bg-primary-500">
+        <div class="flex items-center space-x-2 text-accent-500">
+          <!-- SVG Icon -->
+          <div class="lg:pl-20">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
+              <path d="M5 12l14 0"></path>
+            </svg>
+          </div>
+          <!-- Text -->
+          <p class="font-serif text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-accent-500 lg:pb-l">Vi er her for at hjælpe</p>
+        </div>
+        <h3 class="text-accent-500 lg:pb-xl lg:pl-20">Ofte stillede spørgsmål</h3>
+
+        <div>
+          <Accordion question="Hvordan bestiller jeg et Maltclub abonnement?" answer="Du bestiller et MaltClub abonnement lige her." color="blue" index="1" />
+
+          <Accordion question="Hvor lang tid binder jeg mig?" answer="Vi har ingenbinding hos MaltClub, og du kan til enhver tid opsige dit abonnement. Vær dog opmærksom på at dit abonnement skal opsiges senest den 20. i måneden for at være gældende fra den efterfølgende måned." color="yellow" index="2" />
+
+          <Accordion question="Hvor meget koster et Maltclub abonnemet?" answer="Et MaltClub abonnement med levering hver måned koster fra 275 kr. pr. md. inkl. fragt. Du kan få 20% i rabat på den første måned ved tilmelding til vores nyhedsbrev. " color="red" index="3" />
+
+          <Accordion question="Hvordan kan jeg betale på Maltclub?" answer="På MaltClub.dk kan du betale med Dankort, Visakort og Masterkort, når du opretter et abonnement. Betaling med debet-eller kreditkort er gebyrfrit (dog kan der forekomme gebyr på betaling med firmakort)." color="green" index="4" />
+
+          <Accordion question="Hvordan opsiger jeg mit abonnement?" answer="Ønsker du at opsige dit abonnement bedes du kontakte os på info.maltclub@gmail.com eller via vores kontaktformular her. Du modtager herefter en skriftlig bekræftelse på din opsigelse." color="orange" index="5" />
+        </div>
       </div>
-    <h3 class=" text-accent-500 lg:pb-xl lg:pl-20 ">Ofte stillede spørgsmål</h3>
-    
-  <div>
-  <Accordion 
-    question="Hvordan bestiller jeg et Maltclub abonnement?"
-    answer="Du bestiller et MaltClub abonnement lige her."
-    color="blue"
-    index="1" />
-
-
-  <Accordion 
-    question="Hvor lang tid binder jeg mig?"
-    answer="Vi har ingenbinding hos MaltClub, og du kan til enhver tid opsige dit abonnement. Vær dog opmærksom på at dit abonnement skal opsiges senest den 20. i måneden for at være gældende fra den efterfølgende måned."
-    color="yellow"
-    index="2" />
-
-  <Accordion
-    question="Hvor meget koster et Maltclub abonnemet?"
-    answer="Et MaltClub abonnement med levering hver måned koster fra 275 kr. pr. md. inkl. fragt. Du kan få 20% i rabat på den første måned ved tilmelding til vores nyhedsbrev. "
-    color="red"
-    index="3" />
-
-  <Accordion
-    question="Hvordan kan jeg betale på Maltclub?"
-    answer="På MaltClub.dk kan du betale med Dankort, Visakort og Masterkort, når du opretter et abonnement. Betaling med debet-eller kreditkort er gebyrfrit (dog kan der forekomme gebyr på betaling med firmakort)."
-    color="green"
-    index="4" />
-
-  <Accordion 
-    question="Hvordan opsiger jeg mit abonnement?"
-    answer="Ønsker du at opsige dit abonnement bedes du kontakte os på info.maltclub@gmail.com eller via vores kontaktformular her. Du modtager herefter en skriftlig bekræftelse på din opsigelse."
-    color="orange"
-    index="5" />
+    </div>
   </div>
- </div>
-</div>
-</div>
 </MainLayout>
 
-
-<script>
-
-</script>
+<script></script>
