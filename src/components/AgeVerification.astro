@@ -1,65 +1,58 @@
 <div id="age-verification-modal" class="hidden">
-<div id="age-verification-modal" class="fixed inset-0 z-50 bg-gradient-to-b from-primary-500 to-primary-700 flex items-center justify-center">
+  <div id="age-verification-modal" class="fixed inset-0 z-50 bg-gradient-to-b from-primary-500 to-primary-700 flex items-center justify-center">
     <!-- Container -->
-    <div class="text-center max-w-xl w-full p-8 relative">
-        <!-- Logo øverst -->
-        <div class="absolute -top-28 left-1/2 transform -translate-x-1/2">
-            <img src="../svg/logo.svg" alt="Logo" class="h-48 w-48 object-contain">
+    <div class="text-center w-full flex flex-col gap-md">
+      <!-- Logo øverst -->
+      <div class="mx-auto">
+        <img src="../svg/logo.svg" alt="Logo" class="h-48 w-48 object-contain" />
+      </div>
+
+      <!-- Spørgsmål og knapper -->
+      <h2 class="font-bold text-accent-500">Er du over 18 år?</h2>
+
+      <div class="flex justify-center items-center flex-col gap-ml md:flex-row md:gap-ml">
+        <!-- Ja-knap -->
+        <button id="verify-age-btn" class="bg-neutral-500 text-body-md-desktop font-semibold text-primary-500 px-6 py-3 w-[250px] sm:w-[300px] rounded-lg hover:bg-primary-300 hover:text-accent-500 transition"> Ja, jeg er </button>
+        <!-- Nej-knap -->
+        <button id="deny-age-btn" class="border-2 border-neutral-500 text-neutral-500 px-6 py-3 text-body-md-desktop w-[250px] sm:w-[300px] font-semibold rounded-lg hover:bg-transparent hover:text-primary-300 hover:border-primary-300 transition"> Nej, jeg er ikke </button>
+      </div>
+
+      <!-- Fejlbesked -->
+      <div id="error-message" class="hidden">
+        <div class="flex items-center gap-xxs justify-center px-10">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-7 text-red-500"> <path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-8-5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 10 5Zm0 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path></svg>
+          <p class="text-red-500 text-body-lg font-title text-left">Du skal være over 18 år for at bruge denne side.</p>
         </div>
-        
-        <!-- Spørgsmål og knapper -->
-        <h2 class="font-bold mb-md mt-lg text-accent-500">
-            Er du over 18 år?
-        </h2>
-   
-        <div class="flex justify-center gap-4">
-            <!-- Ja-knap -->
-            <button 
-                id="verify-age-btn" 
-                class="bg-neutral-500 text-primary-500 px-6 py-3 w-full max-w-xs rounded-lg hover:bg-primary-400 hover:text-accent-500 transition">
-                Ja, jeg er
-            </button>
-            <!-- Nej-knap -->
-            <button 
-                id="deny-age-btn" 
-                class="border-2 border-neutral-500 text-neutral-500 px-6 py-3 w-full max-w-xs rounded-lg hover:bg-transparent hover:text-primary-300 hover:border-primary-300 transition">
-                Nej, jeg er ikke
-            </button>
-        </div>
-        
-        <!-- Fejlbesked -->
-        <p id="error-message" class="text-red-600 mt-xs text-body-lg hidden">
-            Du skal være over 18 år for at bruge denne side.
-        </p>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 <script>
-    // On page load
-    window.addEventListener('DOMContentLoaded', (event) => {
-        const modal = document.getElementById('age-verification-modal');
-        const errorMessage = document.getElementById('error-message');
-        const verifyAgeBtn = document.getElementById('verify-age-btn');
-        const denyAgeBtn = document.getElementById('deny-age-btn');
-        
-        // Check if the user is already verified
-        const ageVerified = localStorage.getItem('ageVerified') === 'true';
+  // On page load
+  window.addEventListener("DOMContentLoaded", (event) => {
+    const modal = document.getElementById("age-verification-modal");
+    const errorMessage = document.getElementById("error-message");
+    const verifyAgeBtn = document.getElementById("verify-age-btn");
+    const denyAgeBtn = document.getElementById("deny-age-btn");
 
-        // If not verified, show the modal
-        if (!ageVerified) {
-            modal.classList.remove('hidden');
-        }
+    // Check if the user is already verified - husk
+    const ageVerified = localStorage.getItem("ageVerified") === "true";
 
-        // When "Yes, I am over 18" is clicked
-        verifyAgeBtn.addEventListener('click', () => {
-            localStorage.setItem('ageVerified', 'true');
-            modal.classList.add('hidden'); // Hide the modal
-        });
+    // If not verified, show the modal
+    if (!ageVerified) {
+      modal.classList.remove("hidden");
+    }
 
-        // When "No, I am under 18" is clicked
-        denyAgeBtn.addEventListener('click', () => {
-            localStorage.removeItem('ageVerified');
-            errorMessage.classList.remove('hidden'); // Show error message
-        });
+    // When "Yes, I am over 18" is clicked
+    verifyAgeBtn.addEventListener("click", () => {
+      localStorage.setItem("ageVerified", "true");
+      modal.classList.add("hidden"); // Hide the modal
     });
+
+    // When "No, I am under 18" is clicked
+    denyAgeBtn.addEventListener("click", () => {
+      localStorage.removeItem("ageVerified");
+      errorMessage.classList.remove("hidden"); // Show error message
+    });
+  });
 </script>
