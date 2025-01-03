@@ -2,36 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  h1, h2, h3, h4, h5
-  {
-    @apply font-body
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-body;
   }
-    h1 {
-    @apply text-h1-mobile font-bold
-      }
-    h2 {
-       @apply text-h2-mobile font-semibold
-      }
-      }
+  h1 {
+    @apply text-h1-mobile font-bold;
+  }
+  h2 {
+    @apply text-h2-mobile font-semibold;
+  }
+}
 
-    h3 {
-      @apply text-h3-mobile font-semibold
-    }
-    
+h3 {
+  @apply text-h3-mobile font-semibold;
+}
 
-    h4 {
-      @apply text-h4-mobile font-semibold
-    }
+h4 {
+  @apply text-h4-mobile font-semibold;
+}
 
-    h5 { 
-      @apply text-h5-mobile font-semibold
-
-    }
-    p {
-      @apply text-body-md font-body
-      }
-
+h5 {
+  @apply text-h5-mobile font-semibold;
+}
+p {
+  @apply text-body-md font-body;
+}
 
 @screen md {
   h1 {
@@ -56,25 +56,24 @@
 
 @screen lg {
   h1 {
-    @apply text-h1-desktop
-      }
-    h2 {
-       @apply text-h2-desktop
-      }
+    @apply text-h1-desktop;
+  }
+  h2 {
+    @apply text-h2-desktop;
+  }
 
-    h3 {
-      @apply text-h3-desktop
-    }
+  h3 {
+    @apply text-h3-desktop;
+  }
 
-    h4 {
-      @apply text-h4-desktop
-    }
+  h4 {
+    @apply text-h4-desktop;
+  }
 
-    h5 { 
-      @apply text-h5-desktop
-
-    }
-    p {
-      @apply text-body-sm-desktop;
-      }
+  h5 {
+    @apply text-h5-desktop;
+  }
+  p {
+    @apply text-body-sm-desktop;
+  }
 }
