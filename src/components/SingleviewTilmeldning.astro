@@ -2,7 +2,7 @@
 import Secondarybutton from "./Secondarybutton.astro";
 ---
 
-<section class="bg-accent-500 py-[70px] px-md">
+<section class="bg-accent-500 py-[70px] px-md overflow-x-hidden">
   <!---------------- Odreoversigt title med lukket x ---------------------->
   <section id="odreoversigt" class="lg:max-w-7xl mx-auto flex flex-col items-center">
     <div class="bg-neutral-300 px-xl">
@@ -156,7 +156,7 @@ import Secondarybutton from "./Secondarybutton.astro";
               <div class="flex flex-col lg:pt-sm">
                 <label for="email" class="text-primary-400"><h5 class="md:text-h5-mobile">E-mail <span class="text-accent-800">*</span></h5></label>
                 <div class="pt-xxs">
-                  <input type="email" id="email" name="email" placeholder="maltclub@gmail.com" required x-model="email" @input="validateEmail()" @blur="touched = true; validateEmail()" class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 placeholder:text-primary-500/50 focus:outline border-[1px]" :class="{'border-accent-800': touched && !isValid,'border-red-500': touched && email.trim() && !isValid,'border-green-700': touched && isValid && email.trim()}" />
+                  <input type="email" id="email" name="email" placeholder="maltclub@gmail.com" required x-model="email" @input="validateEmail()" @blur="touched = true; validateEmail()" class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 placeholder:text-primary-500/50 focus:outline border-[1px] focus:border-primary-500" :class="{'border-accent-800': touched && !isValid,'border-red-500': touched && email.trim() && !isValid,'border-green-700': touched && isValid && email.trim()}" />
 
                   <!-- emty fild error message -->
                   <div x-show="touched && !email.trim()" class="text-accent-800 text-xs my-1 flex gap-xxs transition-all duration-300 ease-in-out opacity-0 transform translate-y-2" :class="{ 'opacity-100 translate-y-0': touched && !email.trim() }">
@@ -260,7 +260,7 @@ import Secondarybutton from "./Secondarybutton.astro";
                   </div>
                 </div>
                 <label for="land" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Land / områder<span class="text-accent-800">*</span></h5></label>
-                <select id="land" class="w-full p-2 focus:outline-none focus:outline border-[1px] bg-neutral-200 ext-primary-500/60" required onchange="this.className = this.value ? 'w-full p-2 focus:outline border-[1px] bg-neutral-200 text-primary-500' : 'w-full p-2 border bg-neutral-200 text-primary-500/60'" name="Land" aria-placeholder="Land / områder">
+                <select id="land" class="w-full p-2 focus:outline-none focus:outline border-[1px] bg-neutral-200 text-primary-500/50" required onchange="this.className = this.value ? 'w-full p-2 focus:outline border-[1px] bg-neutral-200 text-primary-500' : 'w-full p-2 border bg-neutral-200'" name="Land" aria-placeholder="Land / områder">
                   <option value="Vælg en mulighed her*" class="text-primary-500/50">Vælg en mulighed her*</option>
                   <option value="Danmark">Danmark</option>
                   <option value="Sverige">Sverige</option>
@@ -273,132 +273,60 @@ import Secondarybutton from "./Secondarybutton.astro";
             <article class="step items-center flex flex-col">
               <h3 class="flex w-full items-center flex-col pt-sm pb-ml text-h1-mobile lg:text-h4-desktop text-primary-400">Leveringsmetode</h3>
               <!-- First Option -->
-              <div class="hidden md:flex md:gap-xxs md:items-center md:flex-row md:justify-evenly mb-md w-full">
-                <label class="w-full gap-sm py-sm px-sm sm:flex sm:flex-row bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400 has-[:checked]:ring-indigo-200">
-                  <div class="pt-xxs">
-                    <input type="radio" id="radio-1" class="checked:border-indigo-500 px-sm transform scale-150 toggle-radio" />
-                  </div>
-                  <div class="flex flex-col gap-xxs w-full">
-                    <h3 class="text-h3-mobile">Levering</h3>
-                    <div class="flex gap-xs items-center flex-wrap">
-                      <p class="text-primary-500 opacity-60 font-semibold text-body-md">PostNord</p>
-                      <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
-                      <p class="text-primary-500 opacity-60 font-semibold text-body-md">Pakkeshop</p>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-xxs w-full items-end">
-                    <h3 class="text-h3-mobile">62,50 DKK</h3>
-                    <p class="text-primary-500 opacity-60 text-body-md font-semibold">Inkl. moms</p>
-                  </div>
-                </label>
-              </div>
-              <!-- Second Option -->
-              <div class="hidden md:flex md:gap-xxs md:items-center md:flex-row md:justify-evenly mb-md w-full">
-                <label class="w-full gap-sm py-sm px-sm sm:flex sm:flex-row bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400 has-[:checked]:ring-indigo-200">
-                  <div class="pt-xxs">
-                    <input type="radio" id="radio-2" class="checked:border-indigo-500 px-sm transform scale-150 toggle-radio" />
-                  </div>
-                  <div class="flex flex-col gap-xxs w-full">
-                    <h3 class="text-h3-mobile">Levering</h3>
-                    <div class="flex gap-xs items-center flex-wrap">
-                      <p class="text-primary-500 opacity-60 font-semibold text-body-md">PostNord</p>
-                      <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
-                      <p class="text-primary-500 opacity-60 font-semibold text-body-md">Levering til døren</p>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-xxs w-full items-end">
-                    <h3 class="text-h3-mobile">112,50 DKK</h3>
-                    <p class="text-primary-500 opacity-60 text-body-md font-semibold">Inkl. moms</p>
-                  </div>
-                </label>
-              </div>
-              <!-- Third Option -->
-              <div class="hidden md:flex md:gap-xxs md:items-center md:flex-row md:justify-evenly mb-md w-full">
-                <label class="w-full gap-sm py-sm px-sm sm:flex sm:flex-row bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400 has-[:checked]:ring-indigo-200">
-                  <div class="pt-xxs">
-                    <input type="radio" id="radio-3" class="checked:border-indigo-500 px-sm transform scale-150 toggle-radio" />
-                  </div>
-                  <div class="flex flex-col gap-xxs w-full">
-                    <h3 class="text-h3-mobile">Afhentning på lager. 2981 Almind</h3>
-                    <div class="flex gap-xs items-center flex-wrap">
-                      <p class="text-primary-500 opacity-60 font-semibold text-body-md">Du vil blive kontaktet når din ordre er klar</p>
-                    </div>
-                  </div>
-                  <div class="flex flex-col gap-xxs w-full items-end">
-                    <h3 class="text-h3-mobile">0,00 DKK</h3>
-                  </div>
-                </label>
-              </div>
-
-              <!-- Mobile -->
-              <div class="flex gap-xxxs items-center flex-col w-full pb-xs md:hidden">
-                <!-- Delivery Information -->
-                <label class="w-full grid grid-cols-[5%,95%] gap-xs py-sm px-sm bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400 has-[:checked]:ring-indigo-200">
-                  <div class="pt-xxs sm:pt-none">
-                    <input type="radio" id="radio" class="w-4 h-4 checked:border-indigo-500 toggle-radio" />
-                  </div>
-                  <div class="flex flex-col gap-xxxs w-full col-start-2">
-                    <div>
-                      <!-- Delivery Option Title -->
-                      <h3 class="text-h3-mobile">Levering</h3>
-                      <div class="flex gap-xxxs items-center flex-wrap">
-                        <!-- Delivery Service Provider -->
-                        <p class="text-primary-500 opacity-60 font-semibold text-body-md">PostNord</p>
-                        <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
-                        <!-- Delivery Method -->
-                        <p class="text-primary-500 opacity-60 font-semibold text-body-md">Pakkeshop</p>
+              <div class="flex flex-col gap-ml">
+                <div class="w-full justify-center items-center flex flex-col flex-wrap">
+                  <label for="radio-1" class="w-full gap-sm py-sm px-sm sm:flex sm:flex-row bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400">
+                    <div class="gap-xs justify-center items-baseline flex w-full">
+                      <input type="radio" id="radio-1" name="option" value="radio-1" class="scale-150 toggle-radio accent-primary-400" />
+                      <div class="flex flex-col w-full">
+                        <h3 class="text-h3-mobile">Levering</h3>
+                        <div class="flex items-center flex-wrap gap-xxs">
+                          <p class="text-primary-500 opacity-60 font-semibold text-body-md">PostNord | Pakkeshop</p>
+                        </div>
                       </div>
                     </div>
-                    <div class="flex gap-xxs w-full">
-                      <!-- Price -->
+                    <div class="flex flex-col flex-wrap w-full items-start pl-7 pt-xxs sm:pl-0 sm:pt-0 sm:items-end">
                       <h3 class="text-h3-mobile">62,50 DKK</h3>
-                      <p class="text-primary-500 opacity-60 text-body-md font-semibold">Inkl.moms</p>
+                      <p class="text-primary-500 opacity-60 text-body-md font-semibold">Inkl. moms</p>
                     </div>
-                  </div>
-                </label>
-              </div>
+                  </label>
+                </div>
+                <!-- Second Option -->
+                <div class="w-full justify-center items-center flex flex-col flex-wrap">
+                  <label class="w-full gap-sm py-sm px-sm sm:flex sm:flex-row bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400">
+                    <div class="gap-xs justify-center items-baseline flex w-full">
+                      <input type="radio" id="radio-2" name="option" value="radio-2" class="scale-150 toggle-radio accent-primary-400" />
 
-              <div class="flex gap-xxxs items-center flex-col w-full pb-xs md:hidden">
-                <!-- Delivery Information -->
-                <label class="w-full grid grid-cols-[5%,95%] gap-xs py-sm px-sm bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400 has-[:checked]:ring-indigo-200">
-                  <div class="pt-xxs sm:pt-none">
-                    <input type="radio" id="radio" class="w-4 h-4 checked:border-indigo-500 toggle-radio" />
-                  </div>
-                  <div class="flex flex-col gap-xxxs w-full col-start-2">
-                    <div>
-                      <!-- Delivery Option Title -->
-                      <h3 class="text-h3-mobile">Levering</h3>
-                      <div class="flex gap-xxxs items-center flex-wrap">
-                        <!-- Delivery Service Provider -->
-                        <p class="text-primary-500 opacity-60 font-semibold text-body-md">PostNord</p>
-                        <div class="border-r-2 border-primary-500 border-opacity-60 h-xs"></div>
-                        <!-- Delivery Method -->
-                        <p class="text-primary-500 opacity-60 font-semibold text-body-md">Levering til døren</p>
+                      <div class="flex flex-col w-full">
+                        <h3 class="text-h3-mobile">Levering</h3>
+                        <div class="flex items-center flex-wrap">
+                          <p class="text-primary-500 opacity-60 font-semibold text-body-md">PostNord | Levering til døren</p>
+                        </div>
                       </div>
                     </div>
-                    <div class="flex gap-xxs w-full">
-                      <!-- Price -->
+                    <div class="flex flex-col pl-7 w-full items-start sm:items-end">
                       <h3 class="text-h3-mobile">112,50 DKK</h3>
-                      <p class="text-primary-500 opacity-60 text-body-md font-semibold">Inkl.moms</p>
+                      <p class="text-primary-500 opacity-60 text-body-md font-semibold">Inkl. moms</p>
                     </div>
-                  </div>
-                </label>
-              </div>
-
-              <div class="flex gap-xxxs items-center flex-col w-full pb-xs md:hidden">
-                <!-- Pickup Information -->
-                <label class="w-full grid grid-cols-[5%,95%] gap-xxs py-xs px-sm bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400 has-[:checked]:ring-indigo-200 items-start">
-                  <div class="pt-xxs sm:pt-none">
-                    <input type="radio" id="radio" class="w-4 h-4 checked:border-indigo-500 toggle-radio" />
-                  </div>
-                  <div class="flex flex-col gap-xxs w-full col-start-2 px-xxxs">
-                    <!-- Pickup Location Title -->
-                    <h3 class="text-h3-mobile">Afhentning på lager. 2981 Almind</h3>
-                    <p class="text-primary-500 opacity-60 font-semibold text-body-md">Du vil blive kontaktet når din ordre er klar</p>
-                    <!-- Price -->
-                    <h3 class="text-h3-mobile">0,00 DKK</h3>
-                  </div>
-                </label>
+                  </label>
+                </div>
+                <!-- Third Option -->
+                <div class="w-full justify-center items-center flex flex-col flex-wrap">
+                  <label class="w-full gap-sm py-sm px-sm sm:flex sm:flex-row bg-neutral-200 has-[:checked]:bg-neutral-300 has-[:checked]:text-primary-400">
+                    <div class="gap-xs justify-center items-baseline flex w-full">
+                      <input type="radio" id="radio-3" name="option" value="radio-3" class="scale-150 toggle-radio accent-primary-400" />
+                      <div class="flex flex-col w-full">
+                        <h3 class="text-h3-mobile">Afhentning på lager. 2981 Almind</h3>
+                        <div class="flex gap-xs items-center flex-wrap">
+                          <p class="text-primary-500 opacity-60 font-semibold text-body-md">Du vil blive kontaktet når din ordre er klar</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-xxs pl-7 w-full items-start sm:items-end">
+                      <h3 class="text-h3-mobile">0,00 DKK</h3>
+                    </div>
+                  </label>
+                </div>
               </div>
             </article>
 
@@ -441,153 +369,169 @@ import Secondarybutton from "./Secondarybutton.astro";
             </article>
           </form>
         </div>
-      </div>
-      <!-- Buttons til progress -->
-      <div class="flex justify-center gap-ml py-md">
-        <button class="btn bg-primary-400 px-s py-xxs rounded-sm hover:bg-primary-300 text-neutral-100 disabled:bg-gray-300 disabled:cursor-not-allowed" id="prev" disabled>Prev</button>
-        <button class="btn bg-primary-400 px-s py-xxs rounded-sm hover:bg-primary-300 text-neutral-100 disabled:bg-gray-300 disabled:cursor-not-allowed" id="next">Next</button>
+        <!-- Buttons til progress -->
+        <div class="flex justify-center gap-ml py-md">
+          <button class="btn bg-primary-400 px-s py-xxs rounded-sm hover:bg-primary-300 text-neutral-100 disabled:bg-gray-300 disabled:cursor-not-allowed" id="prev" disabled>Prev</button>
+          <button class="btn bg-primary-400 px-s py-xxs rounded-sm hover:bg-primary-300 text-neutral-100 disabled:bg-gray-300 disabled:cursor-not-allowed" id="next">Next</button>
+        </div>
       </div>
     </section>
-  </section>
 
-  <!-- 5. step---->
-  <article class="step flex flex-col items-center mx-auto justify-center -mt-[5.5rem]">
-    <div class="flex md:flex-row items-center justify-center gap-sm">
-      <h3 class="flex text-h1-mobile lg:text-h4-desktop text-primary-500">Betaling gennemført!</h3>
-      <div class="udfort">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-ml text-primary-400">
-          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
-        </svg>
+    <!-- 5. step---->
+    <article class="step flex flex-col items-center mx-auto justify-center -mt-[5.5rem]">
+      <div class="flex md:flex-row items-center justify-center gap-sm">
+        <h3 class="flex text-h1-mobile lg:text-h4-desktop text-primary-500">Betaling gennemført!</h3>
+        <div class="udfort">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-ml text-primary-400">
+            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
       </div>
-    </div>
-    <div class="mx-auto flex justify-center py-ml">
-      <img src="/beer_ikon_progressbar_5.svg" alt="gennemført formular" class="w-[200px]" />
-    </div>
-    <p class="w-[300px] md:w-[450px] md:text-body-lg">Vi har hermed modtaget din ordre, og vil behandle din pakke hurtigst muligt.</p>
-    <div class="py-ml">
-      <Secondarybutton variant="primary" size="medium" width="medium" link="/" className="sm:size-small md:size-medium lg:size-large">Gå til forsiden</Secondarybutton>
-    </div>
-  </article>
-</section>
+      <div class="mx-auto flex justify-center py-ml">
+        <img src="/beer_ikon_progressbar_5.svg" alt="gennemført formular" class="w-[200px]" />
+      </div>
+      <p class="w-[300px] md:w-[450px] md:text-body-lg">Vi har hermed modtaget din ordre, og vil behandle din pakke hurtigst muligt.</p>
+      <div class="py-ml">
+        <Secondarybutton variant="primary" size="medium" width="medium" link="/" className="sm:size-small md:size-medium lg:size-large">Gå til forsiden</Secondarybutton>
+      </div>
+    </article>
 
-<script>
-  //Step 3. selected//
-  document.querySelectorAll(".toggle-radio").forEach((radio) => {
-    radio.addEventListener("click", function () {
-      // Sporer den tidligere tilstand
-      if (this.checked) {
-        this.wasChecked = this.wasChecked ? false : true;
-        this.checked = this.wasChecked;
-      }
-    });
-  });
+    <script>
+      //Step 3. selected//
+      document.querySelectorAll(".toggle-radio").forEach((radio) => {
+        radio.addEventListener("click", function () {
+          console.log(this.checked);
+          // Sporer den tidligere tilstand
+          if (this.checked) {
+            console.log("Current checked before toggle:", this.checked);
+            this.wasChecked = this.wasChecked ? false : true;
+            console.log("Was checked state after toggle:", this.wasChecked);
+            this.checked = this.wasChecked;
+          }
+        });
+      });
 
-  //odreoversigt til x
-  document.getElementById("backButton").addEventListener("click", function () {
-    history.back(); // Navigerer tilbage til forrige side
-  });
-  //odreoversigt til betalingsmuligheder hændelse//
-  let currentSection = 0; // start første section
+      //odreoversigt til x
+      document.getElementById("backButton").addEventListener("click", function () {
+        console.log("Back button clicked");
+        history.back(); // Navigerer tilbage til forrige side
+      });
+      //odreoversigt til betalingsmuligheder hændelse//
+      let currentSection = 0; // start første section
 
-  const sections = [document.getElementById("odreoversigt"), document.getElementById("betalingmuligheder"), document.getElementById("formular")];
+      const sections = [document.getElementById("odreoversigt"), document.getElementById("betalingmuligheder"), document.getElementById("formular")];
 
-  // vis første section
-  sections[currentSection].classList.remove("hidden");
-
-  // button klik hændelse (den første section)//
-  document.getElementById("btn-bekraeft").addEventListener("click", function () {
-    sections[currentSection].classList.add("hidden");
-    currentSection = 1;
-    sections[currentSection].classList.remove("hidden");
-  });
-
-  // betalingmuligheders card ikons klik hændelse//
-  const cardIcons = document.querySelectorAll(".card-icon");
-  cardIcons.forEach((icon) => {
-    icon.addEventListener("click", function () {
-      sections[currentSection].classList.add("hidden");
-      currentSection = 2;
+      // vis første section
       sections[currentSection].classList.remove("hidden");
-    });
-  });
-  //progressbar med formular//
-  const nextButton = document.getElementById("next") as HTMLButtonElement;
-  const prevButton = document.getElementById("prev") as HTMLButtonElement;
-  const steps = document.querySelectorAll(".step");
-  const progressBar = document.getElementById("progress") as HTMLElement;
-  const stepImgs = document.querySelectorAll(".Progressbar"); //progressbar ikons
-  const bar = document.querySelector(".bar") as HTMLElement;
 
-  let currentStep = 0; //
-
-  // Initialiseringsfunktion
-  function updateStep() {
-    // Skjul alle trin og vis kun det nuværende trin
-    steps.forEach((step, index) => {
-      if (index === currentStep) {
-        step.classList.remove("hidden");
-      } else {
-        step.classList.add("hidden");
-      }
-    });
-
-    // Update progress bar
-    const progress = (currentStep / (steps.length - 1)) * 100;
-    progressBar.style.width = `${progress}%`;
-
-    // Aktivér billeder for hvert trin
-    stepImgs.forEach((Progressbar, idx) => {
-      const images = Progressbar.querySelectorAll("img");
-
-      if (idx < currentStep) {
-        images[0].classList.add("hidden");
-        images[1].classList.remove("hidden");
-      } else {
-        images[0].classList.remove("hidden");
-        images[1].classList.add("hidden");
-      }
-    });
-
-    // Aktiver/deaktiver knapper
-    prevButton.disabled = currentStep === 0;
-    nextButton.disabled = currentStep === steps.length - 1;
-
-    // Den sidste step - skjul progressbar og knapper
-    if (currentStep === steps.length - 1) {
-      progressBar.classList.add("hidden");
-      nextButton.classList.add("hidden");
-      prevButton.classList.add("hidden");
-      bar.classList.add("hidden");
-      stepImgs.forEach((icon) => {
-        icon.classList.add("hidden");
+      // button klik hændelse (den første section)//
+      document.getElementById("btn-bekraeft").addEventListener("click", function () {
+        sections[currentSection].classList.add("hidden");
+        currentSection = 1;
+        sections[currentSection].classList.remove("hidden");
+        console.log("button clicked");
       });
-    } else {
-      progressBar.classList.remove("hidden");
-      nextButton.classList.remove("hidden");
-      prevButton.classList.remove("hidden");
-      bar.classList.remove("hidden");
-      stepImgs.forEach((icon) => {
-        icon.classList.remove("hidden");
+
+      // betalingmuligheders card ikons klik hændelse//
+      const cardIcons = document.querySelectorAll(".card-icon");
+      cardIcons.forEach((icon) => {
+        icon.addEventListener("click", function () {
+          sections[currentSection].classList.add("hidden");
+          currentSection = 2;
+          sections[currentSection].classList.remove("hidden");
+        });
       });
-    }
-  }
+      //progressbar med formular//
+      const nextButton = document.getElementById("next") as HTMLButtonElement;
+      const prevButton = document.getElementById("prev") as HTMLButtonElement;
+      const steps = document.querySelectorAll(".step");
+      const progressBar = document.getElementById("progress") as HTMLElement;
+      const stepImgs = document.querySelectorAll(".Progressbar"); //progressbar ikons
+      const bar = document.querySelector(".bar") as HTMLElement;
 
-  // "Next" button click event
-  nextButton.addEventListener("click", () => {
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      updateStep(); // status update
-    }
-  });
+      let currentStep = 0; //
 
-  // "Prev" button click event
-  prevButton.addEventListener("click", () => {
-    if (currentStep > 0) {
-      currentStep--;
-      updateStep(); // status update
-    }
-  });
+      // Initialiseringsfunktion
+      function updateStep() {
+        // Skjul alle trin og vis kun det nuværende trin
+        steps.forEach((step, index) => {
+          if (index === currentStep) {
+            step.classList.remove("hidden");
+          } else {
+            step.classList.add("hidden");
+          }
+        });
 
-  // Opdater den indledende tilstand
-  updateStep();
-</script>
+        // Update progress bar
+        let progress = 0;
+        // Indstil forholdet for hvert trin
+        if (currentStep === 0) {
+          progress = 0; //0%
+        } else if (currentStep === 1) {
+          progress = 33; //33%
+        } else if (currentStep === 2) {
+          progress = 60; //60%
+        } else if (currentStep === 3) {
+          progress = 100;
+        }
+
+        progressBar.style.width = `${progress}%`; // progressbar width
+
+        // Aktivér billeder for hvert trin
+        stepImgs.forEach((Progressbar, idx) => {
+          const images = Progressbar.querySelectorAll("img");
+
+          if (idx < currentStep) {
+            images[0].classList.add("hidden");
+            images[1].classList.remove("hidden");
+          } else {
+            images[0].classList.remove("hidden");
+            images[1].classList.add("hidden");
+          }
+        });
+
+        // Aktiver/deaktiver knapper
+        prevButton.disabled = currentStep === 0;
+        nextButton.disabled = currentStep === steps.length - 1;
+
+        // Den sidste step - skjul progressbar og knapper
+        if (currentStep === steps.length - 1) {
+          progressBar.classList.add("hidden");
+          nextButton.classList.add("hidden");
+          prevButton.classList.add("hidden");
+          bar.classList.add("hidden");
+          stepImgs.forEach((icon) => {
+            icon.classList.add("hidden");
+          });
+        } else {
+          progressBar.classList.remove("hidden");
+          nextButton.classList.remove("hidden");
+          prevButton.classList.remove("hidden");
+          bar.classList.remove("hidden");
+          stepImgs.forEach((icon) => {
+            icon.classList.remove("hidden");
+          });
+        }
+      }
+
+      // "Next" button click event
+      nextButton.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+          currentStep++;
+          updateStep(); // status update
+        }
+      });
+
+      // "Prev" button click event
+      prevButton.addEventListener("click", () => {
+        if (currentStep > 0) {
+          currentStep--;
+          updateStep(); // status update
+        }
+      });
+
+      // Opdater den indledende tilstand
+      updateStep();
+    </script>
+  </section>
+</section>
