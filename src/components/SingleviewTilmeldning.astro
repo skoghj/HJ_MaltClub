@@ -123,15 +123,29 @@ import Secondarybutton from "./Secondarybutton.astro";
         <!-- Form start---->
         <div class="flex mx-auto items-center justify-center" x-data="{ 
          email: '', 
+         telefon: '',
          isValid: false,
+         isTelefonValid: false,
          touched: false,
          validateEmail() {
            if (!this.email.trim()) {
              this.isValid = false;
              return;
            }
+          
            const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-           this.isValid = pattern.test(this.email);}}">
+           this.isValid = pattern.test(this.email); 
+         },
+         validateTelefon() {
+           if (!this.telefon.trim()) {
+             this.isTelefonValid = false;
+             return;
+           }
+          
+           const pattern = /^[+]?[0-9\s-]{7,15}$/; 
+           this.isTelefonValid = pattern.test(this.telefon); 
+         }
+       }">
           <form class="flex flex-col w-full md:w-[600px] lg:py-md" action="/submit_form" method="POST" autocomplete="on" accept-charset="UTF-8" ;>
             <!-- 1. step-- -->
             <article class="step">
@@ -140,10 +154,10 @@ import Secondarybutton from "./Secondarybutton.astro";
               <div class="flex flex-col lg:pt-sm">
                 <label for="email" class="text-primary-400"><h5 class="md:text-h5-mobile">E-mail <span class="text-accent-800">*</span></h5></label>
                 <div class="pt-xxs">
-                  <input type="email" id="email" name="email" placeholder="maltclub@gmail.com" required x-model="email" @input="validateEmail()" @blur="touched = true; validateEmail()" class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 placeholder:text-primary-500/50 focus:outline focus:border-primary-500/40" :class="{'border-red-500': touched && !isValid,'border-green-600': touched && isValid && email.trim()}" />
+                  <input type="email" id="email" name="email" placeholder="maltclub@gmail.com" required x-model="email" @input="validateEmail()" @blur="touched = true; validateEmail()" class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 placeholder:text-primary-500/50 focus:outline focus:border-primary-500/40" :class="{'border-red-500': touched && !isValid,'border-green-700': touched && isValid && email.trim()}" />
 
                   <!-- emty fild error message -->
-                  <div x-show="touched && !email.trim()" class="text-red-500 text-xs my-1 flex gap-xxs transition-all duration-300 ease-in-out opacity-0 transform translate-y-2" :class="{ 'opacity-100 translate-y-0': touched && !email.trim() }">
+                  <div x-show="touched && !email.trim()" class="text-accent-800 text-xs my-1 flex gap-xxs transition-all duration-300 ease-in-out opacity-0 transform translate-y-2" :class="{ 'opacity-100 translate-y-0': touched && !email.trim() }">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
                       <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
                     </svg>
@@ -159,11 +173,11 @@ import Secondarybutton from "./Secondarybutton.astro";
                   </div>
 
                   <!-- valid email message -->
-                  <div x-show="touched && isValid" class="text-green-600 text-xs my-1 transition-all duration-300 ease-in-out opacity-0 transform translate-y-2 flex gap-xxs" :class="{ 'opacity-100 translate-y-0': touched && isValid }">
+                  <div x-show="touched && isValid" class="text-green-700 text-xs my-1 transition-all duration-300 ease-in-out opacity-0 transform translate-y-2 flex gap-xxs" :class="{ 'opacity-100 translate-y-0': touched && isValid }">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
                       <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.844-8.791a.75.75 0 0 0-1.188-.918l-3.7 4.79-1.649-1.833a.75.75 0 1 0-1.114 1.004l2.25 2.5a.75.75 0 0 0 1.15-.043l4.25-5.5Z" clip-rule="evenodd"></path>
                     </svg>
-                    Det er en gyldig e-mail
+                    Perfekt! Det er en gyldig e-mail
                   </div>
                 </div>
               </div>
@@ -172,9 +186,34 @@ import Secondarybutton from "./Secondarybutton.astro";
                 <input type="checkbox" id="checkbox" name="checkbox" value="checkbox" class="bg-neutral-200 border-0 rounded-[2px]" />
                 <label for="checkbox" class="text-primary-400"> Send mails til mig om nyheder og tilbud</label>
               </div>
-              <label for="maltclub" class="pt-sm text-primary-400"><h5 class="md:text-h5-mobile">Telefonnummer <span class="text-accent-800">*</span></h5></label>
+
+              <label for="maltclub" class="text-primary-400"><h5 class="pt-md md:text-h5-mobile">Telefonnummer <span class="text-accent-800">*</span></h5></label>
               <div class="pt-xxs">
-                <input type="text" id="telefon" name="telefon" placeholder="+45 11 22 33" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                <input type="text" id="telefon" name="telefon" placeholder="+45 11 22 33" required x-model="telefon" @input="validateTelefon()" @blur="touched = true; validateTelefon()" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+
+                <!-- emty telefon error message -->
+                <div x-show="touched && !telefon.trim()" class="text-accent-800 text-xs my-1 flex gap-xxs transition-all duration-300 ease-in-out opacity-0 transform translate-y-2" :class="{ 'opacity-100 translate-y-0': touched && !telefon.trim() }">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
+                  </svg>
+                  Dette felt er påkrævet
+                </div>
+
+                <!-- telefon error message -->
+                <div x-show="touched && telefon.trim() && !isTelefonValid" class="text-red-500 text-xs my-1 transition-all duration-300 ease-in-out opacity-0 transform translate-y-2 gap-xxs flex" :class="{ 'opacity-100 translate-y-0': touched && telefon.trim() && !isTelefonValid }">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 0 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"></path>
+                  </svg>
+                  Venligst indtast en gyldig telefon nummer
+                </div>
+
+                <!-- valid telefon message -->
+                <div x-show="touched && isTelefonValid" class="text-green-700 text-xs my-1 transition-all duration-300 ease-in-out opacity-0 transform translate-y-2 flex gap-xxs" :class="{ 'opacity-100 translate-y-0': touched && isTelefonValid }">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14Zm3.844-8.791a.75.75 0 0 0-1.188-.918l-3.7 4.79-1.649-1.833a.75.75 0 1 0-1.114 1.004l2.25 2.5a.75.75 0 0 0 1.15-.043l4.25-5.5Z" clip-rule="evenodd"></path>
+                  </svg>
+                  Perfekt! Det er en gyldig telefon nummer
+                </div>
               </div>
             </article>
 
