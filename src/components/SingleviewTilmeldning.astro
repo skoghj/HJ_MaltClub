@@ -227,40 +227,40 @@ import Secondarybutton from "./Secondarybutton.astro";
                   <div>
                     <label for="fornavn" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Fornavn <span class="text-accent-800">*</span></h5></label>
                     <div class="pt-xxs">
-                      <input type="text" id="fornavn" name="fornavn" placeholder="Lars" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                      <input type="text" id="fornavn" name="fornavn" placeholder="Lars" required class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 focus:outline border-[1px]" />
                     </div>
                   </div>
                   <div class="py-xxs md:py-none">
                     <label for="efternavn" class="text-primary-400"><h5 class="md:text-h5-mobile">Efternavn <span class="text-accent-800">*</span></h5></label>
                     <div class="pt-xxs">
-                      <input type="text" id="efternavn" name="efternavn" placeholder="Jensen" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                      <input type="text" id="efternavn" name="efternavn" placeholder="Jensen" required class="w-full px-xs py-xxs focus:outline border-[1px] text-primary-500 bg-neutral-200" />
                     </div>
                   </div>
                 </div>
                 <label for="firma" class="text-primary-400"><h5 class="md:text-h5-mobile md:pt-xxs">Firma (valgfri)</h5></label>
                 <div class="pt-xxs">
-                  <input type="text" id="fornavn" name="fornavn" placeholder="Jensen" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                  <input type="text" id="fornavn" name="fornavn" placeholder="Jensen" class="w-full px-xs py-xxs focus:outline border-[1px] text-primary-500 bg-neutral-200" />
                 </div>
                 <label for="adresse" class="py-xxs md:py-xxs text-primary-400"><h5 class="md:text-h5-mobile">Adresses<span class="text-accent-800">*</span></h5></label>
                 <div class="">
-                  <input type="text" id="adresse" name="adresse" placeholder="Engersleve 82" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                  <input type="text" id="adresse" name="adresse" placeholder="Engersleve 82" required class="w-full px-xs py-xxs focus:outline border-[1px] text-primary-500 bg-neutral-200" />
                 </div>
                 <div class="flex flex-col md:grid md:grid-cols-2 md:gap-md">
                   <div class="pt-xxs">
                     <label for="postnummer" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">Postnummer<span class="text-accent-800">*</span></h5></label>
                     <div class="py-xxs">
-                      <input type="text" id="postnummer" name="postnummer" placeholder="2981" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                      <input type="text" id="postnummer" name="postnummer" placeholder="2981" required class="w-full px-xs py-xxs focus:outline border-[1px] text-primary-500 bg-neutral-200" />
                     </div>
                   </div>
                   <div class="pb-xxs md:pt-xxs">
                     <label for="by" class="pb-xxs pt-md text-primary-400"><h5 class="md:text-h5-mobile">By<span class="text-accent-800">*</span></h5></label>
                     <div class="pt-xxs">
-                      <input type="text" id="by" name="by" placeholder="Almind" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                      <input type="text" id="by" name="by" placeholder="Almind" required class="w-full px-xs py-xxs focus:outline border-[1px] text-primary-500 bg-neutral-200" />
                     </div>
                   </div>
                 </div>
                 <label for="land" class="pb-xxs text-primary-400"><h5 class="md:text-h5-mobile">Land / områder<span class="text-accent-800">*</span></h5></label>
-                <select id="event" class="w-full p-2 border bg-neutral-200 border-neutral-200 text-primary-500/60" required onchange="this.className = this.value ? 'w-full border bg-neutral-200 border-neutral-200 text-primaty-500' : 'w-full border border-neutral-200 '" name="Land" aria-placeholder="Land / områder">
+                <select id="land" class="w-full p-2 focus:outline-none focus:outline border-[1px] bg-neutral-200 ext-primary-500/60" required onchange="this.className = this.value ? 'w-full p-2 focus:outline border-[1px] bg-neutral-200 text-primary-500' : 'w-full p-2 border bg-neutral-200 text-primary-500/60'" name="Land" aria-placeholder="Land / områder">
                   <option value="Vælg en mulighed her*">Vælg en mulighed her*</option>
                   <option value="Danmark">Danmark</option>
                   <option value="Sverige">Sverige</option>
