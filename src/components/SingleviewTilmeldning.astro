@@ -124,8 +124,10 @@ import Secondarybutton from "./Secondarybutton.astro";
         <div class="flex mx-auto items-center justify-center" x-data="{ 
          email: '', 
          telefon: '',
+         fornavn: '',
          isValid: false,
          isTelefonValid: false,
+         isFornavnValid: false,
          touched: false,
          validateEmail() {
            if (!this.email.trim()) {
@@ -136,12 +138,12 @@ import Secondarybutton from "./Secondarybutton.astro";
            const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
            this.isValid = pattern.test(this.email); 
          },
+
          validateTelefon() {
            if (!this.telefon.trim()) {
              this.isTelefonValid = false;
              return;
            }
-          
            const pattern = /^[+]?[0-9\s-]{7,15}$/; 
            this.isTelefonValid = pattern.test(this.telefon); 
          }
@@ -154,7 +156,7 @@ import Secondarybutton from "./Secondarybutton.astro";
               <div class="flex flex-col lg:pt-sm">
                 <label for="email" class="text-primary-400"><h5 class="md:text-h5-mobile">E-mail <span class="text-accent-800">*</span></h5></label>
                 <div class="pt-xxs">
-                  <input type="email" id="email" name="email" placeholder="maltclub@gmail.com" required x-model="email" @input="validateEmail()" @blur="touched = true; validateEmail()" class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 placeholder:text-primary-500/50 focus:outline focus:border-primary-500/40" :class="{'border-red-500': touched && !isValid,'border-green-700': touched && isValid && email.trim()}" />
+                  <input type="email" id="email" name="email" placeholder="maltclub@gmail.com" required x-model="email" @input="validateEmail()" @blur="touched = true; validateEmail()" class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 placeholder:text-primary-500/50 focus:outline border-[1px]" :class="{'border-accent-800': touched && !isValid,'border-red-500': touched && email.trim() && !isValid,'border-green-700': touched && isValid && email.trim()}" />
 
                   <!-- emty fild error message -->
                   <div x-show="touched && !email.trim()" class="text-accent-800 text-xs my-1 flex gap-xxs transition-all duration-300 ease-in-out opacity-0 transform translate-y-2" :class="{ 'opacity-100 translate-y-0': touched && !email.trim() }">
@@ -189,7 +191,7 @@ import Secondarybutton from "./Secondarybutton.astro";
 
               <label for="maltclub" class="text-primary-400"><h5 class="pt-md md:text-h5-mobile">Telefonnummer <span class="text-accent-800">*</span></h5></label>
               <div class="pt-xxs">
-                <input type="text" id="telefon" name="telefon" placeholder="+45 11 22 33" required x-model="telefon" @input="validateTelefon()" @blur="touched = true; validateTelefon()" class="w-full px-xs py-xxs border-[0px] text-primary-500 bg-neutral-200" />
+                <input type="text" id="telefon" name="telefon" placeholder="+45 11 22 33" required x-model="telefon" @input="validateTelefon()" @blur="touched = true; validateTelefon()" class="w-full px-xs py-xxs text-primary-500 bg-neutral-200 placeholder:text-primary-500/50 focus:outline border-[1px]" :class="{'border-accent-800': touched && !isTelefonValid,'border-red-500': touched && telefon.trim() && !isValid,'border-green-700': touched && isTelefonValid && telefon.trim()}" />
 
                 <!-- emty telefon error message -->
                 <div x-show="touched && !telefon.trim()" class="text-accent-800 text-xs my-1 flex gap-xxs transition-all duration-300 ease-in-out opacity-0 transform translate-y-2" :class="{ 'opacity-100 translate-y-0': touched && !telefon.trim() }">
