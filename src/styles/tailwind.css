@@ -3,12 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  .display {
+    @apply text-display-mobile;
+  }
   h1,
   h2,
   h3,
   h4,
   h5 {
-    @apply font-body;
+    @apply font-title;
   }
   h1 {
     @apply text-h1-mobile font-bold;
@@ -34,6 +37,9 @@ p {
 }
 
 @screen md {
+  .display {
+    @apply text-display-tablet;
+  }
   h1 {
     @apply text-h1-tablet;
   }
@@ -55,6 +61,9 @@ p {
 }
 
 @screen lg {
+  .display {
+    @apply text-display-desktop;
+  }
   h1 {
     @apply text-h1-desktop;
   }

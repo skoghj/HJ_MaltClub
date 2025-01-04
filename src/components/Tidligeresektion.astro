@@ -1,84 +1,64 @@
 ---
-import TidligereCard from "../components/TidligereCard.astro";
+import TidligereCard from "./TidligereCard.astro";
 ---
-       
-<section class="bg-neutral-500 h-[800px] overflow-hidden flex flex-col items-center relative">
-  <div id="sektion6" class="opacity-0">
-  <!-- Heading Section -->
-  
-  <div class="text-center">
-    <h3 class="text-primary-500 pt-lg">
-      Nysgerrig på tidligere MaltClub kasser?
-    </h3>
-      <!-- 
-    <div class="flex items-center justify-center gap-1 pb-8">
-      <h5 class="text-primary-500 font-bold font-title">Spin hjulet</h5>
-      <img src="svg/ic_round-play-arrow.svg" alt="Play arrow" class="w-6 sm:w-10">
-    </div>-->
-  </div>
 
-  <!-- Container for the carousel with absolute positioning -->
-  <div class="flex justify-center items-center">
-    <div id="carousel" class="absolute top-[100%] w-[280px] h-[280px] transition-transform" style="transform-origin: center;">
-      <!-- Carousel Items (Months) -->
-      <!-- January -->
-      <div class="absolute" style="transform: rotate(330deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/januar.webp" alt="billed af ølflasker" month="Januar"></TidligereCard>
-      </div>
-      <!-- February -->
-      <div class="absolute" style="transform: rotate(300deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/februar.webp" alt="billed af ølflasker" month="Februar"></TidligereCard>
-      </div>
-      <!-- March -->
-      <div class="absolute" style="transform: rotate(270deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/marts.webp" alt="billed af ølflasker" month="Marts"></TidligereCard>
-      </div>
-      <!-- April -->
-      <div class="absolute" style="transform: rotate(240deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/april.webp" alt="billed af ølflasker" month="April"></TidligereCard>
-      </div>
-      <!-- May -->
-      <div class="absolute" style="transform: rotate(210deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/maj.webp" alt="billed af ølflasker" month="Maj"></TidligereCard>
-      </div>
-      <!-- June -->
-      <div class="absolute" style="transform: rotate(180deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/juni.webp" alt="billed af ølflasker" month="Juni"></TidligereCard>
-      </div>
-      <!-- July -->
-      <div class="absolute" style="transform: rotate(150deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/juli.webp" alt="billed af ølflasker" month="Juli"></TidligereCard>
-      </div>
-      <!-- August -->
-      <div class="absolute" style="transform: rotate(120deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/august.webp" alt="billed af ølflasker" month="August"></TidligereCard>
-      </div>
-      <!-- September -->
-      <div class="absolute" style="transform: rotate(90deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/september.webp" alt="billed af ølflasker" month="September"></TidligereCard>
-      </div>
-      <!-- October -->
-      <div class="absolute" style="transform: rotate(60deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/oktober.webp" alt="billed af ølflasker" month="Oktober"></TidligereCard>
-      </div>
-      <!-- November -->
-      <div class="absolute" style="transform: rotate(30deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/november.webp" alt="billed af ølflasker" month="November"></TidligereCard>
-      </div>
-      <!-- December -->
-      <div class="absolute" style="transform: rotate(0deg) translate(600px) rotate(-270deg);">
-        <TidligereCard img="../img/img_hjul/december.webp" alt="billed af ølflasker" month="December"></TidligereCard>
+<section class="bg-neutral-500 h-[700px] overflow-hidden flex flex-col items-center relative">
+  <div id="sektion6" class="opacity-0">
+    <!-- Heading Section -->
+    <div class="text-center">
+      <h2 class="text-primary-500 pt-lg">Nysgerrig på tidligere MaltClub kasser?</h2>
+    </div>
+
+    <!-- Container for the carousel with absolute positioning -->
+    <div class="flex justify-center items-center">
+      <div id="carousel" class="absolute top-[112%] w-[280px] h-[280px] transition-transform" style="transform-origin: center;">
+        <!-- Carousel Items (Months) -->
+        <div class="absolute" style="transform: rotate(330deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/januar.webp" alt="billed af ølflasker" month="Januar" />
+        </div>
+        <div class="absolute" style="transform: rotate(300deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/februar.webp" alt="billed af ølflasker" month="Februar" />
+        </div>
+        <div class="absolute" style="transform: rotate(270deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/marts.webp" alt="billed af ølflasker" month="Marts" />
+        </div>
+        <div class="absolute" style="transform: rotate(240deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/april.webp" alt="billed af ølflasker" month="April" />
+        </div>
+        <div class="absolute" style="transform: rotate(210deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/maj.webp" alt="billed af ølflasker" month="Maj" />
+        </div>
+        <div class="absolute" style="transform: rotate(180deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/juni.webp" alt="billed af ølflasker" month="Juni" />
+        </div>
+        <div class="absolute" style="transform: rotate(150deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/juli.webp" alt="billed af ølflasker" month="Juli" />
+        </div>
+        <div class="absolute" style="transform: rotate(120deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/august.webp" alt="billed af ølflasker" month="August" />
+        </div>
+        <div class="absolute" style="transform: rotate(90deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/september.webp" alt="billed af ølflasker" month="September" />
+        </div>
+        <div class="absolute" style="transform: rotate(60deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/oktober.webp" alt="billed af ølflasker" month="Oktober" />
+        </div>
+        <div class="absolute" style="transform: rotate(30deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/november.webp" alt="billed af ølflasker" month="November" />
+        </div>
+        <div class="absolute" style="transform: rotate(0deg) translate(600px) rotate(-270deg);">
+          <TidligereCard img="../img/img_hjul/december.webp" alt="billed af ølflasker" month="December" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Spin Button -->
-  <div class="absolute bottom-32 left-0 right-0 flex justify-center items-center z-10">
-    <button id="spinButton" class="pulse-animation">
-      <img src="../img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="w-32">
-    </button>
+    <!-- Spin Button -->
+    <div class="absolute bottom-[5%] left-0 right-0 flex justify-center items-center z-10">
+      <button id="spinButton" class="pulse-animation">
+        <img src="../img/img_hjul/BEER3 4.webp" alt="Spin hjul" class="w-32" />
+      </button>
+    </div>
   </div>
-</div>
 </section>
 
 <style>
@@ -92,7 +72,6 @@ import TidligereCard from "../components/TidligereCard.astro";
     }
     100% {
       transform: scale(1);
-      
     }
   }
 
@@ -103,12 +82,33 @@ import TidligereCard from "../components/TidligereCard.astro";
 
 <script>
   let angle = 0;
-  const carousel = document.getElementById('carousel');
-  const spinButton = document.getElementById('spinButton');
+  let autoSpinInterval = null; // Variable to store the interval ID
+  const carousel = document.getElementById("carousel");
+  const spinButton = document.getElementById("spinButton");
 
+  // Function to start the automatic spinning
+  function startAutoSpin() {
+    autoSpinInterval = setInterval(() => {
+      angle -= 1; // Rotate by 1 degree per interval
+      carousel.style.transform = `rotate(${angle}deg)`; // Apply the rotation to the carousel
+    }, 60); // 60ms interval for smooth animation
+  }
 
-  spinButton.addEventListener('click', () => {
-    angle += -30; // Rotate 30 degrees per click
-    carousel.style.transform = `rotate(${angle}deg)`; // Rotate the entire container
+  // Function to stop the automatic spinning
+  function stopAutoSpin() {
+    clearInterval(autoSpinInterval); // Stops the interval
+    autoSpinInterval = null; // Reset the interval variable
+  }
+
+  // Start auto-spin when the page loads
+  startAutoSpin();
+
+  // Spin button click event handler
+  spinButton.addEventListener("click", () => {
+    if (autoSpinInterval) {
+      stopAutoSpin(); // Stop auto-spin if it's running
+    } else {
+      startAutoSpin(); // Start auto-spin if it's not running
+    }
   });
 </script>

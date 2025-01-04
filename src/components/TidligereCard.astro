@@ -1,16 +1,15 @@
 ---
-const { img, month} = Astro.props
+const { img, month } = Astro.props;
 ---
+
 <div class="">
   <div class="bg-accent-500">
-    <div class="flex flex-col items-center max-w-[284px] lg:max-w-[370px] mx-auto relative h-[240px] sm:h-[270px] md:h-[280px] lg:h-[290px] xl:h-[290px]  ">
+    <div class="flex flex-col items-center max-w-[284px] lg:max-w-[370px] mx-auto relative h-[240px] sm:h-[270px] md:h-[280px] lg:h-[290px] xl:h-[290px]">
       <!-- IMG centered -->
-      <img src={img} alt="Billeder af forskellige ølpakker" class="h-52 w-52 mx-auto p-xs sm:w-56 sm:h-56 sm:p-xs md:w-56 md:h-56 md:p-xs lg:w-60 lg:p-xs xl:h-60 xl:w-60 xl:p-xs">
-      
+      <img src={img} alt="Billeder af forskellige ølpakker" class="h-52 w-52 mx-auto p-xs sm:w-56 sm:h-56 sm:p-xs md:w-56 md:h-56 md:p-xs lg:w-60 lg:p-xs xl:h-60 xl:w-60 xl:p-xs" />
+
       <!-- H5 centered -->
-      <h5 class=" text-primary-500">{month}</h5p>
+      <h5 class="text-primary-500">{month}</h5>
     </div>
   </div>
 </div>
-
-

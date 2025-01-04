@@ -60,8 +60,9 @@ export default {
         "2xl": "128px",
       },
       fontFamily: {
-        title: ["Urbanist", "sans-serif"],
+        title: ["Lora", "serif"],
         body: ["Lora", "serif"],
+        knap: ["Urbanist", "sans-serif"],
       },
       fontSize: {
         /* Mobile, Minor Second */
@@ -88,8 +89,7 @@ export default {
         "h2-tablet": ["2.5rem", { lineHeight: "3rem" }], // 40px
         "h1-tablet": ["3rem", { lineHeight: "3.25rem" }], // 48px
 
-        "display-tablet": ["5rem", { lineHeight: "5.25rem" }], // 52px
-        "display-tablet2": ["3rem", { lineHeight: "3.25rem" }], // 52px
+        "display-tablet": ["3.25rem", { lineHeight: "3.25rem" }], // 52px
 
         /* Desktop, Perfect Fourth */
 
@@ -97,13 +97,13 @@ export default {
         "body-md-desktop": ["1.313rem", { lineHeight: "2rem" }], // 21px, line-height: 32px
         "body-lg-desktop": ["1.75rem", { lineHeight: "2.5rem" }], // 28px, line-height: 40px
 
-        "h5-desktop": ["1.75rem", { lineHeight: "2.5rem" }], // 28px, line-height: 40px
-        "h4-desktop": ["2.375rem", { lineHeight: "3rem" }], // 38px, line-height: 48px
-        "h3-desktop": ["3.188rem", { lineHeight: "4rem" }], // 51px, line-height: 64px
-        "h2-desktop": ["4.188rem", { lineHeight: "5rem" }], // 67px, line-height: 80px
-        "h1-desktop": ["5.625rem", { lineHeight: "6rem" }], // 90px, line-height: 96px
+        "h5-desktop": ["1.333rem", { lineHeight: "2.5rem" }], // 23.99px, line-height: 40px
+        "h4-desktop": ["1.777rem", { lineHeight: "3rem" }], // 31.98px, line-height: 48px
+        "h3-desktop": ["2.369rem", { lineHeight: "4rem" }], // 42.63px, line-height: 64px
+        "h2-desktop": ["3.157rem", { lineHeight: "5rem" }], // 56.83px, line-height: 80px
+        "h1-desktop": ["4.209rem", { lineHeight: "6rem" }], // 75.76px, line-height: 96px
 
-        "display-desktop": ["6.5rem", { lineHeight: "6.25rem" }], // 120px, line-height: 128px
+        "display-desktop": ["4.209rem", { lineHeight: "4rem" }], // 75.76px, line-height: 128px
       },
       fontWeight: {
         light: "300",
