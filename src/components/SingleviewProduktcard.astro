@@ -182,4 +182,31 @@ import Secondarybutton from "./Secondarybutton.astro";
       icon.classList.toggle("rotate-180");
     });
   });
+
+  // Fade ind og skaler op
+  import { animate, inView } from "motion";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const mainContents = document.querySelectorAll(".main-content");
+
+    mainContents.forEach((mainContent) => {
+      const children = Array.from(mainContent.children);
+
+      children.forEach((child) => {
+        inView(child, ({ target }) => {
+          animate(
+            target,
+            {
+              opacity: [0, 1],
+              transform: ["translateY(50px) scale(0.8)", "translateY(0px) scale(1.0)"],
+            },
+            {
+              duration: 0.8,
+              easing: "ease-out",
+            }
+          );
+        });
+      });
+    });
+  });
 </script>
