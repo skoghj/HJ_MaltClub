@@ -25,71 +25,71 @@ const { title } = Astro.props;
   </head>
   <body>
     <AgeVerification />
+    <div>
+      <header>
+        <Header />
+      </header>
 
-    <header>
-      <Header />
-    </header>
+      <main>
+        <slot />
+      </main>
 
-    <main>
-      <slot />
-    </main>
-
-    <footer>
-      <Footer />
-    </footer>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   </body>
-</html>
 
-<script>
-  import { animate, inView } from "motion";
-  // Cirkel maske animation
-  window.addEventListener("load", () => {
-    const circleMask = document.querySelector(".circle-mask");
+  <script>
+    import { animate, inView } from "motion";
+    // Cirkel maske animation
+    window.addEventListener("load", () => {
+      const circleMask = document.querySelector(".circle-mask");
 
-    animate(circleMask, { r: ["0", "150%"] } as any, { duration: 2.8 });
-  });
+      animate(circleMask, { r: ["0", "150%"] } as any, { duration: 2.8 });
+    });
 
-  // Fade ind
-  inView("#sektion2", () => {
-    animate("#sektion2", { opacity: [0, 1] }, { duration: 2.5 });
-  });
+    // Fade ind
+    inView("#sektion2", () => {
+      animate("#sektion2", { opacity: [0, 1] }, { duration: 2.5 });
+    });
 
-  inView("#sektion3", () => {
-    animate("#sektion3", { opacity: [0, 1] }, { duration: 2.5 });
-  });
+    inView("#sektion3", () => {
+      animate("#sektion3", { opacity: [0, 1] }, { duration: 2.5 });
+    });
 
-  inView("#sektion4", () => {
-    animate("#sektion4", { opacity: [0, 1] }, { duration: 2.5 });
-  });
+    inView("#sektion4", () => {
+      animate("#sektion4", { opacity: [0, 1] }, { duration: 2.5 });
+    });
 
-  inView("#sektion5", () => {
-    animate("#sektion5", { opacity: [0, 1] }, { duration: 2.5 });
-  });
+    inView("#sektion5", () => {
+      animate("#sektion5", { opacity: [0, 1] }, { duration: 2.5 });
+    });
 
-  inView("#sektion6", () => {
-    animate("#sektion6", { opacity: [0, 1] }, { duration: 2.5 });
-  });
+    inView("#sektion6", () => {
+      animate("#sektion6", { opacity: [0, 1] }, { duration: 2.5 });
+    });
 
-  inView("#sektion7", () => {
-    animate("#sektion7", { opacity: [0, 1] }, { duration: 2.5 });
-  });
+    inView("#sektion7", () => {
+      animate("#sektion7", { opacity: [0, 1] }, { duration: 2.5 });
+    });
 
-  inView(".fade", () => {
-    animate(".fade", { opacity: [0, 1] }, { duration: 2.5 });
-  });
-</script>
+    inView(".fade", () => {
+      animate(".fade", { opacity: [0, 1] }, { duration: 2.5 });
+    });
+  </script>
 
-<script>
-  // Login modal
-  class Login extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({
-        mode: "open",
-      }); //apparently slots only work with the shadow dom?
-    }
-    connectedCallback() {
-      this.html = `<style>
+  <script>
+    // Login modal
+    class Login extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({
+          mode: "open",
+        }); //apparently slots only work with the shadow dom?
+      }
+      connectedCallback() {
+        this.html = `<style>
       /****** LOGIN MODAL ******/
       #login-modal {
           background:black;
@@ -169,32 +169,33 @@ const { title } = Astro.props;
         </div>
       </div>
     </div>`;
-      this.render();
+        this.render();
 
-      this.shadowRoot.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (this.shadowRoot.querySelector("input[name=pass]").value === "kea") {
-          document.querySelector("#totally-delete-me").remove();
-          localStorage.setItem("iform-totally-logged-in", true);
-        }
-      });
+        this.shadowRoot.querySelector("form").addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (this.shadowRoot.querySelector("input[name=pass]").value === "kea") {
+            document.querySelector("#totally-delete-me").remove();
+            localStorage.setItem("iform-totally-logged-in", true);
+          }
+        });
+      }
+      render() {
+        this.shadowRoot.innerHTML = this.html;
+      }
     }
-    render() {
-      this.shadowRoot.innerHTML = this.html;
-    }
-  }
-  customElements.define("iform-login", Login);
-  window.addEventListener("load", () => {
-    if (!localStorage.getItem("iform-totally-logged-in")) {
-      const div = document.createElement("div");
-      div.id = "totally-delete-me";
-      div.style.width = "100vw";
-      div.style.height = "100vh";
-      div.style.position = "fixed";
-      div.style.zIndex = "9999";
+    customElements.define("iform-login", Login);
+    window.addEventListener("load", () => {
+      if (!localStorage.getItem("iform-totally-logged-in")) {
+        const div = document.createElement("div");
+        div.id = "totally-delete-me";
+        div.style.width = "100vw";
+        div.style.height = "100vh";
+        div.style.position = "fixed";
+        div.style.zIndex = "9999";
 
-      div.innerHTML = "<iform-login />";
-      document.body.prepend(div);
-    }
-  });
-</script>
+        div.innerHTML = "<iform-login />";
+        document.body.prepend(div);
+      }
+    });
+  </script>
+</html>
