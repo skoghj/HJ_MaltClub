@@ -101,9 +101,9 @@ export default {
         "h4-desktop": ["2.375rem", { lineHeight: "3rem" }], // 38px, line-height: 48px
         "h3-desktop": ["3.188rem", { lineHeight: "4rem" }], // 51px, line-height: 64px
         "h2-desktop": ["4.188rem", { lineHeight: "5rem" }], // 67px, line-height: 80px
-        "h1-desktop": ["5.625rem", { lineHeight: "6rem" }], // 90px, line-height: 96px
+        "h1-desktop": ["5rem", { lineHeight: "5rem" }], // 80px, line-height: 96px
 
-        "display-desktop": ["5.625rem", { lineHeight: "6rem" }], // 90px, line-height: 96px
+        "display-desktop": ["5rem", { lineHeight: "5rem" }], // 80px, line-height: 96px
       },
       fontWeight: {
         light: "300",
