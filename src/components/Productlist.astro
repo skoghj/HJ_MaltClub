@@ -2,158 +2,112 @@
 import Secondarybutton from "../components/Secondarybutton.astro";
 ---
 
-<div>
+<div class="flex flex-col bg-neutral-500 overflow-x-hidden md:grid md:grid-cols-[1.5fr_1fr]">
   <!-- Top Box, all content -->
-  <article class="top-box bg-neutral-500 grid grid-cols-1 md:grid-cols-2 py-2xl overflow-hidden">
-    <div class="flex md:hidden flex-col items-center">
-      <!-- Title -->
+  <section class="bg-neutral-500 w-full px-xs md:col-span-full">
+    <article class="grid grid-cols-1 mx-auto md:gap-xxs md:max-w-7xl md:grid-cols-2 py-lg md:py-xl top-box transition-all duration-500 ease-in-out items-center justify-center">
       <div class="flex flex-col items-center">
-        <h3 class="text-neutral-900 font-body">MALTCLUB</h3>
-        <div class="flex items-center">
-          <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900 mr-sm"></div>
-          <h3 class="text-accent-800 font-body">EXTRA</h3>
-          <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900 ml-sm"></div>
-        </div>
-        <div class="flex justify-center pt-sm">
-          <img src="../img/extra.webp" alt="Description of image" class="w-full max-w-[60%] h-auto object-cover" />
-        </div>
-
-        <!-- Text -->
-        <div class="pt-sm pb-lg max-w-[300px] font-medium text-center">
-          <p>9-11 kvalitetsøl fra både nationale og internationale bryggerier, der slår benene væk under dig</p>
-        </div>
-
-        <!-- Button -->
-        <div class="flex justify-center">
-          <Secondarybutton link="/singleview" variant="extra" size="medium" width="base"> GØR ØLKÆDEREN KLAR </Secondarybutton>
-        </div>
-      </div>
-    </div>
-
-    <!-- Title, text, button -->
-
-    <div class="flex flex-col items-center">
-      <div class="hidden md:block">
         <!-- Title -->
-        <div class="flex flex-col items-center">
-          <h3 class="text-neutral-900 font-body">MALTCLUB</h3>
+        <div class="flex flex-col items-center md:cols-start-1">
+          <h3 class="text-neutral-900 text-h3-tablet sm:text-h3-desktop">MALTCLUB</h3>
           <div class="flex items-center">
             <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900 mr-sm"></div>
-            <h3 class="text-accent-800 font-body">EXTRA</h3>
+            <h3 class="text-accent-800 text-h3-tablet sm:text-h3-desktop">EXTRA</h3>
             <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900 ml-sm"></div>
           </div>
+          <div class="flex justify-center px-xxs pt-sm md:hidden">
+            <img src="../img/extra11.webp" alt="Description of image" class="w-full h-auto object-cover" />
+          </div>
           <!-- Text -->
-          <div class="pt-sm pb-lg max-w-[300px] font-medium text-center">
-            <p>9-11 kvalitetsøl fra både nationale og internationale bryggerier, der slår benene væk under dig</p>
+          <div class="py-sm md:w-[350px]">
+            <p class="text-body-md-tablet px-xs md:px-sm">9-11 kvalitetsøl fra både nationale og internationale bryggerier, der slår benene væk under dig</p>
           </div>
           <!-- Button -->
           <div class="flex justify-center">
-            <Secondarybutton link="/singleview" variant="extra" size="medium" width="base"> GØR ØLKÆLDEREN KLAR </Secondarybutton>
+            <Secondarybutton link="/singleview" variant="extra" size="medium" width="base"> GØR ØLKÆDEREN KLAR </Secondarybutton>
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <!-- Image Section -->
-      <div class="hidden md:block justify-center">
-        <img src="../img/extra11.webp" alt="Description of image" class="w-full max-w-[60%] h-auto object-cover" />
+      <div class="hidden md:flex justify-center md:pt-sm md:col-start-2">
+        <img src="../img/extra11.webp" alt="Description of image" class="w-full md:w-[550px] h-auto object-cover hover:scale-110 transition-all duration-500" />
       </div>
-    </div>
-  </article>
-</div>
+    </article>
+  </section>
 
-<!-- Bottom Boxes -->
-<div class="bottom-boxes flex flex-col md:flex-row overflow-hidden">
-  <!-- Left Box -->
-  <article class="left-box py-lg bg-neutral-400 flex flex-col flex-[0_0_62%] md:flex-[0_0_62%]">
-    <!-- Title, text, button -->
-    <div class="flex flex-col items-center">
-      <!-- Title -->
+  <section class="md:cols-start-1 left-box md:cols-end-2 md:row-start-2">
+    <!-- Left Box -->
+    <article class="py-lg px-xs bg-neutral-400 flex flex-col">
+      <!-- Title, text, button -->
+
       <div class="flex flex-col items-center">
-        <h3 class="text-neutral-900 font-body">MALTCLUB</h3>
-        <div class="flex items-center">
-          <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900 mr-sm"></div>
-          <h3 class="text-neutral-800 font-body">CLASSIC</h3>
-          <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900 ml-sm"></div>
-        </div>
-        <div class="flex justify-center pt-sm">
-          <img src="../img/classic.webp" alt="Description of image" class="w-full max-w-[60%] max-h-[450px] object-cover" />
-        </div>
+        <!-- Title -->
+        <div class="flex flex-col justify-center items-center">
+          <h3 class="text-neutral-900 text-h3-tablet sm:text-h3-desktop">MALTCLUB</h3>
+          <div class="flex items-center">
+            <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900"></div>
+            <h3 class="text-neutral-800 text-h3-tablet sm:text-h3-desktop mx-sm">CLASSIC</h3>
+            <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-900"></div>
+          </div>
+          <div class="flex justify-center pt-sm">
+            <img src="../img/classic.webp" alt="Description of image" class="w-full md:w-[400px] h-auto object-cover hover:scale-110 transition-all duration-500" />
+          </div>
 
-        <!-- Text -->
-        <div class="pt-sm pb-lg max-w-[300px] font-medium text-center">
-          <p>5-6 nøje udvalgte specialøl – Håndplukket fra både ind- og udland.</p>
-        </div>
+          <!-- Text -->
+          <div class="py-sm w-full md:text-center">
+            <p class="text-body-md-tablet px-xs md:px-sm">5-6 nøje udvalgte specialøl - <br /> Håndplukket fra både ind- og udland.</p>
+          </div>
 
-        <!-- Button -->
-        <div class="flex justify-center">
-          <Secondarybutton link="/singleview" variant="classic" size="medium" width="base"> FÅ TIDSLØSE FAVORITTER </Secondarybutton>
+          <!-- Button -->
+          <div class="flex justify-center">
+            <Secondarybutton link="/singleview" variant="classic" size="medium" width="base"> FÅ TIDSLØSE FAVORITTER </Secondarybutton>
+          </div>
         </div>
       </div>
-    </div>
-  </article>
+    </article>
+  </section>
 
-  <!-- Right Box -->
-  <article class="right-box py-lg bg-neutral-600 flex flex-col flex-[0_0_38%] md:flex-[0_0_38%]">
-    <!-- Title, text, button -->
-    <div class="flex flex-col md:items-center">
-      <!-- Title -->
-      <div class="flex flex-col items-center">
-        <h3 class="text-neutral-900 font-body">MALTCLUB</h3>
-        <div class="flex items-center">
-          <div class="w-16 md:w-12 lg:w-16 xl:w-24 h-[2px] bg-neutral-900 mr-sm"></div>
-          <h3 class="text-primary-400 font-body">PILSNER</h3>
-          <div class="w-16 md:w-12 lg:w-16 xl:w-24 h-[2px] bg-neutral-900 ml-sm"></div>
-        </div>
-        <div class="flex justify-center pt-sm">
-          <img src="../img/pilsner.webp" alt="Description of image" class="w-full max-w-[60%] max-h-[450px] object-cover" />
-        </div>
-        <!-- Text -->
-        <div class="pt-sm pb-lg max-w-[300px] font-medium text-center">
-          <p>Din månedlige ølkasse uden IPA’er, så du får præcis de smagsoplevelser, du ønsker.</p>
-        </div>
-        <!-- Button -->
-        <div class="flex justify-center">
-          <Secondarybutton link="/singleview" variant="pilsner" size="medium" width="base"> FORKÆL DIG SELV </Secondarybutton>
+  <section class="md:cols-start-2 md:cols-end-3 md:row-start-2 right-box">
+    <article class="bg-neutral-600 py-lg px-xs">
+      <!-- Title, text, button -->
+      <div class="flex flex-col right-box md:items-center">
+        <!-- Title -->
+        <div class="flex flex-col items-center">
+          <h3 class="text-neutral-900 text-h3-tablet sm:text-h3-desktop">MALTCLUB</h3>
+          <div class="flex items-center">
+            <div class="w-16 md:w-12 lg:w-16 xl:w-24 h-[2px] bg-neutral-900"></div>
+            <h3 class="text-primary-400 text-h3-tablet sm:text-h3-desktop mx-sm">PILSNER</h3>
+            <div class="w-16 md:w-12 lg:w-16 xl:w-24 h-[2px] bg-neutral-900"></div>
+          </div>
+          <div class="flex justify-center pt-sm">
+            <img src="../img/pilsner.webp" alt="Description of image" class="w-full md:w-[365px] h-auto object-cover hover:scale-110 transition-all duration-500" />
+          </div>
+          <!-- Text -->
+          <div class="py-sm md:text-center w-full md:w-[360px]">
+            <p class="text-body-md-tablet px-xs md:px-sm">Din månedlige ølkasse uden IPA’er, så du får præcis de smagsoplevelser, du ønsker.</p>
+          </div>
+          <!-- Button -->
+          <div class="flex justify-center">
+            <Secondarybutton link="/singleview" variant="pilsner" size="medium" width="base"> FORKÆL DIG SELV </Secondarybutton>
+          </div>
         </div>
       </div>
-    </div>
-  </article>
+    </article>
+  </section>
 </div>
-
 <script>
-  // Cirkel maske animation
-  window.addEventListener("load", () => {
-    const circleMask = document.querySelector(".circle-mask");
-
-    animate(circleMask, { r: ["0", "150%"] }, { duration: 2.8 });
-  });
-  /* Import af Motion One biblioteket */
-  import { animate, inView } from "motion";
-
-  inView(".content", () => {
-    animate(".content", { opacity: [0, 1] }, { duration: 2 });
+  import { inView } from "motion";
+  const topbox = document.querySelector(".top-box");
+  inView(topbox, ({ target }) => {
+    target.classList.add("animate__animated", "animate__fadeInLeft", "animate__slow");
   });
 
-  inView(".top-box", () => {
-    animate(".top-box", { x: ["-100%", "0%"] }, { duration: 1.5 });
+  const leftbox = document.querySelector(".left-box");
+  inView(leftbox, ({ target }) => {
+    target.classList.add("animate__animated", "animate__fadeInLeft", "animate__slow");
   });
 
-  // Left box animation (slide in from the le ft) with responsiveness
-  inView(".left-box", () => {
-    // Use dynamic `x` value based on screen size
-    const screenWidth = window.innerWidth;
-    let xValue = screenWidth < 600 ? "-50%" : "-100%"; // Adjust for smaller screens
-
-    animate(".left-box", { x: [xValue, "0%"] }, { duration: 1.5 });
-  });
-
-  // Right box animation (slide in from the right) with responsiveness
-  inView(".right-box", () => {
-    // Use dynamic `x` value based on screen size
-    const screenWidth = window.innerWidth;
-    let xValue = screenWidth < 600 ? "50%" : "100%"; // Adjust for smaller screens
-
-    animate(".right-box", { x: [xValue, "0%"] }, { duration: 1.5 });
+  const rightbox = document.querySelector(".right-box");
+  inView(rightbox, ({ target }) => {
+    target.classList.add("animate__animated", "animate__fadeInRight", "animate__slow");
   });
 </script>

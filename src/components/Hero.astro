@@ -1,74 +1,73 @@
 ---
-import Magneticbutton from "../components/Magneticbutton.astro"
+import Magneticbutton from "../components/Magneticbutton.astro";
 ---
 
 <div class="flex flex-col-reverse sm:flex-row bg-gradient-to-r from-primary-500 to-primary-700 justify-between text-accent-500 pb-xl">
-
-    <!-- Left Content -->
-    <div class="flex flex-col pt-lg items-center text-center flex-1">
-        <h1 class="font-body sm:text-h4-desktop md:text-h3-desktop lg:text-h2-desktop">
-            <div class="word-wrapper"><span class="word">MALTCLUB</span></div>
-        </h1>
-        <div class="flex items-center justify-center">
-            <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 mr-sm"></div>
-            <h2 class="font-body text-h5-desktop md:text-h4-desktop lg:text-h3-desktop">
-                <div class="word-wrapper"><span class="word">DIN</span></div>
-                <div class="word-wrapper"><span class="word">ØL</span></div>
-            </h2>
-            <div class=" w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 ml-sm"></div>
-        </div>
-        <h1 class="font-body sm:text-h4-desktop md:text-h3-desktop lg:text-h2-desktop">
-            <div class="word-wrapper"><span class="word">DIT</span></div>
-            <div class="word-wrapper"><span class="word">ØJEBLIK</span></div>
-        </h1>
-        <div class="pt-md  pb-md">
-            <p  class="text-body-sm-desktop md:text-body-md-desktop lg:text-body-lg-desktop max-w-[200px] md:max-w-[400px]"><span class="text-accent-800">Øl på abonnement</span> - smag på nye favoritter hver måned.</p>
-        </div>
-        <div class="pt-md ">
-            <Magneticbutton link="/Ølpakker" variant="accent" size="medium" text="SE ØLKASSER" />
-        </div>
+  <!-- Left Content -->
+  <div class="flex flex-col pt-lg items-center text-center flex-1">
+    <h1 class="font-body sm:text-h4-desktop md:text-h3-desktop lg:text-h2-desktop">
+      <div class="word-wrapper"><span class="word">MALTCLUB</span></div>
+    </h1>
+    <div class="flex items-center justify-center">
+      <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 mr-sm"></div>
+      <h2 class="font-body text-h5-desktop md:text-h4-desktop lg:text-h3-desktop">
+        <div class="word-wrapper"><span class="word">DIN</span></div>
+        <div class="word-wrapper"><span class="word">ØL</span></div>
+      </h2>
+      <div class="w-16 md:w-24 lg:w-32 h-[2px] bg-neutral-100 ml-sm"></div>
     </div>
-
-    <!-- Right Image Wrapper -->
-    <div class="hidden  md:block relative sm:w-[40%]  pb-lg">
-        <img src="../img/heroindex3.webp" alt="Beer being poured into glass" class="absolute top-0 right-0 w-full  max-w-full object-contain">
+    <h1 class="font-body sm:text-h4-desktop md:text-h3-desktop lg:text-h2-desktop">
+      <div class="word-wrapper"><span class="word">DIT</span></div>
+      <div class="word-wrapper"><span class="word">ØJEBLIK</span></div>
+    </h1>
+    <div class="pt-md pb-md">
+      <p class="text-body-sm-desktop md:text-body-md-desktop lg:text-body-lg-desktop max-w-[200px] md:max-w-[400px]"><span class="text-accent-700">Øl på abonnement</span> - smag på nye favoritter hver måned.</p>
     </div>
+    <div class="pt-md">
+      <Magneticbutton link="/Ølpakker" variant="accent" size="medium" text="SE ØLKASSER" />
+    </div>
+  </div>
+
+  <!-- Right Image Wrapper -->
+  <div class="hidden md:block relative sm:w-[40%] pb-lg">
+    <img src="../img/heroindex3.webp" alt="Beer being poured into glass" class="absolute top-0 right-0 w-full max-w-full object-contain" />
+  </div>
 </div>
 <style>
-
-
-.word-wrapper {
-    overflow: hidden;      /* Skjuler det, der er uden for denne container */
+  .word-wrapper {
+    overflow: hidden; /* Skjuler det, der er uden for denne container */
     display: inline-block; /* Bevarer inline-layout */
     position: relative;
-    height: 1em;           /* Justér så det matcher tekstens højde */
-    line-height: 1em;      /* Matcher tekstens linjehøjde */
-}
+    height: 1em; /* Justér så det matcher tekstens højde */
+    line-height: 1em; /* Matcher tekstens linjehøjde */
+  }
 
-.word {
+  .word {
     display: inline-block;
     transform-origin: center;
     position: relative;
     transform: translateY(100px); /* Start med at være under "muren" */
-}
+  }
 </style>
 
 <script>
-     import { animate } from 'motion';
+  import { animate } from "motion";
 
-// Select the elements
-const words = document.querySelectorAll('.word');
+  // Select the elements
+  const words = document.querySelectorAll(".word");
 
-// Animate each word individually with a delay
-words.forEach((word, index) => {
-    animate(word, {
-        opacity: [1, 1],         // Fade in from 0 to 1
-        transform: ['translateY(150px)', 'translateY(0)'],  // Move from 50px below to its original position
-    }, {
-        duration: 1,             // Duration for the animation
-        delay: index * 0.1,      // Sequential delay based on index
-    });
-});
-
+  // Animate each word individually with a delay
+  words.forEach((word, index) => {
+    animate(
+      word,
+      {
+        opacity: [0, 1], // Fade in from 0 to 1
+        transform: ["translateY(150px)", "translateY(0)"], // Move from 50px below to its original position
+      },
+      {
+        duration: 1, // Duration for the animation
+        delay: index * 0.1, // Sequential delay based on index
+      }
+    );
+  });
 </script>
-
