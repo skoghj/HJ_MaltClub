@@ -2,58 +2,54 @@
 import AnmeldelsesCard from "../components/AnmeldelsesCard.astro";
 ---
 
-<div id="anmeld" class="bg-primary-500 px-sm md:py-xl" x-data="{ currentIndex: 0, cardCount: 6 }">
-  <div id="sektion4" class="opacity-0 w-full max-w-7xl mx-auto">
-    <h3 class="text-accent-500 text-center py-xl">Læs anmeldelser af vores produkter</h3>
+<div id="#anmeld" class="bg-primary-500 pt-xl py-lg px-ml lg:p-2xl border-solid">
+  <div id="sektion4" class="opacity-0">
+    <h2 class="text-h1-mobile md:text-2-tablet lg:text-h2-desktop text-accent-500 text-center">Læs anmeldelser af vores produkter</h2>
 
-    <div class="w-full overflow-hidden slider px-4">
+    <div x-data="{ currentIndex: 0, cardWidth: 420, totalCards: 3 }" class="relative overflow-hidden">
+      <!--  <div class="border border-solid border-6 border-red-600  ml-28"> -->
+
       <!-- Cards Container -->
-      <div class="flex transition-transform duration-500" :style="`transform: translateX(-${currentIndex * 100}%);`">
-        <!-- Card 1 -->
-        <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3">
+      <div class="flex transition-transform duration-500 border-solid pt-xl" :style="`transform: translateX(-${currentIndex * cardWidth}px);`">
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2" x-show="true">
           <AnmeldelsesCard img="img/img_profil/Morten.webp" name="Morten Damsgaard" description="Jeg valgte din netbutik, fordi den har for enhver smag og præference. Hurtig levering, ordre intakt. Tusind tak." beer="svg/beer_rate1.svg" />
         </div>
 
-        <!-- Card 2 -->
-        <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3">
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
           <AnmeldelsesCard img="img/img_profil/Izzy.webp" name="Izzy Samson" description="Gode priser og et bredt udvalg at vælge imellem. Godt koncept at det er muligt at vælge hvilken dag leveringen skal finde sted." beer="svg/beer_rate2.svg" />
         </div>
 
-        <!-- Card 3 -->
-        <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3">
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
           <AnmeldelsesCard img="img/img_profil/Maire.webp" name="Maire Nathanials" description="Jeg foretrækker leverancer før kl. 18:00, da levering sent på aftenen ikke passer mig." beer="svg/beer_rate3.svg" />
         </div>
 
-        <!-- Card 4 -->
-        <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3">
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
           <AnmeldelsesCard img="img/img_profil/Andreas.webp" name="Andreas W. N. Martinez" description="Rigtig gode priser og et bredt udvalg af produkter. Man bliver overrasket hver gang!" beer="svg/beer_rate4.svg" />
         </div>
 
-        <!-- Card 5 -->
-        <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3">
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
           <AnmeldelsesCard img="img/img_profil/Lukas.webp" name="Lukas Jensen" description="Et bredt, men eksklusivt udvalg, der emmer af passion og sans for detaljen." beer="svg/beer_rate1.svg" />
         </div>
 
-        <!-- Card 6 -->
-        <div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3">
+        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2">
           <AnmeldelsesCard img="img/img_profil/Lau.webp" name="Lau Mathiesen" description="En kollektion af produkter, der er skræddersyet til den kræsne forbruger." beer="svg/beer_rate1.svg" />
         </div>
+
+        <!-- </div> -->
       </div>
 
       <!-- Navigation Controls (Arrows) -->
-      <div class="w-full flex gap-10 justify-center items-center pt-md">
-        <button @click="currentIndex = (currentIndex - 1 + cardCount) % cardCount" class="text-accent-500 p-3">
-          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
+      <button @click="currentIndex = (currentIndex === 0) ? totalCards - 1 : currentIndex - 1" class="absolute top-1/2 left-0 transform -translate-y-1/2 text-accent-800 p-3 bg-neutral-300 rounded-full shadow-lg">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
 
-        <button @click="currentIndex = (currentIndex + 1) % cardCount" class="text-accent-500 p-3">
-          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
+      <button @click="currentIndex = (currentIndex + 1) % totalCards" class="absolute top-1/2 right-0 transform -translate-y-1/2 text-accent-800 p-3 bg-neutral-300 rounded-full shadow-lg">
+        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
     </div>
   </div>
 </div>
