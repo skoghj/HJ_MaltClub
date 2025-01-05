@@ -1,0 +1,35 @@
+---
+const { variant = "primary", size = "medium", width = "medium", link, defaultText = "GØR ØLKÆDEREN KLAR", hoverText = "KØB ABONNEMENT" } = Astro.props;
+
+const buttonStyling = "rounded-sm px-md py-[11px] font-kanp font-semibold transform transition-transform duration-300 ease-in-out hover:scale-105";
+
+const variantClasses = {
+  primary: "bg-primary-500 text-accent-500 hover:bg-primary-400 hover:text-white",
+  secondary: "bg-neutral-100 text-primary-500 hover:bg-primary-400 hover:text-neutral-100",
+  accent: "bg-accent-700 text-accent-950 border-primary-500 hover:bg-accent-800 transition",
+  extra: "bg-accent-800 hover:bg-accent-900 text-neutral-100",
+  classic: "bg-neutral-800 hover:bg-neutral-900 text-neutral-100",
+  pilsner: "bg-primary-400 hover:bg-primary-500 text-neutral-100",
+};
+
+const sizeClasses = {
+  small: "py-xs text-body-sm md:text-body-sm-tablet lg:text-body-sm-desktop",
+  medium: "py-sm text-body-md md:text-body-md-tablet lg:text-body-md-desktop",
+  large: "text-body-lg md:text-body-lg-tablet lg:text-body-lg-desktop",
+};
+const widthClasses = {
+  base: "w-auto",
+  fill: "w-full",
+};
+---
+
+<a href={link}>
+  <button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size], widthClasses[width]]}>
+    <span class="group relative inline-block">
+      <!-- Standardtekst -->
+      <span class="block group-hover:hidden">{defaultText}</span>
+      <!-- Hovertekst -->
+      <span class="hidden group-hover:block">{hoverText}</span>
+    </span>
+  </button>
+</a>

@@ -1,5 +1,5 @@
 ---
-import Secondarybutton from "../components/Secondarybutton.astro";
+import ListeviewButton from "../components/ListeviewButton.astro";
 ---
 
 <div class="flex flex-col bg-neutral-500 overflow-x-hidden md:grid md:grid-cols-[1.5fr_1fr]">
@@ -24,8 +24,9 @@ import Secondarybutton from "../components/Secondarybutton.astro";
           </div>
           <!-- Button -->
           <div class="flex justify-center">
-            <Secondarybutton link="/singleview" variant="extra" size="medium" width="base"> GØR ØLKÆDEREN KLAR </Secondarybutton>
+            <ListeviewButton link="/singleview" variant="extra" size="medium" width="base" defaultText="GØR ØLKÆDEREN KLAR" hoverText="KØB ØLABONNEMENT" />
           </div>
+          <div class="md:hidden pt-xxs text-red-700"><p class="font-knap">Køb abonnement nu!</p></div>
         </div>
       </div>
       <div class="hidden md:flex justify-center md:pt-sm md:col-start-2">
@@ -59,7 +60,7 @@ import Secondarybutton from "../components/Secondarybutton.astro";
 
           <!-- Button -->
           <div class="flex justify-center">
-            <Secondarybutton link="/singleview" variant="classic" size="medium" width="base"> FÅ TIDSLØSE FAVORITTER </Secondarybutton>
+            <ListeviewButton link="/singleview" variant="classic" size="medium" width="base" defaultText="FÅ TIDSLØSE FAVORITTER" hoverText="KØB ØLABONNEMENT" />
           </div>
         </div>
       </div>
@@ -87,7 +88,7 @@ import Secondarybutton from "../components/Secondarybutton.astro";
           </div>
           <!-- Button -->
           <div class="flex justify-center">
-            <Secondarybutton link="/singleview" variant="pilsner" size="medium" width="base"> FORKÆL DIG SELV </Secondarybutton>
+            <ListeviewButton link="/singleview" variant="pilsner" size="medium" width="base" defaultText="FORKÆL DIG SELV" hoverText="KØB ØLABONNEMENT" />
           </div>
         </div>
       </div>
