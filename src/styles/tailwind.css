@@ -38,22 +38,22 @@ p {
 
 @screen md {
   .display {
-    @apply text-display-tablet;
+    @apply text-display-tablet font-bold;
   }
   h1 {
-    @apply text-h1-tablet;
+    @apply text-h1-tablet font-bold;
   }
   h2 {
-    @apply text-h2-tablet;
+    @apply text-h2-tablet font-semibold;
   }
   h3 {
-    @apply text-h3-tablet;
+    @apply text-h3-tablet font-semibold;
   }
   h4 {
-    @apply text-h4-tablet;
+    @apply text-h4-tablet font-semibold;
   }
   h5 {
-    @apply text-h5-tablet;
+    @apply text-h5-tablet font-semibold;
   }
   p {
     @apply text-body-sm-tablet;
@@ -62,25 +62,25 @@ p {
 
 @screen lg {
   .display {
-    @apply text-display-desktop;
+    @apply text-display-desktop font-semibold;
   }
   h1 {
-    @apply text-h1-desktop;
+    @apply text-h1-desktop font-semibold;
   }
   h2 {
-    @apply text-h2-desktop;
+    @apply text-h2-desktop font-semibold;
   }
 
   h3 {
-    @apply text-h3-desktop;
+    @apply text-h3-desktop font-semibold;
   }
 
   h4 {
-    @apply text-h4-desktop;
+    @apply text-h4-desktop font-semibold;
   }
 
   h5 {
-    @apply text-h5-desktop;
+    @apply text-h5-desktop font-semibold;
   }
   p {
     @apply text-body-sm-desktop;

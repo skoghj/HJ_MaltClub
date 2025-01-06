@@ -96,11 +96,10 @@ export default {
         "body-sm-desktop": ["1.125rem", { lineHeight: "1.75rem" }], // 18px, line-height: 28px
         "body-md-desktop": ["1.313rem", { lineHeight: "2rem" }], // 21px, line-height: 32px
         "body-lg-desktop": ["1.75rem", { lineHeight: "2.5rem" }], // 28px, line-height: 40px
-
-        "h5-desktop": ["1.75rem", { lineHeight: "2.5rem" }], // 28px, line-height: 40px
-        "h4-desktop": ["2.375rem", { lineHeight: "3rem" }], // 38px, line-height: 48px
-        "h3-desktop": ["3.188rem", { lineHeight: "4rem" }], // 51px, line-height: 64px
-        "h2-desktop": ["4.188rem", { lineHeight: "5rem" }], // 67px, line-height: 80px
+        "h5-desktop": ["1.75rem", { lineHeight: "1.875rem" }], // 20px, line-height: 30px
+        "h4-desktop": ["1.75rem", { lineHeight: "2.375rem" }], // 28px, line-height: 38px
+        "h3-desktop": ["2.375rem", { lineHeight: "3rem" }], // 38px, line-height: 48px
+        "h2-desktop": ["3.188rem", { lineHeight: "4rem" }], // 67px, line-height: 80px
         "h1-desktop": ["5rem", { lineHeight: "5rem" }], // 80px, line-height: 96px
 
         "display-desktop": ["5rem", { lineHeight: "5rem" }], // 80px, line-height: 96px
