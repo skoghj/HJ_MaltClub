@@ -29,34 +29,42 @@ import MainLayout from "../layouts/MainLayout.astro";
           <img src="../img/Beers.webp" alt="Billed af ølflasker liggende med forskellige vinkler" class="relative z-10 object-contain max-w-[44%] hidden sm:block" />
         </div>
       </div>
-
-      <ServiceGaranti />
-
-      <div class="flex flex-col pt-ml py-lg px-ml sm:p-xl lg:p-2xl bg-primary-500">
-        <div class="flex items-center space-x-2 text-accent-500">
-          <!-- SVG Icon -->
-          <div class="lg:pl-20">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
-              <path d="M5 12l14 0"></path>
-            </svg>
-          </div>
-          <!-- Text -->
-          <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-accent-500 lg:pb-l">Vi er her for at hjælpe</p>
-        </div>
-        <h2 class="text-accent-500 lg:pb-xl lg:pl-20">Ofte stillede spørgsmål</h2>
-
-        <div>
-          <Accordion question="Hvordan bestiller jeg et Maltclub abonnement?" answer="Du bestiller et MaltClub abonnement lige her." />
-
-          <Accordion question="Hvor lang tid binder jeg mig?" answer="Vi har ingenbinding hos MaltClub, og du kan til enhver tid opsige dit abonnement. Vær dog opmærksom på at dit abonnement skal opsiges senest den 20. i måneden for at være gældende fra den efterfølgende måned." />
-
-          <Accordion question="Hvor meget koster et Maltclub abonnemet?" answer="Et MaltClub abonnement med levering hver måned koster fra 275 kr. pr. md. inkl. fragt. Du kan få 20% i rabat på den første måned ved tilmelding til vores nyhedsbrev." />
-
-          <Accordion question="Hvordan kan jeg betale på Maltclub?" answer="På MaltClub.dk kan du betale med Dankort, Visakort og Masterkort, når du opretter et abonnement. Betaling med debet-eller kreditkort er gebyrfrit (dog kan der forekomme gebyr på betaling med firmakort)." />
-
-          <Accordion question="Hvordan opsiger jeg mit abonnement?" answer="Ønsker du at opsige dit abonnement bedes du kontakte os på info.maltclub@gmail.com eller via vores kontaktformular her. Du modtager herefter en skriftlig bekræftelse på din opsigelse." />
-        </div>
+    </div>
+  </div>
+  <section class="bg-neutral-400 w-full z-20">
+    <div><ServiceGaranti /></div>
+    <div class="flex mx-auto items-center justify-center">
+      <img src="/omos.jpg" alt="om os passionere om øl" class="flex object-cover w-[500px] h-[500px]" />
+      <div class="flex flex-col py-xl px-[10%]">
+        <h3 class="italic pb-ml text-primary-500">"Oplev den ultimative ølrejse – Håndplukkede bryg direkte til din dør"</h3>
+        <p>Maltklub blev til, da vi, to kollegaer med en fælles passion for øl, opdagede, hvor svært det kunne være at finde de rigtige øl. Vi ønskede at dele vores begejstring for håndværksøl med andre og gøre det nemt for folk at opdage nye, spændende smagsoplevelser. Med Maltklub skaber vi en ølrevolution, hvor vi håndplukker de bedste bryg og sender dem direkte til vores brugere som et abonnement. Vores mission? At sprede kærligheden til øl – én flaske ad gangen.</p>
       </div>
+    </div>
+  </section>
+
+  <div class="flex flex-col pt-ml py-lg px-ml sm:p-xl lg:p-2xl bg-primary-500">
+    <div class="flex items-center space-x-2 text-accent-500">
+      <!-- SVG Icon -->
+      <div class="lg:pl-20">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
+          <path d="M5 12l14 0"></path>
+        </svg>
+      </div>
+      <!-- Text -->
+      <p class="text-body-md md:text-body-md-tablet lg:text-body-md-desktop text-accent-500 lg:pb-l">Vi er her for at hjælpe</p>
+    </div>
+    <h2 class="text-accent-500 lg:pb-xl lg:pl-20">Ofte stillede spørgsmål</h2>
+
+    <div>
+      <Accordion question="Hvordan bestiller jeg et Maltclub abonnement?" answer="Du bestiller et MaltClub abonnement lige her." />
+
+      <Accordion question="Hvor lang tid binder jeg mig?" answer="Vi har ingenbinding hos MaltClub, og du kan til enhver tid opsige dit abonnement. Vær dog opmærksom på at dit abonnement skal opsiges senest den 20. i måneden for at være gældende fra den efterfølgende måned." />
+
+      <Accordion question="Hvor meget koster et Maltclub abonnemet?" answer="Et MaltClub abonnement med levering hver måned koster fra 275 kr. pr. md. inkl. fragt. Du kan få 20% i rabat på den første måned ved tilmelding til vores nyhedsbrev." />
+
+      <Accordion question="Hvordan kan jeg betale på Maltclub?" answer="På MaltClub.dk kan du betale med Dankort, Visakort og Masterkort, når du opretter et abonnement. Betaling med debet-eller kreditkort er gebyrfrit (dog kan der forekomme gebyr på betaling med firmakort)." />
+
+      <Accordion question="Hvordan opsiger jeg mit abonnement?" answer="Ønsker du at opsige dit abonnement bedes du kontakte os på info.maltclub@gmail.com eller via vores kontaktformular her. Du modtager herefter en skriftlig bekræftelse på din opsigelse." />
     </div>
   </div>
 </MainLayout>
