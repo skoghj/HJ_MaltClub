@@ -2,25 +2,33 @@
 const { img, name, description, beer } = Astro.props;
 ---
 
-<section class="card @container">
-  <div class="bg-accent-500 mx-auto w-[300px] h-[350px] md:w-[350px] md:h-[370px]">
-    <div class="flex flex-col items-center mx-auto p-sm">
-      <!-- IMG centered -->
-      <img src={img} alt="Ølentusiast" class="h-20 w-120 rounded-sm mx-auto mt-sm" />
+<section class="card @container h-full">
+  <div
+    class="bg-accent-500 mx-auto rounded-md shadow-md
+           w-[90%] max-w-[300px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[360px]
+           min-h-[300px] sm:min-h-[350px] md:min-h-[300px] lg:min-h-[350px]
+           flex flex-col justify-between p-5 transition-all duration-300"
+  >
+    <!-- 상단 (이미지 + 이름 + 설명) -->
+    <div class="flex flex-col items-center text-center flex-grow">
+      <img
+        src={img}
+        alt="Ølentusiast"
+        class="h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 rounded-sm object-cover mx-auto mb-3"
+      />
 
-      <!-- H3 centered -->
-      <h5 class="mt-sm md:text-body-md-tablet">{name}</h5>
+      <h5 class="text-body-md font-semibold mb-2 md:text-body-md-tablet">
+        {name}
+      </h5>
 
-      <!-- Content container that adjusts based on description size -->
-      <div class="flex justify-center items-center w-full">
-        <div class="flex-grow">
-          <p class="text-primary-500 text-body-md text-left mt-xxs">{description}</p>
-        </div>
-      </div>
+      <p class="text-primary-500 text-body-sm sm:text-body-md leading-snug">
+        {description}
+      </p>
+    </div>
 
-      <div class="flex items-start w-full pt-xs">
-        <img src={beer} alt="beer-icon" class="h-18" />
-      </div>
+    <!-- 하단 (맥주 아이콘) -->
+    <div class="flex justify-start items-center mt-4">
+      <img src={beer} alt="beer-icon" class="h-6 sm:h-7 md:h-8" />
     </div>
   </div>
 </section>
